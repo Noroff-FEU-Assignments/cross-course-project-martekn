@@ -1,10 +1,230 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>My first website</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameHub</title>
+    <meta
+      name="description"
+      content="GameHub sells pc games with the customers in mind. Focusing on competitive prices, having a big variety of games and the option to resell games."
+    />
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7674273682.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <h1>Hello world!</h1>
-    <p>Welcome to my first website.</p>
+    <!-- Navigation -->
+    <header>
+      <nav>
+        <a href="#main-content">Skip to content</a>
+        <label for="menu-checkbox">
+          <span class="material-icons">
+            menu
+          </span>
+        </label>
+        <input type="checkbox" name="menu-checkbox" id="menu-checkbox">
+        <a href="index.html"><img src="images/logo.png" alt="Gamehub, the universe of games" /></a>
+        <button class="cart" aria-label="Cart">
+          <span class="material-icons">
+            shopping_cart
+            </span>
+          <div>0</div>
+        </button>
+        <div class="menu">
+          <a href="" aria-label="My account"><i class="fas fa-user-circle"></i></a>
+          <input type="checkbox" name="darkmode-toggle" id="darkmode-toggle">
+          <label for="darkmode-toggle">
+            <span class="material-icons">
+            nightlight
+            </span>
+          </label>
+          <ul>
+            <li>
+              <a href="index.html" class="active">Home</a>
+            </li>
+            <li>
+              <a href="">Games</a>
+            </li>
+            <li>
+              <a href="">Pre-orders</a>
+            </li>
+            <li>
+              <a href="">Special deals</a>
+            </li>
+            <li>
+              <a href="">Resell games</a>
+            </li>
+          </ul>
+          <input type="text" id="search" />
+          <button><span class="material-icons">
+            search
+            </span></button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <main id="main-content">
+      <section class="pre-order-banner">
+        <div>
+          <h2>God of War</h2>
+          <p>Coming 14 January, 2022</p>
+          <button>Pre-order</button>
+        </div>
+        <img src="images/pre-order.jpg" alt="" />
+      </section>
+      <section class="latest games">
+        <h2>Latest games</h2>
+        <a href="" class="card">
+          <img src="images/Covers/mass-effect.jpg" alt="" />
+          <p>Mass Effect Legendary Edition</p>
+          <p>$59.99</p>
+        </a>
+        <a href="" class="card">
+          <img src="images/covers/new-world.jpg" alt="" />
+          <p>New World</p>
+          <p>$40</p>
+        </a>
+        <a href="" class="card">
+          <img src="images/covers/life-is-strange.jpg" alt="" />
+          <p>Life Is Strange: True Colors</p>
+          <p>$59.99</p>
+        </a>
+        <a href="" class="card">
+          <img src="images/covers/cyberpunk.jpg" alt="" />
+          <p>Cyberpunk 2077</p>
+          <p>$59.99</p>
+        </a>
+        <a href="" class="card">
+          <img src="images/covers/diablo-2.jpg" alt="" />
+          <p>Diablo II: Resurrected</p>
+          <p>$39.99</p>
+        </a>
+      </section>
+      <section class="sale-banner">
+        <a href="">
+          <img
+            src="images/sale/sale-covers.png"
+            alt="Halloween sale on Dream Alone, Little Nightmares and Hello Neighbor"
+          />
+          <p>30% off</p>
+        </a>
+      </section>
+      <section class="special-deals">
+        <h2>Special deals</h2>
+        <a href="" class="card">
+          <img src="images/covers/gris.jpg" alt="" />
+          <p>GRIS</p>
+          <p><s><span class="visually-hidden">Regular price </span>$16.99</s></p>
+          <p<span class="visually-hidden">Sale price </span>>$6.79</p>
+        </a>
+        <a href="" class="card">
+          <img src="images/covers/fallout-76.jpg" alt="" />
+          <p>Fallout 76</p>
+          <p><s><span class="visually-hidden">Regular price </span>$39.99</s></p>
+          <p><span class="visually-hidden">Sale price </span>$19.99</p>
+        </a>
+        <a href="" class="card">
+          <img src="images/covers/qube-2.jpg" alt="" />
+          <p>Q.U.B.E. 2</p>
+          <p><s><span class="visually-hidden">Regular price </span>$24.99</s></p>
+          <p<span class="visually-hidden">Sale price </span>>$9.99</p>
+        </a>
+        <a href="" class="card">
+          <img src="images/covers/portal.jpg" alt="" />
+          <p>Portal</p>
+          <p><s><span class="visually-hidden">Regular price </span>$9.99</s></p>
+          <p<span class="visually-hidden">Sale price </span>>$2.99</p>
+        </a>
+        <a href="" class="card">
+          <img src="images/covers/hollow-knight.jpg" alt="" />
+          <p>Hollow Knight</p>
+          <p><s><span class="visually-hidden">Regular price </span>$15.00</s></p>
+          <p><span class="visually-hidden">Sale price </span>$44.99</p>
+        </a>
+      </section>
+      <section class="resell-banner">
+        <a href="">
+          <p>Get some money back after finishing a game through resell, or buy pre-owned games cheaper</p>
+        </a>
+      </section>
+      <section class="best-sellers">
+        <h2>Best sellers</h2>
+        <a href="" class="card">
+          <img src="images/covers/gta-5.jpg" alt="" />
+          <p>Grand Theft Auto V</p>
+          <p>Pre-Owned</p>
+          <p><s><span class="visually-hidden">Regular price </span>$29.99</s></p>
+          <p><span class="visually-hidden">Sale price </span>$23.99</p>
+        </a>
+        <a href="" class="card">
+          <img src="images/covers/wow.jpg" alt="" />
+          <p>World of Warcraft: Shadowlands</p>
+          <p>$39.99</p>
+        </a>
+        <a href="" class="card">
+          <img src="images/covers/witcher-3.jpg" alt="" />
+          <p>The Witcher 3: Wild Hunt</p>
+          <p>Pre-Owned</p>
+          <p><s><span class="visually-hidden">Regular price </span>$49.99</s></p>
+          <p><span class="visually-hidden">Sale price </span>$39.99</p>
+        </a>
+        <a href="" class="card">
+          <img src="images/covers/sims-4.jpg" alt="" />
+          <p>The Sims 4</p>
+          <p>$39.99</p>
+        </a>
+        <a href="" class="card">
+          <img src="images/covers/red-dead-redemption-2.jpg" alt="" />
+          <p>Red Dead Redemption 2</p>
+          <p>Pre-Owned</p>
+          <p><s><span class="visually-hidden">Regular price </span>$59.99</s></p>
+          <p><span class="visually-hidden">Sale price </span>$47.99</p>
+        </a>
+        <a href="" class="card">
+          <img src="images/covers/ori-and-the-will-of-the-wisp.jpg" alt="" />
+          <p>Ori and the Will of the Wisps</p>
+          <p>Pre-Owned</p>
+          <p><s><span class="visually-hidden">Regular price </span>$29.99</s></p>
+          <p><span class="visually-hidden">Sale price </span>$23.99</p>
+        </a>
+        <a href="" class="card">
+          <img src="images/covers/assassins-creed-origins.jpg" alt="" />
+          <p>Assassin's Creed Origins</p>
+          <p>Pre-Owned</p>
+          <p><s><span class="visually-hidden">Regular price </span>$59.99</s></p>
+          <p><span class="visually-hidden">Sale price </span>$47.99</p>
+        </a>
+        <a href="" class="card">
+          <img src="images/covers/doom.jpg" alt="" />
+          <p>DOOM Eternal</p>
+          <p>$59.99</p>
+        </a>
+        <a href="" class="card">
+          <img src="images/covers/darksiders.jpg" alt="" />
+          <p>Darksiders Warmastered Edition</p>
+          <p>Pre-Owned</p>
+          <p><s><span class="visually-hidden">Regular price </span>$19.99</s></p>
+          <p><span class="visually-hidden">Sale price </span>$15.99</p>
+          <p></p>
+        </a>
+        <a href="" class="card">
+          <img src="images/covers/rise-of-the-tomb-raider.jpg" alt="" />
+          <p>Rise of the Tomb Raider</p>
+          <p>$29.99</p>
+        </a>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+      <a href=""><img src="" alt="Gamehub, the universe of games" /></a>
+      <a href="">F.A.Q.</a>
+      <a href="">Contact us</a>
+      <a href="">twitter</a>
+      <a href="">fb</a>
+      <p>Copyright &copy; 2021 All Rights Reserved</p>
+    </footer>
   </body>
 </html>
