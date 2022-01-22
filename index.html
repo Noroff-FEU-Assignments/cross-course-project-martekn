@@ -25,21 +25,23 @@
     <header>
       <div id="skip"><a href="#main-content">Skip to content</a></div>
       <label for="menu-checkbox" class="hamburger">
-        <span class="material-icons icon-hamburger"> menu </span>
+        <span class="material-icons icons"> menu </span>
       </label>
       <input type="checkbox" name="menu-checkbox" id="menu-checkbox" />
       <a href="index.html" class="logo"><img src="images/logo.png" alt="Gamehub, the universe of games" /></a>
       <button class="cart" aria-label="Cart">
-        <span class="material-icons icon-cart"> shopping_cart </span>
+        <span class="material-icons icons"> shopping_cart </span>
         <div id="cart-number">3</div>
       </button>
       <nav>
-        <div>
-          <label for="menu-checkbox">
-            <span class="material-icons icon-close"> close </span>
+        <div id="sub-menu">
+          <label for="menu-checkbox" id="close-checkbox">
+            <span class="material-icons icon-close icons"> close </span>
           </label>
-          <a href="#" aria-label="My account"><i class="fas fa-user-circle"></i></a>
-          <span class="material-icons"> nightlight </span>
+          <div>
+            <a href="#" aria-label="My account"><i class="fas fa-user-circle icons"></i></a>
+            <span class="material-icons dark-mode icons"> nightlight </span>
+          </div>
         </div>
         <div class="menu">
           <ul>
@@ -59,12 +61,16 @@
               <a href="#">Resell games</a>
             </li>
           </ul>
-          <input type="checkbox" name="search-checkbox" id="search-checkbox" /><label for="search-checkbox"
-            ><div class="search-checkbox-button"><span class="material-icons"> search </span></div></label
-          ><label for="search-checkbox">Back</label>
-          <div>
-            <input type="text" id="search" />
-            <button class="btn"><span class="material-icons"> search </span></button>
+          <input type="checkbox" name="search-checkbox" id="search-checkbox" />
+          <label for="search-checkbox">
+            <span class="material-icons btn-label icons"> search </span>
+          </label>
+          <div class="search-overlay">
+            <label for="search-checkbox" id="search-back">Back</label>
+            <div id="search">
+              <input type="text" />
+              <a href=""><span class="material-icons btn-search"> search </span></a>
+            </div>
           </div>
         </div>
       </nav>
@@ -335,7 +341,7 @@
     </main>
 
     <footer class="dark-bg">
-      <a href="index.html"><img src="images/logo.png" alt="Gamehub, the universe of games" /></a>
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="Gamehub, the universe of games" /></a>
       <a href="#">F.A.Q.</a>
       <a href="#">Contact us</a>
       <a href="#"><i class="fab fa-facebook-f"></i></a>
