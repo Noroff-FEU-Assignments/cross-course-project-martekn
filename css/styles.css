@@ -18,6 +18,8 @@ body {
   box-sizing: border-box;
   margin: 0 auto;
   min-width: 280px;
+  display: flex;
+  flex-direction: column;
 }
 
 body,
@@ -51,10 +53,14 @@ header {
   font-size: 1.4rem;
 }
 
-.pre-order-content h2,
-.resell-banner-content p {
+.pre-order-content h2 {
   font-size: 1.8rem;
   font-weight: 800;
+}
+
+.resell-banner-content p {
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 h2,
@@ -322,6 +328,47 @@ nav ul {
   margin-top: 30px;
 }
 
+/* Footer */
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, auto);
+  padding: 10px 20px;
+  gap: 10px;
+  justify-self: end;
+  margin-top: 40px;
+}
+
+footer .logo {
+  grid-column: 1 / 3;
+  justify-self: center;
+}
+
+.footer-links,
+.footer-social {
+  display: flex;
+}
+
+.footer-links {
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-social {
+  justify-self: end;
+  font-size: 2rem;
+  align-self: center;
+  gap: 20px;
+}
+
+footer p {
+  font-size: 0.9rem;
+  width: 100%;
+  text-align: center;
+  grid-column: 1 / 3;
+  margin-bottom: 5px;
+}
+
 /* Buttons */
 .btn {
   background-color: var(--main-color);
@@ -423,7 +470,12 @@ nav ul {
 }
 
 .pre-order-content h2 {
-  margin-top: 0px;
+  margin: 0;
+}
+
+.pre-order-content p {
+  margin-top: 5px;
+  margin-bottom: 20px;
 }
 
 .pre-order-banner img {
@@ -451,17 +503,38 @@ nav ul {
 
 .sale-banner-content p {
   align-self: flex-end;
-  rotate: 10deg;
+  transform: rotate(10deg);
   margin: 5px 0;
+}
+
+.resell-banner-content {
+  padding: 10px 20px;
+  display: flex;
+  gap: 30px;
+}
+
+.resell-banner-image {
+  align-self: center;
+}
+
+.resell-banner-image img {
+  width: 50px;
 }
 
 /** INDEX **/
 .latest-games,
 .special-deals,
 .best-sellers {
-  padding: 10px 20px;
+  padding: 10px 15px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  gap: 10px;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.latest-games h2,
+.special-deals h2,
+.best-sellers h2 {
+  margin: 0;
 }
