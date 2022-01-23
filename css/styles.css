@@ -16,10 +16,26 @@ body {
   color: var(--black);
   background-color: var(--almost-white);
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 400;
   margin: 0 auto;
+  min-width: 280px;
+}
+
+body,
+.cart-title {
+  font-weight: 400;
+}
+
+body,
+.cart-title,
+.cart-price,
+.cart-total {
+  font-family: "Open Sans", sans-serif;
+}
+
+body,
+.cart-title,
+.cart-price {
+  font-size: 1.2rem;
 }
 
 h2,
@@ -33,13 +49,18 @@ header,
 h2,
 header {
   font-size: 1.4rem;
-  font-weight: 600;
 }
 
 .pre-order-content h2,
 .resell-banner-content p {
   font-size: 1.8rem;
   font-weight: 800;
+}
+
+h2,
+header,
+.cart-price {
+  font-weight: 600;
 }
 
 a,
@@ -84,7 +105,8 @@ header,
 
 header input[type="checkbox"],
 nav,
-#skip {
+#skip,
+.cart-overlay {
   display: none;
 }
 header label.hamburger {
@@ -127,6 +149,7 @@ header .cart {
   width: 100%;
   left: 0px;
   top: 0px;
+  min-width: 280px;
 }
 
 #sub-menu {
@@ -215,6 +238,7 @@ nav ul {
   display: flex;
   flex-direction: column;
   display: none;
+  min-width: 280px;
 }
 
 .search-overlay label {
@@ -225,6 +249,7 @@ nav ul {
 #search-checkbox:checked ~ .search-overlay {
   display: revert;
 }
+
 #search {
   margin-top: 40px;
   display: flex;
@@ -249,6 +274,54 @@ nav ul {
   box-shadow: inset 1px 1px 4px var(--light-grey);
 }
 
+#cart-checkbox:checked ~ .cart-overlay {
+  display: revert;
+  box-sizing: border-box;
+  position: absolute;
+  background-color: var(--white);
+  color: var(--black);
+  left: 0;
+  top: 0;
+  padding: 20px;
+  width: 100vw;
+  min-height: 100vh;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-overlay h2 {
+  margin: 25px 0 0 0;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  /* grid-template-rows: repeat(2, 1fr); */
+  gap: 5px;
+  width: 100%;
+}
+
+.cart-price,
+.cart-title {
+  margin: 0;
+}
+
+.cart-item span {
+  color: var(--main-color);
+  text-align: right;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.cart-total {
+  border-top: 2px solid var(--main-color);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
 /* Buttons */
 .btn {
   background-color: var(--main-color);
@@ -259,7 +332,8 @@ nav ul {
   font-weight: 600;
   padding: 12px 30px;
   text-align: center;
-  width: 100%;
+  display: block;
+  /* width: 100%; */
 }
 
 .btn:focus,
@@ -267,6 +341,7 @@ nav ul {
 #search a:focus,
 #search a:hover {
   background-color: var(--main-color-dark);
+  color: var(--white);
 }
 
 .btn:focus {
@@ -275,6 +350,7 @@ nav ul {
 
 .btn:active {
   background-color: var(--main-color-light);
+  color: var(--white);
 }
 
 /* cards */
@@ -284,6 +360,7 @@ nav ul {
   border-radius: 2px;
   font-weight: 600;
   font-size: 1rem;
+  min-width: 100px;
 }
 
 .card a {
@@ -291,7 +368,7 @@ nav ul {
 }
 
 .card-image {
-  max-width: 35%;
+  max-width: 40%;
 }
 
 .card-image img {
