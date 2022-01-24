@@ -1,4 +1,4 @@
-/** COLORS **/
+/** Variables **/
 :root {
   --main-color: #097895;
   --main-color-dark: #174b58;
@@ -20,53 +20,9 @@ body {
   min-width: 280px;
   display: flex;
   flex-direction: column;
-}
-
-body,
-.cart-title {
-  font-weight: 400;
-}
-
-body,
-.cart-title,
-.cart-price,
-.cart-total {
   font-family: "Open Sans", sans-serif;
-}
-
-body,
-.cart-title,
-.cart-price {
   font-size: 1.2rem;
-}
-
-h2,
-header,
-.btn,
-.sale-banner-content p,
-.resell-banner-content p {
-  font-family: "Raleway", sans-serif;
-}
-
-h2,
-header {
-  font-size: 1.4rem;
-}
-
-.pre-order-content h2 {
-  font-size: 1.8rem;
-  font-weight: 800;
-}
-
-.resell-banner-content p {
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-
-h2,
-header,
-.cart-price {
-  font-weight: 600;
+  font-weight: 400;
 }
 
 a,
@@ -77,8 +33,48 @@ a:active {
   color: inherit;
 }
 
-.screen-reader-only,
-#skip a {
+/* Fonts straying from body*/
+h2,
+.menu a,
+.btn,
+.sale-banner-content p,
+.resell-banner-content p {
+  font-family: "Raleway", sans-serif;
+}
+
+h2,
+.menu a,
+.resell-banner-content p {
+  font-size: 1.4rem;
+}
+
+.pre-order-content h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+h2,
+.menu a,
+.cart-price,
+.resell-banner-content,
+.btn {
+  font-weight: 600;
+}
+
+.icons {
+  font-size: 2.5rem;
+}
+
+.footer-social {
+  font-size: 2rem;
+}
+
+.cart-icon {
+  font-size: 0.9rem;
+}
+
+/** UTILITIES **/
+.screen-reader-only {
   position: absolute;
   clip: rect (1px, 1px, 1px, 1px);
   clip-path: inset (50%);
@@ -90,11 +86,38 @@ a:active {
   overflow: hidden;
 }
 
-.dark-bg {
-  background-color: var(--black);
+/* Buttons */
+.btn {
+  background-color: var(--main-color);
+  color: var(--white);
+  border: none;
+  border-radius: 2px;
+  padding: 12px 30px;
+  text-align: center;
+  display: block;
+}
+
+.btn:focus,
+.btn:hover,
+#search a:focus,
+#search a:hover {
+  background-color: var(--main-color-dark);
   color: var(--white);
 }
 
+.btn:focus,
+#search a:focus {
+  border: 1px solid var(--black);
+}
+
+.btn:active,
+#search a:active {
+  background-color: var(--main-color-light);
+  color: var(--white);
+}
+
+/** Navigation **/
+/* Header/nav */
 #skip a:focus {
   border: 2px solid var(--white);
   width: auto;
@@ -102,7 +125,11 @@ a:active {
   padding: 3px 6px;
 }
 
-/* Header */
+header label,
+.dark-mode {
+  cursor: pointer;
+}
+
 header,
 .cart {
   background-color: var(--main-color);
@@ -115,7 +142,7 @@ nav,
 .cart-overlay {
   display: none;
 }
-header label.hamburger {
+.hamburger-icon {
   grid-column: 1;
 }
 
@@ -138,15 +165,19 @@ header,
 
 .logo img,
 .logo,
-header .hamburger {
+.hamburger-icon {
   max-height: 40px;
 }
 
 header .logo,
-header .hamburger,
-header .cart {
+.hamburger-icon,
+.cart-icon {
   align-self: center;
   justify-self: center;
+}
+
+.dark-mode {
+  margin-left: 15px;
 }
 
 #menu-checkbox:checked ~ nav {
@@ -170,16 +201,6 @@ header .cart {
   display: flex;
 }
 
-.icons {
-  font-size: 2.5rem;
-  cursor: pointer;
-}
-
-.dark-mode {
-  font-size: 2.5rem;
-  margin-left: 15px;
-}
-
 nav .menu {
   background-color: var(--white);
   color: var(--black);
@@ -188,6 +209,7 @@ nav .menu {
 
 .menu ul {
   margin-top: 0;
+  padding-left: 0px;
 }
 
 .menu ul a {
@@ -195,20 +217,19 @@ nav .menu {
   padding: 15px 20px;
 }
 
-.menu ul a.active {
+.menu a.active {
   background-color: #b6b8bc;
   border-right: 10px double var(--black);
 }
 
-.cart {
+.cart-icon {
   border: none;
-  font-size: 0.9rem;
   justify-self: end;
   height: 40px;
   position: relative;
 }
 
-.cart #cart-number {
+.cart-icon #cart-number {
   background-color: var(--black);
   border-radius: 3px;
   padding: 5px;
@@ -219,11 +240,7 @@ nav .menu {
   left: 25px;
 }
 
-nav ul {
-  padding-left: 0px;
-}
-
-.btn-label {
+.search-icon {
   background-color: var(--main-color);
   color: var(--white);
   border-radius: 50%;
@@ -231,6 +248,12 @@ nav ul {
   position: absolute;
   left: 78vw;
   top: 85vh;
+  width: 40px;
+  height: 40px;
+}
+
+#search-checkbox:checked ~ .search-overlay {
+  display: revert;
 }
 
 .search-overlay {
@@ -250,10 +273,6 @@ nav ul {
 .search-overlay label {
   margin-left: 20px;
   padding-top: 10px;
-}
-
-#search-checkbox:checked ~ .search-overlay {
-  display: revert;
 }
 
 #search {
@@ -304,7 +323,6 @@ nav ul {
 .cart-item {
   display: grid;
   grid-template-columns: 1fr auto;
-  /* grid-template-rows: repeat(2, 1fr); */
   gap: 5px;
   width: 100%;
 }
@@ -356,7 +374,6 @@ footer .logo {
 
 .footer-social {
   justify-self: end;
-  font-size: 2rem;
   align-self: center;
   gap: 20px;
 }
@@ -369,38 +386,7 @@ footer p {
   margin-bottom: 5px;
 }
 
-/* Buttons */
-.btn {
-  background-color: var(--main-color);
-  color: var(--white);
-  border: none;
-  border-radius: 2px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  padding: 12px 30px;
-  text-align: center;
-  display: block;
-  /* width: 100%; */
-}
-
-.btn:focus,
-.btn:hover,
-#search a:focus,
-#search a:hover {
-  background-color: var(--main-color-dark);
-  color: var(--white);
-}
-
-.btn:focus {
-  border: 1px solid var(--black);
-}
-
-.btn:active {
-  background-color: var(--main-color-light);
-  color: var(--white);
-}
-
-/* cards */
+/** PRODUCT CARDS **/
 .card {
   background-color: var(--white);
   box-shadow: 2px 2px 6px rgba(75, 76, 78, 0.466);
@@ -457,7 +443,8 @@ footer p {
   text-align: right;
 }
 
-/* banners */
+/** BANNERS **/
+/* Pre-order banner */
 .pre-order-banner {
   display: flex;
   flex-wrap: wrap;
@@ -467,6 +454,8 @@ footer p {
   flex: auto;
   padding: 30px 20px;
   text-align: center;
+  background-color: var(--black);
+  color: var(--white);
 }
 
 .pre-order-content h2 {
@@ -486,6 +475,7 @@ footer p {
   object-fit: cover;
 }
 
+/* sales banner */
 .sale-banner-content {
   background: no-repeat url(../images/sale/sale-bg-small.png);
   background-size: cover;
@@ -507,6 +497,7 @@ footer p {
   margin: 5px 0;
 }
 
+/* resell banner */
 .resell-banner-content {
   padding: 10px 20px;
   display: flex;
@@ -538,3 +529,5 @@ footer p {
 .best-sellers h2 {
   margin: 0;
 }
+
+/** MEDIA QUERIES **/

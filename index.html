@@ -23,14 +23,14 @@
 
   <body>
     <header>
-      <div id="skip"><a href="#main-content">Skip to content</a></div>
-      <label for="menu-checkbox" class="hamburger">
+      <div id="skip"><a class="screen-reader-only" href="#main-content">Skip to content</a></div>
+      <label for="menu-checkbox" class="hamburger-icon">
         <span class="material-icons icons"> menu </span>
       </label>
       <input type="checkbox" name="menu-checkbox" id="menu-checkbox" />
       <a href="index.html" class="logo"><img src="images/logo.png" alt="Gamehub, the universe of games" /></a>
-      <label for="cart-checkbox" class="cart-label cart">
-        <div class="cart">
+      <label for="cart-checkbox" class="cart-label cart-icon">
+        <div>
           <span class="material-icons icons"> shopping_cart </span>
           <div id="cart-number">3</div>
         </div>
@@ -65,8 +65,8 @@
             </li>
           </ul>
           <input type="checkbox" name="search-checkbox" id="search-checkbox" />
-          <label for="search-checkbox">
-            <span class="material-icons btn-label icons"> search </span>
+          <label for="search-checkbox" class="search-icon">
+            <span class="material-icons icons"> search </span>
           </label>
           <div class="search-overlay">
             <label for="search-checkbox" id="search-back">Back</label>
@@ -78,7 +78,7 @@
         </div>
       </nav>
       <div class="cart-overlay">
-        <label for="cart-checkbox" id="cart-back">Back</label>
+        <div><label for="cart-checkbox" id="cart-back">Back</label></div>
         <h2>Cart summary</h2>
         <div class="cart-item">
           <p class="cart-title">Cyberpunk 2077</p>
@@ -106,7 +106,7 @@
     <main id="main-content">
       <section class="pre-order-banner">
         <img src="images/pre-order.jpg" alt="" />
-        <div class="dark-bg pre-order-content">
+        <div class="pre-order-content">
           <h2>God of War</h2>
           <p>Coming 14 January, 2022</p>
           <a href="" class="btn">Pre-order</a>
