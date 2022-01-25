@@ -23,21 +23,21 @@
 
   <body>
     <header>
-      <div id="skip"><a class="screen-reader-only" href="#main-content">Skip to content</a></div>
+      <div class="skip"><a class="screen-reader-only" href="#main-content">Skip to content</a></div>
       <label for="menu-checkbox" class="hamburger-icon">
         <span class="material-icons icons"> menu </span>
       </label>
-      <input type="checkbox" name="menu-checkbox" id="menu-checkbox" />
+      <input type="checkbox" name="menu-checkbox" id="menu-checkbox" class="menu-checkbox" />
       <a href="index.html" class="logo"><img src="images/logo.png" alt="Gamehub, the universe of games" /></a>
       <label for="cart-checkbox" class="cart-label cart-icon">
         <div>
           <span class="material-icons icons"> shopping_cart </span>
-          <div id="cart-number">3</div>
+          <div class="cart-number">3</div>
         </div>
       </label>
-      <input type="checkbox" name="cart-checkbox" id="cart-checkbox" />
+      <input type="checkbox" name="cart-checkbox" id="cart-checkbox" class="cart-checkbox" />
       <nav>
-        <div id="sub-menu">
+        <div class="sub-menu">
           <label for="menu-checkbox" id="close-checkbox">
             <span class="material-icons icon-close icons"> close </span>
           </label>
@@ -64,15 +64,15 @@
               <a href="#">Resell games</a>
             </li>
           </ul>
-          <input type="checkbox" name="search-checkbox" id="search-checkbox" />
+          <input type="checkbox" name="search-checkbox" id="search-checkbox" class="search-checkbox" />
           <label for="search-checkbox" class="search-icon">
             <span class="material-icons icons"> search </span>
           </label>
           <div class="search-overlay">
             <label for="search-checkbox" id="search-back">Back</label>
-            <div id="search">
+            <div class="search">
               <input type="text" />
-              <a href=""><span class="material-icons btn-search"> search </span></a>
+              <a href="" class="btn"><span class="material-icons"> search </span></a>
             </div>
           </div>
         </div>

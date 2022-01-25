@@ -30,10 +30,10 @@ a:hover,
 a:focus,
 a:active {
   text-decoration: none;
-  color: inherit;
+  color: var(--black);
 }
 
-/* Fonts straying from body*/
+/* Fonts straying from body */
 h2,
 .menu a,
 .btn,
@@ -57,11 +57,14 @@ h2,
 .menu a,
 .cart-price,
 .resell-banner-content,
-.btn {
+.btn,
+.card,
+.sale-banner-content {
   font-weight: 600;
 }
 
-.icons {
+.icons,
+.sale-banner-content {
   font-size: 2.5rem;
 }
 
@@ -69,7 +72,14 @@ h2,
   font-size: 2rem;
 }
 
-.cart-icon {
+.card {
+  font-size: 1rem;
+}
+
+.cart-icon,
+.card-status,
+.old-price,
+footer p {
   font-size: 0.9rem;
 }
 
@@ -86,6 +96,10 @@ h2,
   overflow: hidden;
 }
 
+.icons {
+  color: var(--white);
+}
+
 /* Buttons */
 .btn {
   background-color: var(--main-color);
@@ -99,26 +113,24 @@ h2,
 
 .btn:focus,
 .btn:hover,
-#search a:focus,
-#search a:hover {
+.search-icon:focus,
+.search-icon:hover {
   background-color: var(--main-color-dark);
-  color: var(--white);
 }
 
 .btn:focus,
-#search a:focus {
+.search-icon:focus {
   border: 1px solid var(--black);
 }
 
 .btn:active,
-#search a:active {
+.search-icon:active {
   background-color: var(--main-color-light);
-  color: var(--white);
 }
 
 /** Navigation **/
-/* Header/nav */
-#skip a:focus {
+/* Header*/
+.skip a:focus {
   border: 2px solid var(--white);
   width: auto;
   height: auto;
@@ -133,15 +145,16 @@ header label,
 header,
 .cart {
   background-color: var(--main-color);
-  color: var(--white);
 }
 
 header input[type="checkbox"],
 nav,
-#skip,
-.cart-overlay {
+.skip,
+.cart-overlay,
+.search-overlay {
   display: none;
 }
+
 .hamburger-icon {
   grid-column: 1;
 }
@@ -150,12 +163,11 @@ header {
   display: grid;
   grid-template-columns: auto 1fr auto;
   grid-template-rows: 1fr;
-  max-width: 100%;
   padding: 10px 20px;
   align-content: center;
 }
 header,
-#sub-menu {
+.sub-menu {
   border-bottom: 3px solid var(--black);
 }
 
@@ -180,16 +192,23 @@ header .logo,
   margin-left: 15px;
 }
 
-#menu-checkbox:checked ~ nav {
-  display: revert;
+/* Overlays / navigation */
+.cart-overlay,
+.search-overlay,
+nav {
   position: absolute;
-  width: 100%;
-  left: 0px;
-  top: 0px;
+  top: 0;
+  left: 0;
   min-width: 280px;
+  min-height: 100vh;
 }
 
-#sub-menu {
+.menu-checkbox:checked ~ nav {
+  display: revert;
+  width: 100%;
+}
+
+.sub-menu {
   background-color: var(--main-color);
   height: 40px;
   padding: 10px 20px;
@@ -197,13 +216,12 @@ header .logo,
   justify-content: space-between;
 }
 
-#sub-menu div {
+.sub-menu div {
   display: flex;
 }
 
 nav .menu {
   background-color: var(--white);
-  color: var(--black);
   height: 100vh;
 }
 
@@ -229,8 +247,9 @@ nav .menu {
   position: relative;
 }
 
-.cart-icon #cart-number {
+.cart-icon .cart-number {
   background-color: var(--black);
+  color: white;
   border-radius: 3px;
   padding: 5px;
   max-width: min-content;
@@ -242,7 +261,6 @@ nav .menu {
 
 .search-icon {
   background-color: var(--main-color);
-  color: var(--white);
   border-radius: 50%;
   padding: 10px;
   position: absolute;
@@ -252,22 +270,11 @@ nav .menu {
   height: 40px;
 }
 
-#search-checkbox:checked ~ .search-overlay {
+.search-checkbox:checked ~ .search-overlay {
   display: revert;
-}
-
-.search-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
   background-color: var(--white);
-  height: 100vh;
   width: 100vw;
   padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  display: none;
-  min-width: 280px;
 }
 
 .search-overlay label {
@@ -275,23 +282,21 @@ nav .menu {
   padding-top: 10px;
 }
 
-#search {
+.search {
   margin-top: 40px;
   display: flex;
   width: 100%;
 }
 
-#search a {
+.search a {
   width: 24px;
   height: 24px;
   padding: 10px;
   margin-right: 20px;
-  background-color: var(--main-color);
-  color: var(--white);
   border-radius: 0 2px 2px 0;
 }
 
-#search input {
+.search input {
   flex: auto;
   margin-left: 20px;
   border-radius: 2px 0 0 2px;
@@ -299,21 +304,14 @@ nav .menu {
   box-shadow: inset 1px 1px 4px var(--light-grey);
 }
 
-#cart-checkbox:checked ~ .cart-overlay {
-  display: revert;
-  box-sizing: border-box;
-  position: absolute;
-  background-color: var(--white);
-  color: var(--black);
-  left: 0;
-  top: 0;
-  padding: 20px;
-  width: 100vw;
-  min-height: 100vh;
-  min-width: 280px;
+.cart-checkbox:checked ~ .cart-overlay {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  box-sizing: border-box;
+  background-color: var(--white);
+  padding: 20px;
+  width: 100vw;
 }
 
 .cart-overlay h2 {
@@ -355,6 +353,12 @@ footer {
   gap: 10px;
   justify-self: end;
   margin-top: 40px;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+footer a {
+  color: inherit;
 }
 
 footer .logo {
@@ -379,7 +383,6 @@ footer .logo {
 }
 
 footer p {
-  font-size: 0.9rem;
   width: 100%;
   text-align: center;
   grid-column: 1 / 3;
@@ -391,8 +394,6 @@ footer p {
   background-color: var(--white);
   box-shadow: 2px 2px 6px rgba(75, 76, 78, 0.466);
   border-radius: 2px;
-  font-weight: 600;
-  font-size: 1rem;
   min-width: 100px;
 }
 
@@ -408,7 +409,7 @@ footer p {
   display: block;
   width: 100%;
   object-fit: cover;
-  border-radius: 2px 2px 0px 0px;
+  border-radius: 2px 0px 0px 2px;
 }
 
 .card-details {
@@ -428,8 +429,6 @@ footer p {
 .card-status,
 .old-price {
   color: var(--light-grey);
-  /* font-size: 1rem; */
-  font-size: 0.8rem;
 }
 
 .card-status {
@@ -480,8 +479,6 @@ footer p {
   background: no-repeat url(../images/sale/sale-bg-small.png);
   background-size: cover;
   color: #f89523;
-  font-size: 3rem;
-  font-weight: 600;
   padding: 20px;
   display: flex;
   flex-direction: column-reverse;
@@ -502,6 +499,8 @@ footer p {
   padding: 10px 20px;
   display: flex;
   gap: 30px;
+  background-color: var(--black);
+  color: var(--white);
 }
 
 .resell-banner-image {
