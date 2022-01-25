@@ -70,10 +70,6 @@ h2,
   font-size: 2.5rem;
 }
 
-.footer-social {
-  font-size: 2rem;
-}
-
 .card {
   font-size: 1rem;
 }
@@ -100,6 +96,10 @@ footer p {
 
 .icons {
   color: var(--white);
+}
+
+.icons:hover {
+  color: rgb(219, 216, 216);
 }
 
 /* Buttons */
@@ -273,6 +273,10 @@ nav .menu {
   height: 40px;
 }
 
+.search-icon span:hover {
+  color: white;
+}
+
 .search-checkbox:checked ~ .search-overlay {
   display: revert;
   background-color: var(--white);
@@ -334,11 +338,15 @@ nav .menu {
   margin: 0;
 }
 
-.cart-item span {
+.cart-remove {
   color: var(--main-color);
   text-align: right;
   grid-column: 2;
   grid-row: 1;
+}
+
+.cart-remove:hover {
+  color: var(--main-color-dark);
 }
 
 .cart-total {
