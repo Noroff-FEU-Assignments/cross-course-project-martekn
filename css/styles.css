@@ -30,7 +30,6 @@ a:hover,
 a:focus,
 a:active {
   text-decoration: none;
-  color: var(--black);
 }
 
 /* Fonts straying from body */
@@ -44,7 +43,8 @@ h2,
 
 h2,
 .menu a,
-.resell-banner-content p {
+.resell-banner-content p,
+.cart-total {
   font-size: 1.4rem;
 }
 
@@ -59,7 +59,9 @@ h2,
 .resell-banner-content,
 .btn,
 .card,
-.sale-banner-content {
+.sale-banner-content,
+.cart-total,
+.back-label {
   font-weight: 600;
 }
 
@@ -233,6 +235,7 @@ nav .menu {
 .menu ul a {
   display: block;
   padding: 15px 20px;
+  color: black;
 }
 
 .menu a.active {
@@ -323,6 +326,7 @@ nav .menu {
   grid-template-columns: 1fr auto;
   gap: 5px;
   width: 100%;
+  color: black;
 }
 
 .cart-price,
@@ -392,6 +396,7 @@ footer p {
 /** PRODUCT CARDS **/
 .card {
   background-color: var(--white);
+  color: black;
   box-shadow: 2px 2px 6px rgba(75, 76, 78, 0.466);
   border-radius: 2px;
   min-width: 100px;
@@ -399,6 +404,11 @@ footer p {
 
 .card a {
   display: flex;
+  color: inherit;
+}
+
+.card a:hover {
+  background-color: #eff1f5;
 }
 
 .card-image {
@@ -414,7 +424,7 @@ footer p {
 
 .card-details {
   display: grid;
-  width: 100%;
+  flex: auto;
   padding: 10px;
   grid-template-columns: repeat(2, 1fr);
   grid-template-columns: 1fr auto;
