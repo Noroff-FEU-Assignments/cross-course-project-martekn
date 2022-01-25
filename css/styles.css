@@ -388,6 +388,10 @@ footer .logo {
   gap: 10px;
 }
 
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
 .footer-social {
   justify-self: end;
   align-self: center;
@@ -417,6 +421,10 @@ footer p {
 
 .card a:hover {
   background-color: #eff1f5;
+}
+
+.card a:focus {
+  border: 2px solid var(--main-color);
 }
 
 .card-image {
@@ -461,6 +469,16 @@ footer p {
 }
 
 /** BANNERS **/
+.sale-banner a:focus,
+.resell-banner a:focus {
+  border: 3px solid var(--main-color);
+}
+
+.sale-banner a,
+.resell-banner a {
+  display: block;
+}
+
 /* Pre-order banner */
 .pre-order-banner {
   display: flex;

@@ -184,11 +184,8 @@
       <section class="sale-banner">
         <a href="#">
           <div class="sale-banner-content">
-            <img
-              src="images/sale/sale-covers.png"
-              alt="Halloween sale on Dream Alone, Little Nightmares and Hello Neighbor"
-            />
-            <p>30% off</p>
+            <img src="images/sale/sale-covers.png" alt="Dream Alone, Little Nightmares and Hello Neighbor" />
+            <p>30% off <span class="screen-reader-only">on Dream alone, Little Nightmares and Hello Neighbor</span></p>
           </div>
         </a>
       </section>
@@ -447,15 +444,19 @@
       </section>
     </main>
 
-    <footer class="dark-bg">
+    <footer>
       <a href="index.html" class="logo"><img src="images/logo.png" alt="Gamehub, the universe of games" /></a>
       <div class="footer-links">
         <a href="#">F.A.Q.</a>
         <a href="#">Contact us</a>
       </div>
       <div class="footer-social">
-        <a href="#" class="icons"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="icons"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="icons" aria-hidden="true"
+          ><i class="fab fa-facebook-f"><span class="screen-reader-only">Facebook</span></i></a
+        >
+        <a href="#" class="icons" aria-hidden="true"
+          ><i class="fab fa-twitter"><span class="screen-reader-only">Twitter</span></i></a
+        >
       </div>
       <p>Copyright &copy; 2021 All Rights Reserved</p>
     </footer>
