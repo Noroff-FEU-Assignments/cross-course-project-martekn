@@ -24,30 +24,36 @@
 
   <body>
     <header>
-      <div class="skip"><a class="screen-reader-only" href="#main-content">Skip to content</a></div>
-      <label for="menu-checkbox" class="hamburger-icon">
-        <span class="material-icons icons"> menu </span>
-      </label>
-      <input type="checkbox" name="menu-checkbox" id="menu-checkbox" class="menu-checkbox" />
-      <a href="index.html" class="logo"><img src="images/logo.png" alt="Gamehub, the universe of games" /></a>
-      <label for="cart-checkbox" class="cart-label cart-icon">
-        <div>
-          <span class="material-icons icons"> shopping_cart </span>
-          <div class="cart-number">3</div>
-        </div>
-      </label>
-      <input type="checkbox" name="cart-checkbox" id="cart-checkbox" class="cart-checkbox" />
-      <nav>
-        <div class="sub-menu">
-          <label for="menu-checkbox" id="close-checkbox">
-            <span class="material-icons icon-close icons"> close </span>
-          </label>
+      <div class="header-wrapper">
+        <div class="skip"><a class="screen-reader-only" href="#main-content">Skip to content</a></div>
+        <label for="menu-checkbox" class="hamburger-icon">
+          <span class="material-icons icons"> menu </span>
+        </label>
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="Gamehub, the universe of games" /></a>
+        <a href="#" aria-label="My account" class="account"><i class="fas fa-user-circle icons"></i></a>
+        <label for="cart-checkbox" class="cart-label cart-icon">
           <div>
-            <a href="#" aria-label="My account"><i class="fas fa-user-circle icons"></i></a>
-            <span class="material-icons dark-mode icons"> nightlight </span>
+            <span class="material-icons icons"> shopping_cart </span>
+            <div class="cart-number">3</div>
           </div>
+        </label>
+        <span class="material-icons dark-mode icons"> nightlight </span>
+      </div>
+    </header>
+    <input type="checkbox" name="menu-checkbox" id="menu-checkbox" class="menu-checkbox checkbox-hack" />
+    <input type="checkbox" name="cart-checkbox" id="cart-checkbox" class="cart-checkbox checkbox-hack" />
+    <nav>
+      <div class="sub-menu">
+        <label for="menu-checkbox" id="close-checkbox" class="close-icon">
+          <span class="material-icons icon-close icons"> close </span>
+        </label>
+        <div class="sub-menu-icons">
+          <a href="#" aria-label="My account"><i class="fas fa-user-circle icons"></i></a>
+          <span class="material-icons icons"> nightlight </span>
         </div>
-        <div class="menu">
+      </div>
+      <div class="menu">
+        <div class="menu-wrapper">
           <ul>
             <li>
               <a href="index.html" class="active">Home</a>
@@ -65,7 +71,7 @@
               <a href="#">Resell games</a>
             </li>
           </ul>
-          <input type="checkbox" name="search-checkbox" id="search-checkbox" class="search-checkbox" />
+          <input type="checkbox" name="search-checkbox" id="search-checkbox" class="search-checkbox checkbox-hack" />
           <label for="search-checkbox" class="search-icon">
             <span class="material-icons icons"> search </span>
           </label>
@@ -77,32 +83,32 @@
             </div>
           </div>
         </div>
-      </nav>
-      <div class="cart-overlay">
-        <div><label for="cart-checkbox" id="cart-back" class="back-label">Back</label></div>
-        <h2>Cart summary</h2>
-        <a href="" class="cart-item">
-          <p class="cart-title">Cyberpunk 2077</p>
-          <p class="cart-price">$59.99</p>
-          <span class="material-icons cart-remove"> remove_shopping_cart </span>
-        </a>
-        <a href="" class="cart-item">
-          <p class="cart-title">The Witcher 3: Wild Hunt</p>
-          <p class="cart-price">$39.99</p>
-          <span class="material-icons cart-remove"> remove_shopping_cart </span>
-        </a>
-        <a href="" class="cart-item">
-          <p class="cart-title">Ori and the Will of the Wisps</p>
-          <p class="cart-price">$23.99</p>
-          <span class="material-icons cart-remove"> remove_shopping_cart </span>
-        </a>
-        <div class="cart-total">
-          <p>Total price</p>
-          <p>$123.97</p>
-        </div>
-        <a href="" class="btn">Go to checkout</a>
       </div>
-    </header>
+    </nav>
+    <div class="cart-overlay">
+      <div><label for="cart-checkbox" id="cart-back" class="back-label">Back</label></div>
+      <h2>Cart summary</h2>
+      <a href="" class="cart-item">
+        <p class="cart-title">Cyberpunk 2077</p>
+        <p class="cart-price">$59.99</p>
+        <span class="material-icons cart-remove"> remove_shopping_cart </span>
+      </a>
+      <a href="" class="cart-item">
+        <p class="cart-title">The Witcher 3: Wild Hunt</p>
+        <p class="cart-price">$39.99</p>
+        <span class="material-icons cart-remove"> remove_shopping_cart </span>
+      </a>
+      <a href="" class="cart-item">
+        <p class="cart-title">Ori and the Will of the Wisps</p>
+        <p class="cart-price">$23.99</p>
+        <span class="material-icons cart-remove"> remove_shopping_cart </span>
+      </a>
+      <div class="cart-total">
+        <p>Total price</p>
+        <p>$123.97</p>
+      </div>
+      <a href="" class="btn">Go to checkout</a>
+    </div>
 
     <main id="main-content">
       <section class="pre-order-banner">
