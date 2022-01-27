@@ -142,7 +142,7 @@ footer p {
 
 .btn:focus,
 .search-icon:focus {
-  border: 1px solid var(--black);
+  outline: 1px solid var(--black);
 }
 
 .btn:active,
@@ -448,7 +448,7 @@ footer p {
 }
 
 .card a:focus {
-  border: 2px solid var(--main-color);
+  outline: 2px solid var(--main-color);
 }
 
 .card-image {
@@ -494,7 +494,7 @@ footer p {
 /** BANNERS **/
 .sale-banner a:focus,
 .resell-banner a:focus {
-  border: 3px solid var(--main-color);
+  outline: 3px solid var(--main-color);
 }
 
 .sale-banner a,
@@ -883,7 +883,8 @@ footer p {
     right: 0;
     top: 0;
     max-width: 600px;
-    min-height: fit-content;
+    min-height: revert;
+    z-index: 1001;
   }
 
   .sub-menu {
