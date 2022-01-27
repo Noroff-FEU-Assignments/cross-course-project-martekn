@@ -37,6 +37,10 @@ a:active {
   text-decoration: none;
 }
 
+img {
+  width: 100%;
+}
+
 /* Fonts straying from body */
 h2,
 .menu a,
@@ -453,7 +457,6 @@ footer p {
 
 .card-image img {
   display: block;
-  width: 100%;
   object-fit: cover;
   border-radius: 2px 0px 0px 2px;
 }
@@ -520,6 +523,10 @@ footer p {
   margin: 0;
 }
 
+.pre-order-image {
+  height: 200px;
+}
+
 .pre-order-content p {
   margin-top: 5px;
   margin-bottom: 20px;
@@ -527,8 +534,8 @@ footer p {
 
 .pre-order-banner img {
   background-repeat: no-repeat;
-  width: 100%;
   object-fit: cover;
+  height: 100%;
 }
 
 .pre-order-banner a {
@@ -542,12 +549,12 @@ footer p {
   color: #f89523;
   padding: 20px;
   display: flex;
+  border-radius: 2px;
   flex-direction: column-reverse;
 }
 
 .sale-banner-content img {
   max-width: 500px;
-  width: 100%;
   justify-self: center;
 }
 
@@ -564,6 +571,7 @@ footer p {
   justify-content: space-between;
   gap: 30px;
   background-color: var(--black);
+  border-radius: 2px;
   color: var(--white);
 }
 
@@ -626,7 +634,7 @@ footer p {
 @media (min-width: 700px) {
   /* footer */
   footer {
-    padding-top: 20px;
+    padding: 20px 0 0 0;
   }
   .footer-wrapper {
     grid-template-columns: repeat(3, 1fr);
@@ -671,34 +679,32 @@ footer p {
     height: 100%;
   }
   .card-image {
-    width: 100%;
     max-width: 100%;
     max-height: 250px;
   }
   .card-image img {
     object-fit: cover;
-    width: 100%;
     height: 100%;
   }
 
   /* banners */
   .pre-order-banner {
     flex-direction: row;
-    max-height: 350px;
-    margin-top: 60px;
-    margin: 60px 20px 30px 20px;
+    margin: 30px 20px 30px 20px;
+    max-height: 300px;
+  }
+
+  .pre-order-image {
+    flex: 2;
+    height: 300px;
   }
   .pre-order-banner img {
-    flex: 2;
-    max-width: 100%;
-    max-height: 100%;
     border-radius: 2px 0 0 2px;
   }
 
   .pre-order-content {
     flex: 1;
-    max-height: 100%;
-    min-width: 280px;
+    min-width: 300px;
     border-radius: 0 2px 2px 0;
   }
 
@@ -709,7 +715,6 @@ footer p {
   .sale-banner-content {
     background: no-repeat url(../images/sale/sale-bg-large.png);
     background-size: cover;
-    object-fit: cover;
   }
 
   .sale-banner-content p {
@@ -737,7 +742,6 @@ footer p {
   .special-deals,
   .best-sellers {
     grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
   }
   .latest-games h2,
   .special-deals h2,
@@ -745,25 +749,17 @@ footer p {
     grid-column: 1/6;
   }
 
-  /* nav */
   .hamburger-icon,
   .close-icon,
   .search-icon,
   .search-overlay .back-label,
-  .sub-menu-icons {
+  .sub-menu div {
     display: none;
   }
 
-  .account,
-  .dark-mode {
-    display: inline-block;
-  }
-
-  nav,
-  .search-overlay {
-    display: revert;
-    position: static;
-    min-height: fit-content;
+  /* Header */
+  header {
+    padding: 0;
   }
 
   .header-wrapper {
@@ -772,8 +768,17 @@ footer p {
     min-height: 130px;
     margin: 0 auto;
     align-content: center;
+    padding: 0;
   }
-
+  header .logo {
+    grid-column: 1;
+    max-width: 100%;
+    justify-self: start;
+  }
+  .account,
+  .dark-mode {
+    display: inline-block;
+  }
   .dark-mode {
     grid-column: 2;
     grid-row: 1;
@@ -784,16 +789,13 @@ footer p {
     font-size: 1.5rem;
   }
 
-  header .logo {
-    margin-left: 20px;
-    grid-column: 1;
-    max-width: 100%;
-  }
-  header .logo {
-    justify-self: start;
-  }
   .account {
     grid-column: 3;
+  }
+
+  .logo,
+  .cart-icon {
+    margin: 20px;
   }
 
   .logo,
@@ -805,8 +807,26 @@ footer p {
   .account,
   .cart-icon,
   .dark-mode {
-    margin-right: 20px;
     align-self: center;
+  }
+
+  /* Nav */
+  nav,
+  .search-overlay {
+    display: revert;
+    position: revert;
+    min-height: fit-content;
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  nav .menu {
+    background-color: var(--black);
+    height: fit-content;
   }
 
   .menu-wrapper {
@@ -823,12 +843,12 @@ footer p {
   }
   .menu ul {
     margin-top: revert;
-    margin-left: 10px;
+    margin-left: 20px;
     flex: 2;
   }
   .menu ul a {
     color: var(--white);
-    padding: 15px 10px;
+    padding: 15px 5px;
   }
 
   .menu a.active {
@@ -866,14 +886,5 @@ footer p {
     background-color: none;
     height: 0;
     padding: 0;
-  }
-
-  .sub-menu div {
-    display: none;
-  }
-
-  nav .menu {
-    background-color: var(--black);
-    height: fit-content;
   }
 }
