@@ -685,6 +685,8 @@ footer p {
   .card-image img {
     object-fit: cover;
     height: 100%;
+    display: inline;
+    border-radius: 2px 2px 0 0;
   }
 
   /* banners */
@@ -822,11 +824,12 @@ footer p {
     position: sticky;
     top: 0;
     z-index: 1000;
+    min-height: revert;
   }
 
   nav .menu {
     background-color: var(--black);
-    height: fit-content;
+    height: revert;
   }
 
   .menu-wrapper {
@@ -865,6 +868,7 @@ footer p {
 
   .search-overlay {
     flex: 1;
+    min-height: revert;
   }
 
   .search {
