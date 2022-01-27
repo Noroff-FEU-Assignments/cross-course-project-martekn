@@ -148,6 +148,40 @@ footer p {
 
 /** Navigation **/
 /* Header*/
+
+header label,
+.icons {
+  cursor: pointer;
+}
+
+header {
+  background-color: var(--main-color);
+  position: relative;
+  border-bottom: 3px solid var(--black);
+}
+
+header .logo,
+.hamburger-icon,
+.cart-icon {
+  justify-self: center;
+}
+
+.header-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  padding: 10px 20px;
+}
+
+.checkbox-hack,
+.skip,
+.cart-overlay,
+.account,
+.dark-mode,
+nav,
+.search-overlay {
+  display: none;
+}
+
 .skip a:focus {
   position: absolute;
   text-decoration: underline;
@@ -157,32 +191,6 @@ footer p {
   left: 0;
   margin-left: 20px;
   color: white;
-}
-
-header label,
-.icons {
-  cursor: pointer;
-}
-
-header {
-  position: relative;
-}
-
-header,
-.cart {
-  background-color: var(--main-color);
-}
-
-.checkbox-hack,
-.skip,
-.cart-overlay,
-.account,
-.dark-mode {
-  display: none;
-}
-
-.header-wrapper {
-  display: grid;
 }
 
 .logo {
@@ -195,87 +203,8 @@ header,
 .hamburger-icon {
   max-height: 40px;
 }
-
-.menu ul {
-  padding-left: 0px;
-}
-
-.menu a {
-  padding: 15px 20px;
-}
-
-.header-wrapper {
-  grid-template-columns: auto 1fr auto;
-  padding: 10px 20px;
-}
-
-header {
-  border-bottom: 3px solid var(--black);
-}
-
-header .logo,
-.hamburger-icon,
-.cart-icon {
-  justify-self: center;
-}
-
-/* nav */
-nav,
-.search-overlay {
-  display: none;
-}
 .hamburger-icon {
   grid-column: 1;
-}
-
-.sub-menu-icons span {
-  margin-left: 15px;
-}
-
-.cart-overlay,
-.search-overlay,
-nav {
-  position: absolute;
-  min-width: 280px;
-  min-height: 100vh;
-}
-.search-overlay {
-  top: 0;
-  left: 0;
-}
-
-.menu-checkbox:checked ~ nav {
-  display: revert;
-  width: 100%;
-}
-
-.sub-menu {
-  background-color: var(--main-color);
-  height: 40px;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-}
-.sub-menu div {
-  display: flex;
-}
-
-nav .menu {
-  background-color: var(--white);
-  height: 100vh;
-}
-
-.menu ul {
-  margin-top: 0;
-  padding-left: 0px;
-}
-.menu ul a {
-  display: block;
-  color: black;
-}
-.menu a.active {
-  background-color: #b6b8bc;
-  border-right: 10px double var(--black);
 }
 
 .cart-icon {
@@ -299,16 +228,6 @@ nav .menu {
   color: white;
 }
 
-.search-checkbox:checked ~ .search-overlay {
-  display: revert;
-  background-color: var(--white);
-  width: 100vw;
-  padding-top: 20px;
-}
-.search-overlay label {
-  margin-left: 20px;
-  padding-top: 10px;
-}
 /* cart icon */
 .cart-icon {
   position: relative;
@@ -326,7 +245,65 @@ nav .menu {
 }
 
 /* Overlays / navigation */
+.cart-overlay,
+.search-overlay,
+nav {
+  position: absolute;
+  min-width: 280px;
+  min-height: 100vh;
+}
 
+.menu-checkbox:checked ~ nav {
+  display: revert;
+  width: 100%;
+}
+
+nav .menu {
+  background-color: var(--white);
+  height: 100vh;
+}
+
+.sub-menu {
+  background-color: var(--main-color);
+  height: 40px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sub-menu-icons span {
+  margin-left: 15px;
+}
+.sub-menu div {
+  display: flex;
+}
+
+.menu ul {
+  margin-top: 0;
+  padding-left: 0px;
+}
+.menu ul a {
+  display: block;
+  color: black;
+  padding: 15px 20px;
+}
+.menu a.active {
+  background-color: #b6b8bc;
+  border-right: 10px double var(--black);
+}
+
+.search-checkbox:checked ~ .search-overlay {
+  display: revert;
+  background-color: var(--white);
+  width: 100vw;
+  padding-top: 20px;
+  top: 0;
+  left: 0;
+}
+.search-overlay label {
+  margin-left: 20px;
+  padding-top: 10px;
+}
 .search {
   margin-top: 40px;
   display: flex;
