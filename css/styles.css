@@ -149,15 +149,23 @@ footer p {
 /** Navigation **/
 /* Header*/
 .skip a:focus {
-  border: 2px solid var(--white);
+  position: absolute;
+  text-decoration: underline;
   width: auto;
   height: auto;
-  padding: 3px 6px;
+  top: 0;
+  left: 0;
+  margin-left: 20px;
+  color: white;
 }
 
 header label,
 .icons {
   cursor: pointer;
+}
+
+header {
+  position: relative;
 }
 
 header,
@@ -179,6 +187,7 @@ header,
 
 .logo {
   display: block;
+  max-width: fit-content;
 }
 
 .menu ul {
@@ -743,6 +752,9 @@ footer p {
 }
 
 @media (min-width: 1100px) {
+  .skip {
+    display: inline;
+  }
   .latest-games,
   .special-deals,
   .best-sellers {
@@ -832,6 +844,16 @@ footer p {
   .menu a {
     color: var(--white);
     padding: 15px 10px;
+  }
+
+  .menu a.active {
+    display: block;
+    border-bottom: 5px solid var(--white);
+  }
+
+  .menu ul a:hover,
+  .menu ul a:focus {
+    background-color: var(--dark-grey);
   }
 
   .search-overlay {
