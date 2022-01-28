@@ -860,6 +860,7 @@ footer p {
 
   .menu li {
     display: inline-block;
+    margin-right: 15px;
   }
   .menu ul {
     margin-top: revert;
