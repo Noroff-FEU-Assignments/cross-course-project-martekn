@@ -453,18 +453,15 @@ footer p {
   box-shadow: 2px 2px 6px rgba(75, 76, 78, 0.466);
   border-radius: 2px;
   min-width: 100px;
-}
-
-.card a {
   display: flex;
   color: inherit;
 }
 
-.card a:hover {
+.card:hover {
   background-color: #eff1f5;
 }
 
-.card a:focus {
+.card:focus {
   outline: 2px solid var(--main-color);
 }
 
@@ -475,6 +472,7 @@ footer p {
 .card-image img {
   display: block;
   object-fit: cover;
+  width: 100%;
   border-radius: 2px 0px 0px 2px;
 }
 
@@ -691,18 +689,20 @@ footer p {
     grid-column: 1/4;
   }
 
-  .card a {
+  .card {
     flex-direction: column;
     height: 100%;
   }
   .card-image {
     max-width: 100%;
     max-height: 250px;
+    /* overflow: hidden; */
   }
   .card-image img {
     object-fit: cover;
     height: 100%;
-    display: inline;
+    width: 100%;
+    max-height: 250px;
     border-radius: 2px 2px 0 0;
   }
 
