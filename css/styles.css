@@ -271,10 +271,13 @@ nav,
 
 /* Overlays / navigation */
 .cart-overlay,
+nav {
+  min-width: 280px;
+}
+.cart-overlay,
 .search-overlay,
 nav {
   position: fixed;
-  min-width: 280px;
   height: 100vh;
 }
 
@@ -789,7 +792,7 @@ footer p {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 980px) {
   /* Incase of menu wasn't closed when on bigger screen */
   .menu-checkbox:checked ~ .overlay {
     display: none;
