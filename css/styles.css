@@ -508,6 +508,7 @@ footer p {
   grid-template-columns: repeat(2, 1fr);
   grid-template-columns: 1fr auto;
   align-content: space-between;
+  min-height: 100px;
 }
 
 .card-title {
@@ -874,6 +875,7 @@ footer p {
   }
   nav .menu {
     background-color: var(--black);
+    box-shadow: 1px 2px 7px 1px var(--dark-grey);
   }
 
   .menu-wrapper {
