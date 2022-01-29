@@ -831,6 +831,19 @@ footer p {
     align-self: center;
   }
 
+  /* Incase of menu wasn't closed when on bigger screen */
+  .menu-checkbox:checked ~ .overlay {
+    display: none;
+  }
+
+  .menu-checkbox:checked ~ nav {
+    height: revert;
+  }
+
+  .cart-checkbox:checked ~ .overlay {
+    display: block;
+  }
+
   /* Nav */
   nav,
   .search-overlay {
