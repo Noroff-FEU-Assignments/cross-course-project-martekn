@@ -15,19 +15,16 @@
 body {
   color: var(--black);
   background-color: var(--almost-white);
-  box-sizing: border-box;
-  margin: 0 auto;
   min-width: 280px;
-
   flex-direction: column;
   font-family: "Open Sans", sans-serif;
   font-size: 1.2rem;
   font-weight: 400;
 }
 
-main {
+main,
+.footer-wrapper {
   max-width: 1300px;
-  margin: 0 auto;
 }
 
 a,
@@ -39,6 +36,13 @@ a:active {
 
 img {
   width: 100%;
+}
+
+body,
+main,
+.pre-order-banner a,
+.footer-wrapper {
+  margin: 0 auto;
 }
 
 /* Fonts straying from body */
@@ -70,7 +74,8 @@ h2,
 .card,
 .sale-banner-content,
 .cart-total,
-.back-label {
+.back-label,
+.link {
   font-weight: 600;
 }
 
@@ -93,7 +98,7 @@ footer p {
 /** UTILITIES **/
 .screen-reader-only {
   position: absolute;
-  clip: rect (1px, 1px, 1px, 1px);
+  clip: rect (1px);
   clip-path: inset (50%);
   width: 1px;
   height: 1px;
@@ -109,18 +114,6 @@ footer p {
 
 .grid {
   display: grid;
-}
-
-.link {
-  color: var(--main-color);
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-align: center;
-}
-
-.link:hover {
-  text-decoration: underline;
-  color: var(--main-color-dark);
 }
 
 .icons {
@@ -141,7 +134,17 @@ footer p {
   object-position: top;
 }
 
-/* Buttons */
+.link {
+  color: var(--main-color);
+  text-align: center;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: var(--main-color-dark);
+}
+
+/* Button */
 .btn {
   background-color: var(--main-color);
   color: var(--white);
@@ -172,7 +175,6 @@ footer p {
 
 /** Navigation **/
 /* Header*/
-
 header label,
 .icons {
   cursor: pointer;
@@ -279,12 +281,15 @@ nav {
 .menu-checkbox:checked ~ nav {
   display: revert;
   width: 100%;
-  height: 100vh;
+}
+
+.menu-checkbox:checked ~ nav,
+nav .menu {
+  height: 100%;
 }
 
 nav .menu {
   background-color: var(--white);
-  height: 100%;
 }
 .menu-wrapper {
   flex-direction: column;
@@ -294,7 +299,6 @@ nav .menu {
   background-color: var(--main-color);
   height: 40px;
   padding: 10px 20px;
-
   justify-content: space-between;
 }
 
@@ -375,11 +379,6 @@ nav .menu {
   color: black;
 }
 
-.cart-price,
-.cart-title {
-  margin: 0;
-}
-
 .cart-remove {
   color: var(--main-color);
   text-align: right;
@@ -407,10 +406,7 @@ footer {
 }
 
 .footer-wrapper {
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3, auto);
-  max-width: 1300px;
-  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 footer a {
@@ -426,11 +422,11 @@ footer .logo {
 .footer-social {
   align-self: center;
   margin: 20px;
+  gap: 20px;
 }
 
 .footer-links {
   flex-direction: column;
-  gap: 10px;
 }
 
 .footer-links a:hover {
@@ -439,8 +435,6 @@ footer .logo {
 
 .footer-social {
   justify-self: end;
-  align-self: center;
-  gap: 20px;
 }
 
 footer p {
@@ -451,6 +445,13 @@ footer p {
 }
 
 /** PRODUCT CARDS **/
+.games-section {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 15px;
+  margin: 30px 20px;
+}
+
 .card {
   background-color: var(--white);
   color: black;
@@ -462,10 +463,6 @@ footer p {
 
 .card:hover {
   background-color: #eff1f5;
-}
-
-.card:focus {
-  outline: 2px solid var(--main-color);
 }
 
 .card-image {
@@ -489,7 +486,6 @@ footer p {
 
 .card-title {
   grid-column: 1 / span 2;
-  margin: 0;
 }
 
 .card-status,
@@ -510,8 +506,9 @@ footer p {
 
 /** BANNERS **/
 .sale-banner a:focus,
-.resell-banner a:focus {
-  outline: 3px solid var(--main-color);
+.resell-banner a:focus,
+.card:focus {
+  outline: 2px solid var(--main-color);
 }
 
 .sale-banner a,
@@ -520,22 +517,24 @@ footer p {
 }
 
 /* Pre-order banner */
-.pre-order-banner {
+.pre-order-banner,
+.pre-order-content {
   flex-direction: column;
 }
 
 .pre-order-content {
-  flex: auto;
   padding: 30px 20px;
   text-align: center;
   background-color: var(--black);
   color: var(--white);
-
-  flex-direction: column;
   justify-content: center;
 }
 
-.pre-order-content h2 {
+.pre-order-content h2,
+.games-section h2,
+.card-title,
+.cart-price,
+.cart-title {
   margin: 0;
 }
 
@@ -554,20 +553,12 @@ footer p {
   height: 100%;
 }
 
-.pre-order-banner a {
-  margin: 0 auto;
-}
-
 /* sales banner */
 .sale-banner-content {
   background: no-repeat url(../images/sale/sale-bg-small.png);
   background-size: cover;
   color: #f89523;
-  padding: 20px;
-
-  border-radius: 2px;
   text-align: center;
-  padding: 10px 20px;
 }
 
 .sale-banner-content img {
@@ -582,14 +573,17 @@ footer p {
   margin: 5px 0;
 }
 
-/* resell banner */
+.sale-banner-content,
 .resell-banner-content {
   padding: 10px 20px;
+  border-radius: 2px;
+}
 
+/* resell banner */
+.resell-banner-content {
   justify-content: space-between;
   gap: 30px;
   background-color: var(--black);
-  border-radius: 2px;
   color: var(--white);
 }
 
@@ -599,22 +593,6 @@ footer p {
 
 .resell-banner-image img {
   width: 50px;
-}
-
-/** INDEX **/
-.latest-games,
-.special-deals,
-.best-sellers {
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  gap: 15px;
-  margin: 30px 20px;
-}
-
-.latest-games h2,
-.special-deals h2,
-.best-sellers h2 {
-  margin: 0;
 }
 
 /** MEDIA QUERIES **/
@@ -646,6 +624,7 @@ footer p {
     z-index: 1001;
   }
 
+  /* Product cards */
   .card {
     font-size: 1.2rem;
   }
@@ -671,10 +650,9 @@ footer p {
 }
 
 @media (min-width: 700px) {
+  /* Footer */
   .footer-wrapper,
-  .latest-games,
-  .special-deals,
-  .best-sellers {
+  .games-section {
     grid-template-columns: repeat(3, 1fr);
   }
   footer .logo {
@@ -698,14 +676,12 @@ footer p {
     margin-right: 20px;
   }
 
-  .latest-games,
-  .special-deals,
-  .best-sellers {
+  /* Product cards */
+  .games-section {
     gap: 15px;
   }
-  .latest-games h2,
-  .special-deals h2,
-  .best-sellers h2 {
+
+  .games-section h2 {
     grid-column: 1/4;
   }
 
@@ -768,44 +744,49 @@ footer p {
 }
 
 @media (min-width: 1100px) {
-  .skip {
+  /* Incase of menu wasn't closed when on bigger screen */
+  .menu-checkbox:checked ~ .overlay {
+    display: none;
+  }
+
+  .menu-checkbox:checked ~ nav {
+    height: revert;
+  }
+
+  .cart-checkbox:checked ~ .overlay {
+    display: block;
+  }
+
+  /* Header and nav */
+  .skip,
+  .account,
+  .dark-mode {
     display: inline;
-  }
-  .latest-games,
-  .special-deals,
-  .best-sellers {
-    grid-template-columns: repeat(5, 1fr);
-  }
-  .latest-games h2,
-  .special-deals h2,
-  .best-sellers h2 {
-    grid-column: 1/6;
   }
 
   .hamburger-icon,
   .close-icon,
   .search-icon,
   .search-overlay .back-label,
-  .sub-menu div {
+  .sub-menu {
     display: none;
   }
-
-  /* Header */
   .header-wrapper {
-    max-width: 1300px;
     grid-template-columns: 1fr repeat(3, auto);
     min-height: 130px;
-    margin: 0 auto;
     align-content: center;
     padding: 0;
   }
+
+  .header-wrapper,
+  .menu-wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
   header .logo {
     grid-column: 1;
     justify-self: start;
-  }
-  .account,
-  .dark-mode {
-    display: inline-block;
   }
   .dark-mode {
     position: absolute;
@@ -831,27 +812,6 @@ footer p {
     align-self: center;
   }
 
-  /* Incase of menu wasn't closed when on bigger screen */
-  .menu-checkbox:checked ~ .overlay {
-    display: none;
-  }
-
-  .menu-checkbox:checked ~ nav {
-    height: revert;
-  }
-
-  .cart-checkbox:checked ~ .overlay {
-    display: block;
-  }
-
-  /* Nav */
-  nav,
-  .search-overlay {
-    display: block;
-    position: static;
-    min-height: fit-content;
-  }
-
   .menu-checkbox:checked ~ nav {
     max-width: 100%;
   }
@@ -860,17 +820,17 @@ footer p {
     position: sticky;
     top: 0;
     z-index: 1000;
-    min-height: revert;
   }
-
+  nav,
+  .search-overlay {
+    min-height: revert;
+    display: block;
+  }
   nav .menu {
     background-color: var(--black);
-    height: revert;
   }
 
   .menu-wrapper {
-    max-width: 1300px;
-    margin: 0 auto;
     flex-direction: row;
     align-items: center;
     height: 60px;
@@ -890,20 +850,20 @@ footer p {
     padding: 15px 10px;
   }
 
+  .menu ul a:hover,
+  .menu ul a:focus {
+    background-color: var(--dark-grey);
+  }
+
   .menu a.active {
     border-bottom: 5px solid var(--white);
     background-color: revert;
     border-right: none;
   }
 
-  .menu ul a:hover,
-  .menu ul a:focus {
-    background-color: var(--dark-grey);
-  }
-
   .search-overlay {
     flex: 1;
-    min-height: revert;
+    position: static;
   }
 
   .search {
@@ -914,8 +874,12 @@ footer p {
     padding: 7px;
   }
 
-  .sub-menu {
-    height: 0;
-    padding: 0;
+  /* Product cards layout */
+  .games-section {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .games-section h2 {
+    grid-column: 1/6;
   }
 }
