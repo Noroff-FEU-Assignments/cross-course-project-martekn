@@ -789,7 +789,7 @@ footer p {
   }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1024px) {
   /* Incase of menu wasn't closed when on bigger screen */
   .menu-checkbox:checked ~ .overlay {
     display: none;
@@ -877,6 +877,8 @@ footer p {
     flex-direction: row;
     align-items: center;
     height: 60px;
+    gap: 10px;
+    justify-content: space-between;
   }
 
   .menu li {
@@ -886,7 +888,6 @@ footer p {
   .menu ul {
     margin-top: revert;
     margin-left: 20px;
-    flex: 2;
   }
   .menu ul a {
     color: var(--white);
@@ -905,8 +906,9 @@ footer p {
   }
 
   .search-overlay {
-    flex: 1;
+    flex: auto;
     position: static;
+    max-width: 400px;
   }
 
   .search {
