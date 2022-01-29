@@ -912,6 +912,7 @@ footer p {
     flex: auto;
     position: static;
     max-width: 400px;
+    width: 100px;
   }
 
   .search {
