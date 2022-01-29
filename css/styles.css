@@ -796,7 +796,7 @@ footer p {
   }
 
   .menu-checkbox:checked ~ nav {
-    height: revert;
+    max-width: 100%;
   }
 
   .cart-checkbox:checked ~ .overlay {
@@ -858,15 +858,10 @@ footer p {
     align-self: center;
   }
 
-  .menu-checkbox:checked ~ nav {
-    max-width: 100%;
-  }
-
   nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-    height: revert;
   }
   nav,
   .search-overlay {
