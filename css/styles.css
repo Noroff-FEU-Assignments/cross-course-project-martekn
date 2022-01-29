@@ -242,8 +242,8 @@ nav,
   border-radius: 50%;
   padding: 10px;
   position: absolute;
-  left: 78vw;
-  top: 85vh;
+  right: 20px;
+  bottom: 20px;
   width: 40px;
   height: 40px;
 }
@@ -279,11 +279,12 @@ nav {
 .menu-checkbox:checked ~ nav {
   display: revert;
   width: 100%;
+  height: 100vh;
 }
 
 nav .menu {
   background-color: var(--white);
-  height: 100vh;
+  height: 100%;
 }
 .menu-wrapper {
   flex-direction: column;
@@ -620,14 +621,18 @@ footer p {
 @media (min-width: 330px) {
   .cart-checkbox:checked ~ .cart-overlay {
     right: 0;
-    max-width: 550px;
     z-index: 1002;
     padding: 40px;
   }
 
   .menu-checkbox:checked ~ nav {
-    max-width: 550px;
     z-index: 1002;
+  }
+
+  .menu-checkbox:checked ~ nav,
+  .cart-checkbox:checked ~ .cart-overlay,
+  .menu-wrapper {
+    max-width: 550px;
   }
 
   .cart-checkbox:checked ~ .overlay,
