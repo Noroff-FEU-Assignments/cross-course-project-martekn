@@ -173,7 +173,7 @@ footer p {
   background-color: var(--main-color-light);
 }
 
-/** SITEWIDE **/
+/** SITE WIDE **/
 /* Header*/
 header label,
 .icons {
@@ -205,6 +205,11 @@ header .logo,
 nav,
 .search-overlay {
   display: none;
+}
+
+.back-label:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .skip a:focus {
