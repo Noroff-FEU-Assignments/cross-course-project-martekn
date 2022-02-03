@@ -1,4 +1,17 @@
-/** VARIABLES **/
+/* CSS DIRECTORY
+    1. VARIABLES
+    2. GENERAL
+    3. TYPOGRAPHY
+    4. UTILITIES
+    5. LINKS/BUTTONS
+    6. SITE WIDE (header, nav, footer)
+    7. PRODUCT CARD
+    8. BANNERS
+    9. MEDIA QUERIES
+*/
+
+/** 1. VARIABLES **/
+/* #region variables*/
 :root {
   --main-color: #097895;
   --main-color-dark: #174b58;
@@ -10,8 +23,10 @@
   --almost-black: #1b1c20;
   --black: #131313;
 }
+/* #endregion */
 
-/** GENERAL **/
+/** 2. GENERAl **/
+/* #region general */
 body {
   color: var(--black);
   background-color: var(--almost-white);
@@ -27,13 +42,6 @@ main,
   max-width: 1300px;
 }
 
-a,
-a:hover,
-a:focus,
-a:active {
-  text-decoration: none;
-}
-
 img {
   width: 100%;
 }
@@ -44,8 +52,10 @@ main,
 .footer-wrapper {
   margin: 0 auto;
 }
+/* #endregion */
 
-/* Fonts straying from body */
+/** 3. TYPOGRAPHY **/
+/* #region typography */
 h2,
 .menu a,
 .btn,
@@ -94,8 +104,10 @@ h2,
 footer p {
   font-size: 0.9rem;
 }
+/* #endregion */
 
-/** UTILITIES **/
+/** 4. UTILITIES **/
+/* #region utilities */
 .screen-reader-only {
   position: absolute;
   clip: rect (1px);
@@ -133,7 +145,16 @@ footer p {
 .image-top {
   object-position: top;
 }
+/* #endregion */
 
+/** 5. LINKS/BUTTONS */
+/* #region links/buttons */
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+}
 .link {
   color: var(--main-color);
   text-align: center;
@@ -143,8 +164,6 @@ footer p {
   text-decoration: underline;
   color: var(--main-color-dark);
 }
-
-/* Button */
 .btn {
   background-color: var(--main-color);
   color: var(--white);
@@ -172,9 +191,11 @@ footer p {
 .search-icon:active {
   background-color: var(--main-color-light);
 }
+/* #endregion */
 
-/** SITE WIDE **/
-/* Header*/
+/** 6. SITE WIDE **/
+/* #region */
+/* #region Header*/
 header label,
 .icons {
   cursor: pointer;
@@ -269,8 +290,9 @@ nav,
   bottom: 0;
   right: 0;
 }
+/* #endregion */
 
-/* Overlays / navigation */
+/* #region Overlays / navigation */
 .cart-overlay,
 nav {
   min-width: 280px;
@@ -324,6 +346,7 @@ nav .menu {
   border-right: 10px double var(--black);
 }
 
+/* search overlay */
 .search-checkbox:checked ~ .search-overlay {
   display: revert;
   background-color: var(--white);
@@ -356,6 +379,7 @@ nav .menu {
   box-shadow: inset 1px 1px 4px var(--light-grey);
 }
 
+/* cart overlay */
 .cart-checkbox:checked ~ .cart-overlay {
   display: flex;
   flex-direction: column;
@@ -406,6 +430,10 @@ nav .menu {
   grid-column: 2;
   grid-row: 1;
 }
+.cart-price,
+.cart-title {
+  margin: 0;
+}
 
 .cart-remove:hover {
   color: var(--main-color-dark);
@@ -425,8 +453,9 @@ nav .menu {
 .cart-overlay .link {
   margin: 20px 20px 0 0;
 }
+/* #endregion */
 
-/* Footer */
+/* #region Footer */
 footer {
   padding-top: 20px;
   gap: 10px;
@@ -475,12 +504,20 @@ footer p {
   margin-bottom: 5px;
 }
 
-/** PRODUCT CARDS **/
+/* #endregion */
+/* #endregion */
+
+/** 7. PRODUCT CARDS **/
+/* #region */
 .games-section {
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   gap: 15px;
   margin: 30px 20px;
+}
+.games-section h2,
+.card-title {
+  margin: 0;
 }
 
 .card {
@@ -535,8 +572,9 @@ footer p {
   margin: 0px;
   text-align: right;
 }
-
-/** BANNERS **/
+/* #endregion */
+/** 6. BANNERS **/
+/* #region */
 .sale-banner a:focus,
 .resell-banner a:focus,
 .card:focus {
@@ -548,7 +586,7 @@ footer p {
   display: block;
 }
 
-/* Pre-order banner */
+/* #region Pre-order banner */
 .pre-order-banner,
 .pre-order-content {
   flex-direction: column;
@@ -562,11 +600,7 @@ footer p {
   justify-content: center;
 }
 
-.pre-order-content h2,
-.games-section h2,
-.card-title,
-.cart-price,
-.cart-title {
+.pre-order-content h2 {
   margin: 0;
 }
 
@@ -585,7 +619,9 @@ footer p {
   height: 100%;
 }
 
-/* sales banner */
+/* #endregion */
+
+/* #region sales banner */
 .sale-banner-content {
   background: no-repeat url(../images/sale/sale-bg-small.png);
   background-size: cover;
@@ -610,8 +646,9 @@ footer p {
   padding: 10px 20px;
   border-radius: 2px;
 }
+/* #endregion */
 
-/* resell banner */
+/* #region resell banner */
 .resell-banner-content {
   justify-content: space-between;
   gap: 30px;
@@ -626,8 +663,11 @@ footer p {
 .resell-banner-image img {
   width: 50px;
 }
+/* #endregion */
+/* #endregion */
 
 /** MEDIA QUERIES **/
+/* #region */
 @media (min-width: 330px) {
   .cart-checkbox:checked ~ .cart-overlay {
     right: 0;
@@ -933,3 +973,4 @@ footer p {
     grid-column: 1/6;
   }
 }
+/* #endregion */
