@@ -21,6 +21,7 @@
     <script src="https://kit.fontawesome.com/7674273682.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="/css/product.css" />
+    <link rel="stylesheet" href="css/media.css" />
   </head>
 
   <body class="flex">
@@ -113,16 +114,16 @@
       <label for="cart-checkbox" class="link">Continue shopping</label>
     </div>
 
-    <main id="main-content">
+    <main id="main-content" class="product-page grid">
       <h1>Ori and the Will of the Wisps</h1>
-      <section>
-        <div>
+      <section class="product-images">
+        <div class="main-image flex">
           <img
-            src="images/product/product-cover.jpg"
+            src="images/product/product-cover.png"
             alt="A white creature with an owl standing on the edge of a cliff."
           />
         </div>
-        <div>
+        <div class="flex image-scroll scroll">
           <img src="images/product/product-image-1.jpg" alt="" />
           <img src="images/product/product-image-2.jpg" alt="" />
           <img src="images/product/product-image-3.jpg" alt="" />
@@ -132,7 +133,7 @@
           <img src="images/product/product-image-7.jpg" alt="" />
         </div>
       </section>
-      <section>
+      <section class="product-description">
         <h2>Description</h2>
         <p>
           The little spirit Ori is no stranger to peril, but when a fateful flight puts the owlet Ku in harm's way, it
@@ -145,71 +146,37 @@
           stunning, hand-painted artwork. Set to a fully orchestrated original score, Ori and the Will of the Wisps
           continues the Moon Studios tradition of tightly crafted platforming action and deeply emotional storytelling.
         </p>
+        <div class="grid">
+          <select name="" id="">
+            <option value="new">New $29.99</option>
+            <option value="pre-owned">Pre-Owned $23.99</option>
+          </select>
+          <button class="btn">Add to cart</button>
+        </div>
       </section>
-      <section>
+      <section class="system-req grid">
         <h2>System Requirements</h2>
-
         <div>
-          <h3>Minimum system requirements</h3>
-          <table>
-            <tbody>
-              <tr>
-                <th>OS:</th>
-                <td>Windows 10 Version 18362.0 or higher</td>
-              </tr>
-              <tr>
-                <th>Processor:</th>
-                <td>AMD Athlon X4 | Intel Core i5 4460</td>
-              </tr>
-              <tr>
-                <th>Memory:</th>
-                <td>8 GB RAM</td>
-              </tr>
-              <tr>
-                <th>Graphics:</th>
-                <td>Nvidia GTX 950 | AMD R7 370</td>
-              </tr>
-              <tr>
-                <th>DirectX:</th>
-                <td>Version 11</td>
-              </tr>
-              <tr>
-                <th>Storage:</th>
-                <td>20 GB available space</td>
-              </tr>
-            </tbody>
-          </table>
+          <h3>Minimum</h3>
+          <ul>
+            <li class="flex"><span>OS:</span> <span>Windows 10 Version 18362.0 or higher</span></li>
+            <li class="flex"><span>Processor:</span> <span>AMD Athlon X4 | Intel Core i5 4460</span></li>
+            <li class="flex"><span>Memory:</span> <span>8 GB RAM</span></li>
+            <li class="flex"><span>Graphics:</span> <span>Nvidia GTX 950 | AMD R7 370</span></li>
+            <li class="flex"><span>DirectX:</span> <span>Version 11</span></li>
+            <li class="flex"><span>Storage:</span> <span>20 GB available space</span></li>
+          </ul>
         </div>
         <div>
-          <h3>Recommended system requirements</h3>
-          <table>
-            <tbody>
-              <tr>
-                <th>OS:</th>
-                <td>Windows 10 Version 18362.0 or higher</td>
-              </tr>
-              <tr>
-                <th>Processor:</th>
-                <td>AMD Ryzen 3 | Intel i5 Skylake</td>
-              </tr>
-              <tr>
-                <th>Memory:</th>
-                <td>8 GB RAM</td>
-              </tr>
-              <tr>
-                <th>Graphics:</th>
-                <td>Nvidia GTX 970 | AMD RX 570</td>
-              </tr>
-              <tr>
-                <th>DirectX:</th>
-                <td>Version 11</td>
-              </tr>
-              <tr>
-                <th>Storage:</th>
-                <td>20 GB available space</td>
-              </tr>
-            </tbody>
-          </table>
+          <h3>Recommended</h3>
+          <ul>
+            <li class="flex"><span>OS:</span> <span>Windows 10 Version 18362.0 or higher</span></li>
+            <li class="flex"><span>Processor:</span> <span>AMD Ryzen 3 | Intel i5 Skylake</span></li>
+            <li class="flex"><span>Memory:</span> <span>8 GB RAM</span></li>
+            <li class="flex"><span>Graphics:</span> <span>Nvidia GTX 970 | AMD RX 570</span></li>
+            <li class="flex"><span>DirectX:</span> <span>Version 11</span></li>
+            <li class="flex"><span>Storage:</span> <span>20 GB available space</span></li>
+          </ul>
         </div>
       </section>
     </main>
