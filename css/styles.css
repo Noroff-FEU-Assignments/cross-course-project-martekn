@@ -5,12 +5,13 @@
     4. UTILITIES
     5. LINKS/BUTTONS
     6. SITE WIDE (header, nav, footer)
-    7. PRODUCT CARD
-    8. BANNERS
-    9. MEDIA QUERIES
+    7. GAMES LIST
+    8. PRODUCT CARD
+    9. BANNERS
+    10. MEDIA QUERIES
 */
 
-/** 1. VARIABLES **/
+/** VARIABLES **/
 /* #region variables*/
 :root {
   --main-color: #097895;
@@ -25,7 +26,7 @@
 }
 /* #endregion */
 
-/** 2. GENERAl **/
+/** GENERAl **/
 /* #region general */
 body {
   color: var(--black);
@@ -35,6 +36,10 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 1.2rem;
   font-weight: 400;
+}
+
+body .container {
+  min-height: 100vh;
 }
 
 main,
@@ -59,7 +64,7 @@ h1 {
 
 /* #endregion */
 
-/** 3. TYPOGRAPHY **/
+/** TYPOGRAPHY **/
 /* #region typography */
 h1 {
   font-weight: 800;
@@ -121,7 +126,7 @@ footer p {
 }
 /* #endregion */
 
-/** 4. UTILITIES **/
+/** UTILITIES **/
 /* #region utilities */
 .screen-reader-only {
   position: absolute;
@@ -177,7 +182,7 @@ footer p {
 }
 /* #endregion */
 
-/** 5. LINKS/BUTTONS */
+/** LINKS/BUTTONS */
 /* #region links/buttons */
 a,
 a:hover,
@@ -224,7 +229,7 @@ a:active {
 }
 /* #endregion */
 
-/** 6. SITE WIDE **/
+/** SITE WIDE **/
 /* #region */
 /* #region Header*/
 header label,
@@ -333,6 +338,7 @@ nav {
 nav {
   position: fixed;
   height: 100vh;
+  top: 0;
 }
 
 .menu-checkbox:checked ~ nav {
@@ -526,7 +532,22 @@ footer p {
 /* #endregion */
 /* #endregion */
 
-/** 7. PRODUCT CARDS **/
+/** GAMES LIST **/
+/* #region */
+.main-games {
+  flex-direction: column;
+}
+
+.main-games h1 {
+  margin-bottom: 0;
+}
+
+.main-games .banner {
+  order: -1;
+}
+/* #endregion */
+
+/** PRODUCT CARDS **/
 /* #region */
 .games-section {
   grid-template-columns: 1fr;
@@ -592,7 +613,8 @@ footer p {
   text-align: right;
 }
 /* #endregion */
-/** 6. BANNERS **/
+
+/** BANNERS **/
 /* #region */
 .sale-banner a:focus,
 .resell-banner a:focus,

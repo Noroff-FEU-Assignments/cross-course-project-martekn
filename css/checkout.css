@@ -1,0 +1,14 @@
+body {
+  background: url(../images/background.jpg) no-repeat top;
+  min-height: 100vh;
+}
+main.checkout-success .cart-overlay {
+  display: block;
+  position: static;
+  z-index: revert;
+  height: revert;
+}
+
+main.checkout-success {
+  flex: auto;
+}

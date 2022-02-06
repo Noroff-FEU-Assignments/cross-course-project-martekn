@@ -24,440 +24,442 @@
   </head>
 
   <body class="flex">
-    <header>
-      <div class="header-wrapper grid">
-        <div class="skip"><a class="screen-reader-only" href="#main-content">Skip to content</a></div>
-        <label for="menu-checkbox" class="hamburger-icon">
-          <span class="material-icons icons"> menu </span>
-        </label>
-        <a href="index.html" class="logo"><img src="images/logo.png" alt="Gamehub, the universe of games." /></a>
-        <a href="account.html" aria-label="My account" class="account"><i class="fas fa-user-circle icons"></i></a>
-        <label for="cart-checkbox" class="cart-label cart-icon">
-          <span class="material-icons icons"> shopping_cart </span>
-          <span class="cart-number">3</span>
-        </label>
-        <span class="material-icons dark-mode icons"> nightlight </span>
-      </div>
-    </header>
-    <input type="checkbox" name="menu-checkbox" id="menu-checkbox" class="menu-checkbox checkbox-hack" />
-    <input type="checkbox" name="cart-checkbox" id="cart-checkbox" class="cart-checkbox checkbox-hack" />
-    <div class="overlay"></div>
-    <nav>
-      <div class="sub-menu flex">
-        <label for="menu-checkbox" id="close-checkbox" class="close-icon">
-          <span class="material-icons icon-close icons"> close </span>
-        </label>
-        <div class="sub-menu-icons flex">
-          <a href="account.html" aria-label="My account"><i class="fas fa-user-circle icons"></i></a>
-          <span class="material-icons icons"> nightlight </span>
-        </div>
-      </div>
-      <div class="menu">
-        <div class="menu-wrapper flex">
-          <ul>
-            <li>
-              <a href="index.html" class="active">Home</a>
-            </li>
-            <li>
-              <a href="product-list.html">Games</a>
-            </li>
-            <li>
-              <a href="pre-order.html">Pre-orders</a>
-            </li>
-            <li>
-              <a href="sale.html">Special deals</a>
-            </li>
-            <li>
-              <a href="resell.html">Resell games</a>
-            </li>
-          </ul>
-          <input type="checkbox" name="search-checkbox" id="search-checkbox" class="search-checkbox checkbox-hack" />
-          <label for="search-checkbox" class="search-icon">
-            <span class="material-icons icons"> search </span>
+    <div class="container">
+      <header>
+        <div class="header-wrapper grid">
+          <div class="skip"><a class="screen-reader-only" href="#main-content">Skip to content</a></div>
+          <label for="menu-checkbox" class="hamburger-icon">
+            <span class="material-icons icons"> menu </span>
           </label>
-          <div class="search-overlay flex">
-            <label for="search-checkbox" id="search-back" class="back-label">Back</label>
-            <div class="search-container flex">
-              <input type="text" />
-              <a href="product-list.html" class="btn"><span class="material-icons"> search </span></a>
+          <a href="index.html" class="logo"><img src="images/logo.png" alt="Gamehub, the universe of games." /></a>
+          <a href="account.html" aria-label="My account" class="account"><i class="fas fa-user-circle icons"></i></a>
+          <label for="cart-checkbox" class="cart-label cart-icon">
+            <span class="material-icons icons"> shopping_cart </span>
+            <span class="cart-number">3</span>
+          </label>
+          <span class="material-icons dark-mode icons"> nightlight </span>
+        </div>
+      </header>
+      <input type="checkbox" name="menu-checkbox" id="menu-checkbox" class="menu-checkbox checkbox-hack" />
+      <input type="checkbox" name="cart-checkbox" id="cart-checkbox" class="cart-checkbox checkbox-hack" />
+      <div class="overlay"></div>
+      <nav>
+        <div class="sub-menu flex">
+          <label for="menu-checkbox" id="close-checkbox" class="close-icon">
+            <span class="material-icons icon-close icons"> close </span>
+          </label>
+          <div class="sub-menu-icons flex">
+            <a href="account.html" aria-label="My account"><i class="fas fa-user-circle icons"></i></a>
+            <span class="material-icons icons"> nightlight </span>
+          </div>
+        </div>
+        <div class="menu">
+          <div class="menu-wrapper flex">
+            <ul>
+              <li>
+                <a href="index.html" class="active">Home</a>
+              </li>
+              <li>
+                <a href="product-list.html">Games</a>
+              </li>
+              <li>
+                <a href="pre-order.html">Pre-orders</a>
+              </li>
+              <li>
+                <a href="sale.html">Special deals</a>
+              </li>
+              <li>
+                <a href="resell.html">Resell games</a>
+              </li>
+            </ul>
+            <input type="checkbox" name="search-checkbox" id="search-checkbox" class="search-checkbox checkbox-hack" />
+            <label for="search-checkbox" class="search-icon">
+              <span class="material-icons icons"> search </span>
+            </label>
+            <div class="search-overlay flex">
+              <label for="search-checkbox" id="search-back" class="back-label">Back</label>
+              <div class="search-container flex">
+                <input type="text" />
+                <a href="product-list.html" class="btn"><span class="material-icons"> search </span></a>
+              </div>
             </div>
           </div>
         </div>
+      </nav>
+      <div class="cart-overlay">
+        <label for="cart-checkbox" class="back-label">Back</label>
+        <h2>Cart summary</h2>
+        <div class="item-container flex scroll">
+          <a href="product.html" class="cart-item grid">
+            <p class="cart-title">Cyberpunk 2077</p>
+            <p class="cart-price">$59.99</p>
+            <span class="material-icons cart-remove"> remove_shopping_cart </span>
+          </a>
+          <a href="product.html" class="cart-item grid">
+            <p class="cart-title">The Witcher 3: Wild Hunt</p>
+            <p class="cart-price">$39.99</p>
+            <span class="material-icons cart-remove"> remove_shopping_cart </span>
+          </a>
+          <a href="product.html" class="cart-item grid">
+            <p class="cart-title">Ori and the Will of the Wisps</p>
+            <p class="cart-price">$23.99</p>
+            <span class="material-icons cart-remove"> remove_shopping_cart </span>
+          </a>
+        </div>
+        <div class="cart-total flex">
+          <p>Total price</p>
+          <p>$123.97</p>
+        </div>
+        <a href="checkout.html" class="btn">Go to checkout</a>
+        <label for="cart-checkbox" class="link">Continue shopping</label>
       </div>
-    </nav>
-    <div class="cart-overlay">
-      <label for="cart-checkbox" class="back-label">Back</label>
-      <h2>Cart summary</h2>
-      <div class="item-container flex scroll">
-        <a href="product.html" class="cart-item grid">
-          <p class="cart-title">Cyberpunk 2077</p>
-          <p class="cart-price">$59.99</p>
-          <span class="material-icons cart-remove"> remove_shopping_cart </span>
-        </a>
-        <a href="product.html" class="cart-item grid">
-          <p class="cart-title">The Witcher 3: Wild Hunt</p>
-          <p class="cart-price">$39.99</p>
-          <span class="material-icons cart-remove"> remove_shopping_cart </span>
-        </a>
-        <a href="product.html" class="cart-item grid">
-          <p class="cart-title">Ori and the Will of the Wisps</p>
-          <p class="cart-price">$23.99</p>
-          <span class="material-icons cart-remove"> remove_shopping_cart </span>
-        </a>
-      </div>
-      <div class="cart-total flex">
-        <p>Total price</p>
-        <p>$123.97</p>
-      </div>
-      <a href="checkout.html" class="btn">Go to checkout</a>
-      <label for="cart-checkbox" class="link">Continue shopping</label>
+      <main id="main-content">
+        <section class="pre-order-banner flex">
+          <div class="pre-order-image"><img src="images/pre-order.jpg" alt="A man and a boy fighting an enemy." /></div>
+          <div class="pre-order-content flex">
+            <h2>God of War</h2>
+            <p>Coming 14 January, 2022</p>
+            <a href="product.html" class="btn">Pre-order</a>
+          </div>
+        </section>
+        <section class="games-section grid">
+          <h2>Latest games</h2>
+          <a href="product.html" class="card flex">
+            <div class="card-image">
+              <img
+                class="image-center"
+                src="images/Covers/mass-effect.jpg"
+                alt="Multiple characters in front of a blue and red background."
+              />
+            </div>
+            <div class="card-details grid">
+              <p class="card-title">Mass Effect Legendary Edition</p>
+              <div class="card-prices">
+                <p class="current-price">$59.99</p>
+              </div>
+            </div>
+          </a>
+          <a href="product.html" class="card flex">
+            <div class="card-image">
+              <img class="image-bottom" src="images/covers/new-world.jpg" alt="A man with an iron mask in armor." />
+            </div>
+            <div class="card-details grid">
+              <p class="card-title">New World</p>
+              <div class="card-prices">
+                <p class="current-price">$40</p>
+              </div>
+            </div>
+          </a>
+          <a href="product.html" class="card flex">
+            <div class="card-image">
+              <img
+                class="image-top"
+                src="images/covers/life-is-strange.jpg"
+                alt="A woman in front of a colorful background."
+              />
+            </div>
+            <div class="card-details grid">
+              <p class="card-title">Life Is Strange: True Colors</p>
+              <div class="card-prices">
+                <p class="current-price">$59.99</p>
+              </div>
+            </div>
+          </a>
+          <a href="product.html" class="card flex">
+            <div class="card-image">
+              <img
+                class="image-center"
+                src="images/covers/cyberpunk.jpg"
+                alt="A man holding a gun in front of a yellow background."
+              />
+            </div>
+            <div class="card-details grid">
+              <p class="card-title">Cyberpunk 2077</p>
+              <div class="card-prices">
+                <p class="current-price">$59.99</p>
+              </div>
+            </div>
+          </a>
+          <a href="product.html" class="card flex">
+            <div class="card-image">
+              <img
+                class="image-center"
+                src="images/covers/diablo-2.jpg"
+                alt="A person in a red robe wearing a skull mask."
+              />
+            </div>
+            <div class="card-details grid">
+              <p class="card-title">Diablo II: Resurrected</p>
+              <div class="card-prices">
+                <p class="current-price">$39.99</p>
+              </div>
+            </div>
+          </a>
+        </section>
+        <section class="sale-banner">
+          <a href="">
+            <div class="sale-banner-content grid">
+              <img src="images/sale/sale-covers.png" alt="Cover art of 3 games." />
+              <p>
+                30% off <span class="screen-reader-only">on Dream alone, Little Nightmares and Hello Neighbor</span>
+              </p>
+            </div>
+          </a>
+        </section>
+        <section class="games-section grid">
+          <h2>Special deals</h2>
+          <a href="product.html" class="card flex">
+            <div class="card-image">
+              <img
+                class="image-center"
+                src="images/covers/gris.jpg"
+                alt="A woman with short curly hair and closed eyes."
+              />
+            </div>
+            <div class="card-details grid">
+              <p class="card-title">GRIS</p>
+              <div class="card-prices">
+                <p class="old-price">
+                  <s><span class="screen-reader-only">Ordinary price </span>$16.99</s>
+                </p>
+                <p class="current-price"><span class="screen-reader-only">Sale price </span>$6.79</p>
+              </div>
+            </div>
+          </a>
+          <a href="product.html" class="card flex">
+            <div class="card-image">
+              <img class="image-top" src="images/covers/fallout-76.jpg" alt="A person wearing a helmet" />
+            </div>
+            <div class="card-details grid">
+              <p class="card-title">Fallout 76</p>
+              <div class="card-prices">
+                <p class="old-price">
+                  <s><span class="screen-reader-only">Ordinary price </span>$39.99</s>
+                </p>
+                <p class="current-price"><span class="screen-reader-only">Sale price </span>$19.99</p>
+              </div>
+            </div>
+          </a>
+          <a href="product.html" class="card flex">
+            <div class="card-image">
+              <img class="image-top" src="images/covers/qube-2.jpg" alt="A woman stand on top of cubes looking away." />
+            </div>
+            <div class="card-details grid">
+              <p class="card-title">Q.U.B.E. 2</p>
+              <div class="card-prices">
+                <p class="old-price">
+                  <s><span class="screen-reader-only">Ordinary price </span>$24.99</s>
+                </p>
+                <p class="current-price"><span class="screen-reader-only">Sale price </span>$9.99</p>
+              </div>
+            </div>
+          </a>
+          <a href="product.html" class="card flex">
+            <div class="card-image">
+              <img class="image-bottom" src="images/covers/portal.jpg" alt="Person going through a portal." />
+            </div>
+            <div class="card-details grid">
+              <p class="card-title">Portal</p>
+              <div class="card-prices">
+                <p class="old-price">
+                  <s><span class="screen-reader-only">Ordinary price </span>$9.99</s>
+                </p>
+                <p class="current-price"><span class="screen-reader-only">Sale price </span>$2.99</p>
+              </div>
+            </div>
+          </a>
+          <a href="product.html" class="card flex">
+            <div class="card-image">
+              <img
+                class="image-top"
+                src="images/covers/hollow-knight.jpg"
+                alt="Creature holding a weapon looking out."
+              />
+            </div>
+            <div class="card-details grid">
+              <p class="card-title">Hollow Knight</p>
+              <div class="card-prices">
+                <p class="old-price">
+                  <s><span class="screen-reader-only">Ordinary price </span>$15.00</s>
+                </p>
+                <p class="current-price"><span class="screen-reader-only">Sale price </span>$44.99</p>
+              </div>
+            </div>
+          </a>
+        </section>
+        <section class="resell-banner">
+          <a href="">
+            <div class="resell-banner-content flex">
+              <p>Get some money back after finishing a game through resell, or buy pre-owned games cheaper</p>
+              <div class="resell-banner-image">
+                <img src="images/icons/repeat.png" alt="Repeat." />
+              </div>
+            </div>
+          </a>
+        </section>
+        <section class="games-section grid">
+          <h2>Best sellers</h2>
+          <a href="product.html" class="card flex">
+            <div class="card-image">
+              <img class="image-center" src="images/covers/gta-5.jpg" alt="Collage of scenes from the game." />
+            </div>
+            <div class="card-details grid">
+              <p class="card-title">Grand Theft Auto V</p>
+              <p class="card-status">Pre-Owned</p>
+              <div class="card-prices">
+                <p class="old-price">
+                  <s><span class="screen-reader-only">Ordinary price </span>$29.99</s>
+                </p>
+                <p class="current-price"><span class="screen-reader-only">Sale price </span>$23.99</p>
+              </div>
+            </div>
+          </a>
+          <a href="product.html" class="card flex">
+            <div class="card-image">
+              <img class="image-top" src="images/covers/wow.jpg" alt="A citadel being reflected in a shattered sky." />
+            </div>
+            <div class="card-details grid">
+              <p class="card-title">World of Warcraft: Shadowlands</p>
+              <div class="card-prices">
+                <p class="current-price">$39.99</p>
+              </div>
+            </div>
+          </a>
+          <a href="product.html" class="card flex">
+            <div class="card-image">
+              <img class="image-center" src="images/covers/witcher-3.jpg" alt="A man ready to pull out his sword." />
+            </div>
+            <div class="card-details grid">
+              <p class="card-title">The Witcher 3: Wild Hunt</p>
+              <p class="card-status">Pre-Owned</p>
+              <div class="card-prices">
+                <p class="old-price">
+                  <s><span class="screen-reader-only">Ordinary price </span>$49.99</s>
+                </p>
+                <p class="current-price"><span class="screen-reader-only">Sale price </span>$39.99</p>
+              </div>
+            </div>
+          </a>
+          <a href="product.html" class="card flex">
+            <div class="card-image">
+              <img
+                class="image-center"
+                src="images/covers/sims-4.jpg"
+                alt="Group of characters with different expressions."
+              />
+            </div>
+            <div class="card-details grid">
+              <p class="card-title">The Sims 4</p>
+              <div class="card-prices">
+                <p class="current-price">$39.99</p>
+              </div>
+            </div>
+          </a>
+          <a href="product.html" class="card flex">
+            <div class="card-image">
+              <img
+                class="image-bottom"
+                src="images/covers/red-dead-redemption-2.jpg"
+                alt="A man holding a gun, and people riding horses on a red background."
+              />
+            </div>
+            <div class="card-details grid">
+              <p class="card-title">Red Dead Redemption 2</p>
+              <p class="card-status">Pre-Owned</p>
+              <div class="card-prices">
+                <p class="old-price">
+                  <s><span class="screen-reader-only">Ordinary price </span>$59.99</s>
+                </p>
+                <p class="current-price"><span class="screen-reader-only">Sale price </span>$47.99</p>
+              </div>
+            </div>
+          </a>
+          <a href="product.html" class="card flex">
+            <div class="card-image">
+              <img
+                class="image-top"
+                src="images/covers/ori-and-the-will-of-the-wisp.jpg"
+                alt="A white creature with an owl standing on the edge of a cliff."
+              />
+            </div>
+            <div class="card-details grid">
+              <p class="card-title">Ori and the Will of the Wisps</p>
+              <p class="card-status">Pre-Owned</p>
+              <div class="card-prices">
+                <p class="old-price">
+                  <s><span class="screen-reader-only">Ordinary price </span>$29.99</s>
+                </p>
+                <p class="current-price"><span class="screen-reader-only">Sale price </span>$23.99</p>
+              </div>
+            </div>
+          </a>
+          <a href="product.html" class="card flex">
+            <div class="card-image">
+              <img
+                class="image-center"
+                src="images/covers/assassins-creed-origins.jpg"
+                alt="A man in front of a city with a pyramid."
+              />
+            </div>
+            <div class="card-details grid">
+              <p class="card-title">Assassin's Creed Origins</p>
+              <p class="card-status">Pre-Owned</p>
+              <div class="card-prices">
+                <p class="old-price">
+                  <s><span class="screen-reader-only">Ordinary price </span>$59.99</s>
+                </p>
+                <p class="current-price"><span class="screen-reader-only">Sale price </span>$47.99</p>
+              </div>
+            </div>
+          </a>
+          <a href="product.html" class="card flex">
+            <div class="card-image">
+              <img class="image-top" src="images/covers/doom.jpg" alt="Two people fighting." />
+            </div>
+            <div class="card-details grid">
+              <p class="card-title">DOOM Eternal</p>
+              <div class="card-prices">
+                <p class="current-price">$59.99</p>
+              </div>
+            </div>
+          </a>
+          <a href="product.html" class="card flex">
+            <div class="card-image">
+              <img
+                class="image-top"
+                src="images/covers/darksiders.jpg"
+                alt="A man posing on a horse with flaming legs."
+              />
+            </div>
+            <div class="card-details grid">
+              <p class="card-title">Darksiders Warmastered Edition</p>
+              <p class="card-status">Pre-Owned</p>
+              <div class="card-prices">
+                <p class="old-price">
+                  <s><span class="screen-reader-only">Ordinary price </span>$19.99</s>
+                </p>
+                <p class="current-price"><span class="screen-reader-only">Sale price </span>$15.99</p>
+              </div>
+            </div>
+          </a>
+          <a href="product.html" class="card flex">
+            <div class="card-image">
+              <img
+                class="image-top"
+                src="images/covers/rise-of-the-tomb-raider.jpg"
+                alt="A woman entering a cave in the cold."
+              />
+            </div>
+            <div class="card-details grid">
+              <p class="card-title">Rise of the Tomb Raider</p>
+              <div class="card-prices">
+                <p class="current-price">$29.99</p>
+              </div>
+            </div>
+          </a>
+        </section>
+      </main>
     </div>
-
-    <main id="main-content">
-      <section class="pre-order-banner flex">
-        <div class="pre-order-image"><img src="images/pre-order.jpg" alt="A man and a boy fighting an enemy." /></div>
-        <div class="pre-order-content flex">
-          <h2>God of War</h2>
-          <p>Coming 14 January, 2022</p>
-          <a href="product.html" class="btn">Pre-order</a>
-        </div>
-      </section>
-
-      <section class="games-section grid">
-        <h2>Latest games</h2>
-        <a href="product.html" class="card flex">
-          <div class="card-image">
-            <img
-              class="image-center"
-              src="images/Covers/mass-effect.jpg"
-              alt="Multiple characters in front of a blue and red background."
-            />
-          </div>
-          <div class="card-details grid">
-            <p class="card-title">Mass Effect Legendary Edition</p>
-            <div class="card-prices">
-              <p class="current-price">$59.99</p>
-            </div>
-          </div>
-        </a>
-        <a href="product.html" class="card flex">
-          <div class="card-image">
-            <img class="image-bottom" src="images/covers/new-world.jpg" alt="A man with an iron mask in armor." />
-          </div>
-          <div class="card-details grid">
-            <p class="card-title">New World</p>
-            <div class="card-prices">
-              <p class="current-price">$40</p>
-            </div>
-          </div>
-        </a>
-        <a href="product.html" class="card flex">
-          <div class="card-image">
-            <img
-              class="image-top"
-              src="images/covers/life-is-strange.jpg"
-              alt="A woman in front of a colorful background."
-            />
-          </div>
-          <div class="card-details grid">
-            <p class="card-title">Life Is Strange: True Colors</p>
-            <div class="card-prices">
-              <p class="current-price">$59.99</p>
-            </div>
-          </div>
-        </a>
-        <a href="product.html" class="card flex">
-          <div class="card-image">
-            <img
-              class="image-center"
-              src="images/covers/cyberpunk.jpg"
-              alt="A man holding a gun in front of a yellow background."
-            />
-          </div>
-          <div class="card-details grid">
-            <p class="card-title">Cyberpunk 2077</p>
-            <div class="card-prices">
-              <p class="current-price">$59.99</p>
-            </div>
-          </div>
-        </a>
-        <a href="product.html" class="card flex">
-          <div class="card-image">
-            <img
-              class="image-center"
-              src="images/covers/diablo-2.jpg"
-              alt="A person in a red robe wearing a skull mask."
-            />
-          </div>
-          <div class="card-details grid">
-            <p class="card-title">Diablo II: Resurrected</p>
-            <div class="card-prices">
-              <p class="current-price">$39.99</p>
-            </div>
-          </div>
-        </a>
-      </section>
-
-      <section class="sale-banner">
-        <a href="">
-          <div class="sale-banner-content grid">
-            <img src="images/sale/sale-covers.png" alt="Cover art of 3 games." />
-            <p>30% off <span class="screen-reader-only">on Dream alone, Little Nightmares and Hello Neighbor</span></p>
-          </div>
-        </a>
-      </section>
-
-      <section class="games-section grid">
-        <h2>Special deals</h2>
-        <a href="product.html" class="card flex">
-          <div class="card-image">
-            <img
-              class="image-center"
-              src="images/covers/gris.jpg"
-              alt="A woman with short curly hair and closed eyes."
-            />
-          </div>
-          <div class="card-details grid">
-            <p class="card-title">GRIS</p>
-            <div class="card-prices">
-              <p class="old-price">
-                <s><span class="screen-reader-only">Ordinary price </span>$16.99</s>
-              </p>
-              <p class="current-price"><span class="screen-reader-only">Sale price </span>$6.79</p>
-            </div>
-          </div>
-        </a>
-        <a href="product.html" class="card flex">
-          <div class="card-image">
-            <img class="image-top" src="images/covers/fallout-76.jpg" alt="A person wearing a helmet" />
-          </div>
-          <div class="card-details grid">
-            <p class="card-title">Fallout 76</p>
-            <div class="card-prices">
-              <p class="old-price">
-                <s><span class="screen-reader-only">Ordinary price </span>$39.99</s>
-              </p>
-              <p class="current-price"><span class="screen-reader-only">Sale price </span>$19.99</p>
-            </div>
-          </div>
-        </a>
-        <a href="product.html" class="card flex">
-          <div class="card-image">
-            <img class="image-top" src="images/covers/qube-2.jpg" alt="A woman stand on top of cubes looking away." />
-          </div>
-          <div class="card-details grid">
-            <p class="card-title">Q.U.B.E. 2</p>
-            <div class="card-prices">
-              <p class="old-price">
-                <s><span class="screen-reader-only">Ordinary price </span>$24.99</s>
-              </p>
-              <p class="current-price"><span class="screen-reader-only">Sale price </span>$9.99</p>
-            </div>
-          </div>
-        </a>
-        <a href="product.html" class="card flex">
-          <div class="card-image">
-            <img class="image-bottom" src="images/covers/portal.jpg" alt="Person going through a portal." />
-          </div>
-          <div class="card-details grid">
-            <p class="card-title">Portal</p>
-            <div class="card-prices">
-              <p class="old-price">
-                <s><span class="screen-reader-only">Ordinary price </span>$9.99</s>
-              </p>
-              <p class="current-price"><span class="screen-reader-only">Sale price </span>$2.99</p>
-            </div>
-          </div>
-        </a>
-        <a href="product.html" class="card flex">
-          <div class="card-image">
-            <img class="image-top" src="images/covers/hollow-knight.jpg" alt="Creature holding a weapon looking out." />
-          </div>
-          <div class="card-details grid">
-            <p class="card-title">Hollow Knight</p>
-            <div class="card-prices">
-              <p class="old-price">
-                <s><span class="screen-reader-only">Ordinary price </span>$15.00</s>
-              </p>
-              <p class="current-price"><span class="screen-reader-only">Sale price </span>$44.99</p>
-            </div>
-          </div>
-        </a>
-      </section>
-
-      <section class="resell-banner">
-        <a href="">
-          <div class="resell-banner-content flex">
-            <p>Get some money back after finishing a game through resell, or buy pre-owned games cheaper</p>
-            <div class="resell-banner-image">
-              <img src="images/icons/repeat.png" alt="Repeat." />
-            </div>
-          </div>
-        </a>
-      </section>
-
-      <section class="games-section grid">
-        <h2>Best sellers</h2>
-        <a href="product.html" class="card flex">
-          <div class="card-image">
-            <img class="image-center" src="images/covers/gta-5.jpg" alt="Collage of scenes from the game." />
-          </div>
-          <div class="card-details grid">
-            <p class="card-title">Grand Theft Auto V</p>
-            <p class="card-status">Pre-Owned</p>
-            <div class="card-prices">
-              <p class="old-price">
-                <s><span class="screen-reader-only">Ordinary price </span>$29.99</s>
-              </p>
-              <p class="current-price"><span class="screen-reader-only">Sale price </span>$23.99</p>
-            </div>
-          </div>
-        </a>
-        <a href="product.html" class="card flex">
-          <div class="card-image">
-            <img class="image-top" src="images/covers/wow.jpg" alt="A citadel being reflected in a shattered sky." />
-          </div>
-          <div class="card-details grid">
-            <p class="card-title">World of Warcraft: Shadowlands</p>
-            <div class="card-prices">
-              <p class="current-price">$39.99</p>
-            </div>
-          </div>
-        </a>
-        <a href="product.html" class="card flex">
-          <div class="card-image">
-            <img class="image-center" src="images/covers/witcher-3.jpg" alt="A man ready to pull out his sword." />
-          </div>
-          <div class="card-details grid">
-            <p class="card-title">The Witcher 3: Wild Hunt</p>
-            <p class="card-status">Pre-Owned</p>
-            <div class="card-prices">
-              <p class="old-price">
-                <s><span class="screen-reader-only">Ordinary price </span>$49.99</s>
-              </p>
-              <p class="current-price"><span class="screen-reader-only">Sale price </span>$39.99</p>
-            </div>
-          </div>
-        </a>
-        <a href="product.html" class="card flex">
-          <div class="card-image">
-            <img
-              class="image-center"
-              src="images/covers/sims-4.jpg"
-              alt="Group of characters with different expressions."
-            />
-          </div>
-          <div class="card-details grid">
-            <p class="card-title">The Sims 4</p>
-            <div class="card-prices">
-              <p class="current-price">$39.99</p>
-            </div>
-          </div>
-        </a>
-        <a href="product.html" class="card flex">
-          <div class="card-image">
-            <img
-              class="image-bottom"
-              src="images/covers/red-dead-redemption-2.jpg"
-              alt="A man holding a gun, and people riding horses on a red background."
-            />
-          </div>
-          <div class="card-details grid">
-            <p class="card-title">Red Dead Redemption 2</p>
-            <p class="card-status">Pre-Owned</p>
-            <div class="card-prices">
-              <p class="old-price">
-                <s><span class="screen-reader-only">Ordinary price </span>$59.99</s>
-              </p>
-              <p class="current-price"><span class="screen-reader-only">Sale price </span>$47.99</p>
-            </div>
-          </div>
-        </a>
-        <a href="product.html" class="card flex">
-          <div class="card-image">
-            <img
-              class="image-top"
-              src="images/covers/ori-and-the-will-of-the-wisp.jpg"
-              alt="A white creature with an owl standing on the edge of a cliff."
-            />
-          </div>
-          <div class="card-details grid">
-            <p class="card-title">Ori and the Will of the Wisps</p>
-            <p class="card-status">Pre-Owned</p>
-            <div class="card-prices">
-              <p class="old-price">
-                <s><span class="screen-reader-only">Ordinary price </span>$29.99</s>
-              </p>
-              <p class="current-price"><span class="screen-reader-only">Sale price </span>$23.99</p>
-            </div>
-          </div>
-        </a>
-        <a href="product.html" class="card flex">
-          <div class="card-image">
-            <img
-              class="image-center"
-              src="images/covers/assassins-creed-origins.jpg"
-              alt="A man in front of a city with a pyramid."
-            />
-          </div>
-          <div class="card-details grid">
-            <p class="card-title">Assassin's Creed Origins</p>
-            <p class="card-status">Pre-Owned</p>
-            <div class="card-prices">
-              <p class="old-price">
-                <s><span class="screen-reader-only">Ordinary price </span>$59.99</s>
-              </p>
-              <p class="current-price"><span class="screen-reader-only">Sale price </span>$47.99</p>
-            </div>
-          </div>
-        </a>
-        <a href="product.html" class="card flex">
-          <div class="card-image">
-            <img class="image-top" src="images/covers/doom.jpg" alt="Two people fighting." />
-          </div>
-          <div class="card-details grid">
-            <p class="card-title">DOOM Eternal</p>
-            <div class="card-prices">
-              <p class="current-price">$59.99</p>
-            </div>
-          </div>
-        </a>
-        <a href="product.html" class="card flex">
-          <div class="card-image">
-            <img
-              class="image-top"
-              src="images/covers/darksiders.jpg"
-              alt="A man posing on a horse with flaming legs."
-            />
-          </div>
-          <div class="card-details grid">
-            <p class="card-title">Darksiders Warmastered Edition</p>
-            <p class="card-status">Pre-Owned</p>
-            <div class="card-prices">
-              <p class="old-price">
-                <s><span class="screen-reader-only">Ordinary price </span>$19.99</s>
-              </p>
-              <p class="current-price"><span class="screen-reader-only">Sale price </span>$15.99</p>
-            </div>
-          </div>
-        </a>
-        <a href="product.html" class="card flex">
-          <div class="card-image">
-            <img
-              class="image-top"
-              src="images/covers/rise-of-the-tomb-raider.jpg"
-              alt="A woman entering a cave in the cold."
-            />
-          </div>
-          <div class="card-details grid">
-            <p class="card-title">Rise of the Tomb Raider</p>
-            <div class="card-prices">
-              <p class="current-price">$29.99</p>
-            </div>
-          </div>
-        </a>
-      </section>
-    </main>
 
     <footer>
       <div class="footer-wrapper grid">
