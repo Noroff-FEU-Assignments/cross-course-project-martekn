@@ -33,6 +33,7 @@ body {
   color: var(--black);
   background-color: var(--almost-white);
   min-width: 280px;
+  min-height: 100vh;
   flex-direction: column;
   font-family: "Open Sans", sans-serif;
   font-size: 1.2rem;
@@ -470,6 +471,10 @@ nav .menu {
   justify-content: space-between;
   margin: 30px 20px 0 0;
   justify-self: flex-end;
+}
+
+.cart-total span {
+  margin: 20px 0;
 }
 
 .cart-overlay .btn {

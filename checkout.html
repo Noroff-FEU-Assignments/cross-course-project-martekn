@@ -108,8 +108,8 @@
           </a>
         </div>
         <div class="cart-total flex">
-          <p>Total price</p>
-          <p>$123.97</p>
+          <span>Total price</span>
+          <span>$123.97</span>
         </div>
         <a href="checkout.html" class="btn">Go to checkout</a>
         <label for="cart-checkbox" class="link">Continue shopping</label>
@@ -144,8 +144,8 @@
             </a>
           </div>
           <div class="cart-total flex">
-            <p>Total price</p>
-            <p>$123.97</p>
+            <span>Total price</span>
+            <span>$123.97</span>
           </div>
         </section>
         <section>
@@ -161,21 +161,21 @@
         <section>
           <h2>Payment</h2>
           <div>
-            <span>Select payment method</span>
-            <input type="radio" name="payment-method" id="card" /><label for="card">Credit Card</label>
-            <input type="radio" name="payment-method" id="gh-wallet" /><label for="gh-wallet">GameHub Wallet</label>
-          </div>
-          <!-- <div>
-            <span>Select payment method</span>
-            <select name="" id="">
+            <label for="payment-method">Select payment method</label>
+            <select name="" id="payment-method">
+              Select payment method
               <option value="">Credit Card</option>
               <option value="">GameHub Wallet</option>
             </select>
-          </div> -->
+          </div>
           <div>
-            <label for="credit-card">Credit Card Number</label><input type="number" name="" id="credit-card" />
-            <label for="expiration-date">Expiration Date</label><input type="number" name="" id="expiration-date" />
-            <label for="security-code">Security Code</label><input type="number" name="" id="security-code" />
+            <label for="credit-card">Credit Card Number</label><input type="text" name="" id="credit-card" />
+            <label for="expiration-date">Expiration Date</label><input type="text" name="" id="expiration-date" />
+            <div>
+              <label>Security Code</label>
+              <label for="month">MM</label><input type="text" name="" id="month" /> <label for="year">YY</label
+              ><input type="text" name="" id="year" />
+            </div>
             <i class="fas fa-question-circle" aria-label="help for security code"></i>
           </div>
           <!-- <div>
