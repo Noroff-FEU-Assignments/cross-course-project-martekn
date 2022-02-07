@@ -22,6 +22,7 @@
 /** CHECKOUT **/
 
 /** CHECKOUT SUCCESS **/
+/* #region */
 main.checkout-success {
   flex: auto;
 }
@@ -41,6 +42,7 @@ main.checkout-success {
 .order-details :nth-child(2) {
   font-size: 1.5rem;
 }
+/* #endregion */
 
 @media (min-width: 700px) {
   body {
