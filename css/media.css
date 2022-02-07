@@ -7,11 +7,11 @@
     padding: 40px 0 40px 40px;
   }
 
-  .item-container {
+  .cart-overlay .item-container {
     padding-right: 40px;
   }
 
-  .cart-total {
+  .cart-overlay .cart-total {
     margin: 30px 40px 0 0;
   }
   .cart-overlay .btn {
