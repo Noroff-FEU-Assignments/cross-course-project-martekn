@@ -120,6 +120,12 @@ input[type="checkbox"] {
   display: none;
 }
 
+.checkout .cart-total {
+  justify-self: auto;
+  border-top: none;
+  margin-right: 0;
+}
+
 /* Your information */
 
 .information-edit {
