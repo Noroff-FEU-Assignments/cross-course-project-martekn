@@ -34,7 +34,7 @@
 
 /* hidden */
 input[type="checkbox"],
-.information-details,
+.checkout .information-details,
 .payment,
 .complete-checkout,
 .info-checkout-progress,
@@ -67,7 +67,7 @@ main.checkout {
 
 .checkout h1,
 .checkout .order-summary,
-.information-details,
+.checkout .information-details,
 .payment {
   grid-column: 1/3;
 }
@@ -129,7 +129,7 @@ main.checkout {
   max-width: revert;
 }
 
-.checkbox-steps:checked ~ .information-details,
+.checkbox-steps:checked ~ .checkout .information-details,
 .checkbox-steps:checked ~ .payment,
 .checkbox-steps:checked ~ .complete-checkout,
 .checkbox-steps:checked ~ .info-checkout-progress {
@@ -161,10 +161,13 @@ main.checkout {
 
 .information-details,
 .payment {
-  margin-top: 30px;
   background-color: var(--white);
   box-shadow: var(--box-shadow);
   padding: 20px;
+}
+.checkout .information-details,
+.payment {
+  margin-top: 30px;
 }
 
 .information-summary,
@@ -194,7 +197,7 @@ main.checkout {
   color: var(--main-color);
 }
 
-.information-summary,
+.checkout .information-summary,
 .information-edit {
   grid-column: 1/3;
 }
@@ -308,6 +311,71 @@ main.checkout-success {
 }
 /* #endregion */
 
+/** ACCOUNT **/
+.account-page section {
+  margin-bottom: 30px;
+}
+.change-password label {
+  display: block;
+}
+.change-password input {
+  margin-bottom: 15px;
+}
+
+.change-password .btn {
+  margin: 15px 0;
+  /* align-self: flex-end; */
+  box-sizing: content-box;
+}
+
+.change-password {
+  flex-direction: column;
+}
+.change-password,
+.gamehub-wallet,
+.order-history {
+  margin: 0 20px;
+  background-color: var(--white);
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+}
+
+.gamehub-wallet {
+  grid-template-columns: 1fr 1fr;
+}
+
+.gamehub-wallet img {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  max-width: 100px;
+  justify-self: end;
+  align-self: center;
+}
+
+.order-history thead {
+  display: none;
+}
+
+.order-history tr {
+  display: grid;
+  grid-template: 1fr 1fr;
+  justify-content: space-between;
+}
+
+tbody > :nth-child(2) {
+  margin: 30px 0;
+}
+
+tbody tr :nth-child(2),
+tbody tr :nth-child(4) {
+  font-weight: 600;
+}
+
+tbody tr :nth-child(3) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
 @media (min-width: 700px) {
   body {
     background: url(../images/background.jpg) no-repeat top;
@@ -359,9 +427,11 @@ main.checkout-success {
   }
 
   .checkout .btn,
+  .account-page .btn,
+  .account-page .label-btn,
   .checkout .label-btn {
     justify-self: end;
-    min-width: 130px;
+    min-width: 140px;
   }
 
   .information-edit > :nth-child(5),
@@ -404,6 +474,10 @@ main.checkout-success {
   .payment {
     margin: 0 20px 0 20px;
   }
+
+  .change-password .btn {
+    align-self: flex-end;
+  }
 }
 
 @media (min-width: 980px) {
@@ -420,7 +494,7 @@ main.checkout-success {
     display: none;
   }
 
-  .information-details,
+  .checkout .information-details,
   .payment,
   .complete-checkout {
     display: grid;
