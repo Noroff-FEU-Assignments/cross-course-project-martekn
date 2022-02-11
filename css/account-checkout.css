@@ -341,7 +341,7 @@ main.checkout-success {
 }
 
 .gamehub-wallet {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
 }
 
 .gamehub-wallet img {
@@ -374,6 +374,46 @@ tbody tr :nth-child(4) {
 tbody tr :nth-child(3) {
   grid-column: 2;
   grid-row: 1;
+}
+
+.account-page > div {
+  flex-direction: column;
+}
+
+@media (min-width: 980px) {
+  .account-page {
+    grid-template-columns: 5fr 3fr;
+    align-items: start;
+    gap: 0 30px;
+  }
+  .account-page h1 {
+    grid-column: 1/3;
+    margin-top: 60px;
+  }
+
+  .account-page > div {
+    grid-column: 2;
+    grid-row: 2/4;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .account-page > div section {
+    margin: 0;
+    margin: 0;
+  }
+
+  .order-history {
+    margin-right: 0px;
+  }
+
+  .account-page .information-details,
+  .account-page .order-history {
+    margin-left: 20px;
+  }
+  .account-page > div {
+    margin-right: 20px;
+  }
 }
 
 @media (min-width: 700px) {
@@ -410,6 +450,10 @@ tbody tr :nth-child(3) {
 
   .checkout {
     gap: 30px;
+  }
+
+  .information-details {
+    margin-top: 0;
   }
 
   .checkout .order-summary {
