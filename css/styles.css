@@ -6,7 +6,7 @@
     5. LINKS/BUTTONS
     6. SITE WIDE (header, nav, footer)
     7. GAMES LIST
-    8. PRODUCT CARD
+    8. PRODUCT product-card
     9. BANNERS
     10. MEDIA QUERIES
 */
@@ -103,7 +103,7 @@ h2,
 .cart-price,
 .resell-banner-content,
 .btn,
-.card,
+.product-card,
 .sale-banner-content,
 .cart-total,
 .back-label,
@@ -116,12 +116,12 @@ h2,
   font-size: 2.5rem;
 }
 
-.card {
+.product-card {
   font-size: 1rem;
 }
 
 .cart-icon,
-.card-status,
+.product-card-status,
 .old-price,
 footer p {
   font-size: 0.9rem;
@@ -561,35 +561,34 @@ footer p {
   margin: 30px 20px;
 }
 .games-section h2,
-.card-title {
+.product-card-title {
   margin: 0;
 }
 
-.card {
+.product-card {
   background-color: var(--white);
   color: black;
   box-shadow: var(--box-shadow);
   border-radius: 2px;
   min-width: 100px;
-  color: inherit;
 }
 
-.card:hover {
+.product-card:hover {
   background-color: #eff1f5;
 }
 
-.card-image {
+.product-card-image {
   max-width: 40%;
 }
 
-.card-image img {
+.product-card-image img {
   display: block;
   object-fit: cover;
   width: 100%;
   border-radius: 2px 0px 0px 2px;
 }
 
-.card-details {
+.product-card-details {
   flex: auto;
   padding: 10px;
   grid-template-columns: repeat(2, 1fr);
@@ -598,16 +597,16 @@ footer p {
   min-height: 100px;
 }
 
-.card-title {
+.product-card-title {
   grid-column: 1 / span 2;
 }
 
-.card-status,
+.product-card-status,
 .old-price {
   color: var(--light-grey);
 }
 
-.card-status {
+.product-card-status {
   margin: 0px;
   align-self: end;
 }
@@ -623,7 +622,7 @@ footer p {
 /* #region */
 .sale-banner a:focus,
 .resell-banner a:focus,
-.card:focus {
+.product-card:focus {
   outline: 2px solid var(--main-color);
 }
 
