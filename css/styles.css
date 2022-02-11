@@ -551,9 +551,26 @@ footer p {
   order: -1;
 }
 /* #endregion */
+/** CARDS **/
+/* #region */
+.card {
+  background-color: var(--white);
+  color: black;
+  box-shadow: var(--box-shadow);
+  border-radius: 2px;
+  padding: 20px;
+  margin: 0 20px;
+}
+/* #endregion */
 
 /** PRODUCT CARDS **/
 /* #region */
+
+.card.product-card {
+  padding: 0;
+  min-width: 100px;
+  margin: 0;
+}
 .games-section {
   grid-template-columns: 1fr;
   grid-template-rows: auto;
@@ -563,14 +580,6 @@ footer p {
 .games-section h2,
 .product-card-title {
   margin: 0;
-}
-
-.product-card {
-  background-color: var(--white);
-  color: black;
-  box-shadow: var(--box-shadow);
-  border-radius: 2px;
-  min-width: 100px;
 }
 
 .product-card:hover {
