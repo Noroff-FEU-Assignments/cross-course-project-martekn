@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="css/media.css" />
   </head>
 
-  <body class="flex">
+  <body class="flex bg">
     <div class="container">
       <header>
         <div class="header-wrapper grid">
@@ -58,7 +58,7 @@
           <div class="menu-wrapper flex">
             <ul>
               <li>
-                <a href="index.html" class="active">Home</a>
+                <a href="index.html" >Home</a>
               </li>
               <li>
                 <a href="product-list.html">Games</a>
@@ -117,7 +117,7 @@
 
       <main id="main-content" class="account-page grid">
         <h1>Account</h1>
-        <section class="information-details grid card">
+        <section class="information-details grid card card-left">
           <h2>Your information</h2>
           <label for="edit-info" class="edit-info"><i class="fas fa-user-edit" aria-label="edit"></i></label>
           <input type="checkbox" name="" id="edit-info" class="checkbox-edit" />
@@ -172,12 +172,12 @@
           </div>
         </section>
         <div class="flex">
-          <section class="gamehub-wallet grid card">
+          <section class="gamehub-wallet grid card card-right">
             <h2>GameHub Wallet</h2>
             <span>$100</span>
             <img src="images/gamehub.png" alt="Digital drawing of a controller inside a circle.">
           </section>
-          <section class="change-password flex card">
+          <section class="change-password flex card card-right">
             <h2>Change password</h2>
             <label for="account-email">Email</label>
             <input type="email" name="" id="account-email">
@@ -188,7 +188,7 @@
             <button type="submit" class="btn">Save password</button>
           </section>
         </div>
-        <section class="order-history card">
+        <section class="order-history card card-left">
           <h2>Order history</h2>
           <table>
             <thead>

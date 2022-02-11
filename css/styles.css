@@ -44,6 +44,10 @@ body .container {
   min-height: 100vh;
 }
 
+main {
+  margin: 30px auto;
+}
+
 main,
 .footer-wrapper {
   max-width: 1300px;
@@ -54,14 +58,21 @@ img {
 }
 
 body,
-main,
 .pre-order-banner a,
 .footer-wrapper {
   margin: 0 auto;
 }
 
-h1 {
-  padding: 0 20px;
+section {
+  margin: 0 20px;
+}
+
+input {
+  border-radius: 2px;
+  border: 2px solid var(--light-grey);
+  box-shadow: inset var(--box-shadow);
+  padding: 8px 15px;
+  background-color: var(--almost-white);
 }
 
 /* #endregion */
@@ -71,6 +82,7 @@ h1 {
 h1 {
   font-weight: 800;
   font-size: 2rem;
+  margin: 20px;
 }
 h1,
 h2,
@@ -490,7 +502,7 @@ footer {
   padding-top: 20px;
   gap: 10px;
   justify-self: end;
-  margin-top: 40px;
+  margin-top: 30px;
   background-color: var(--black);
   color: var(--white);
 }
@@ -543,10 +555,6 @@ footer p {
   flex-direction: column;
 }
 
-.main-games h1 {
-  margin-bottom: 0;
-}
-
 .main-games .banner {
   order: -1;
 }
@@ -561,6 +569,7 @@ footer p {
   padding: 20px;
   margin: 0 20px;
 }
+
 /* #endregion */
 
 /** PRODUCT CARDS **/
@@ -575,7 +584,6 @@ footer p {
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   gap: 15px;
-  margin: 30px 20px;
 }
 .games-section h2,
 .product-card-title {
@@ -719,3 +727,12 @@ footer p {
 }
 /* #endregion */
 /* #endregion */
+/** INDEX **/
+.index {
+  margin-top: 0;
+  gap: 30px;
+}
+
+.index .banner {
+  margin: 0;
+}

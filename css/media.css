@@ -81,6 +81,9 @@
 @media (min-width: 700px) {
   /** SITE WIDE **/
   /* #region */
+  body.bg {
+    background: url(../images/background.jpg) no-repeat top;
+  }
   /* Footer */
   .footer-wrapper,
   .games-section {
@@ -109,9 +112,6 @@
   /* #endregion */
   /** PRODUCT CARDS **/
   /* #region */
-  .games-section {
-    gap: 15px;
-  }
 
   .games-section h2 {
     grid-column: 1/4;
@@ -135,7 +135,6 @@
   /* #region */
   .pre-order-banner {
     flex-direction: row;
-    margin: 30px 20px 30px 20px;
   }
 
   .pre-order-image {
@@ -152,8 +151,8 @@
     border-radius: 0 2px 2px 0;
   }
 
-  .sale-banner,
-  .resell-banner {
+  .index.sale-banner,
+  .index.resell-banner {
     margin: 30px 20px;
   }
 
@@ -320,4 +319,22 @@
     grid-column: 1/6;
   }
   /* #endregion */
+
+  /** CARD **/
+  .card-right {
+    margin-left: 0;
+  }
+
+  .card-left {
+    margin-right: 0;
+  }
+
+  /** INDEX **/
+  main.index {
+    margin-top: 30px;
+  }
+
+  .index .banner {
+    margin: 0 20px;
+  }
 }
