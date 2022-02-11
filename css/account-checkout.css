@@ -129,12 +129,13 @@ main.checkout {
   max-width: revert;
 }
 
-.checkbox-steps:checked ~ .checkout .information-details,
+.checkbox-steps:checked ~ .information-details,
 .checkbox-steps:checked ~ .payment,
 .checkbox-steps:checked ~ .complete-checkout,
 .checkbox-steps:checked ~ .info-checkout-progress {
   display: grid;
 }
+
 .checkbox-steps:checked ~ .checkout-order-summary,
 .checkbox-steps:checked ~ .cart-checkout-progress,
 .checkbox-steps:checked ~ .progress-next {
@@ -493,6 +494,9 @@ tbody tr :nth-child(3) {
   }
   /** ACCOUNT PAGE **/
   /* #region */
+  .account-page {
+    margin-bottom: 60px;
+  }
   .order-history thead {
     display: revert;
     text-align: left;
@@ -525,6 +529,11 @@ tbody tr :nth-child(3) {
   .progress,
   .progress-next {
     display: none;
+  }
+
+  .checkout .information-details,
+  .payment {
+    margin-top: 0px;
   }
 
   .checkout .information-details,
