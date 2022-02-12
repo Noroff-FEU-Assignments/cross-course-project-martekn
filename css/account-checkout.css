@@ -1,9 +1,18 @@
-/** SHARED **/
+/* CSS DIRECTORY
+------------------------------------------------------------
+    1. GENERAL
+    2. HIDDEN
+    3. CHECKOUT PAGE
+    4. CHECKOUT SUCCESS PAGE
+    5. ACCOUNT PAGE
+    6. MEDIA QUERIES
+*/
+
+/** GENERAL **/
 /* #region */
 
-/* Order-summary */
+/* order summary*/
 /* #region */
-
 .progress,
 .progress-next {
   margin: 0 20px;
@@ -33,7 +42,20 @@
 }
 /* #endregion */
 
-/* hidden by default*/
+/* Complete checkout */
+/* #region */
+.complete-checkout .cart-total {
+  justify-self: auto;
+  border-top: none;
+}
+.complete-checkout .cart-total span {
+  margin-top: 0;
+}
+/* #endregion */
+
+/* #endregion */
+
+/** HIDDEN **/
 /* #region */
 input[type="checkbox"],
 .checkout .information-details,
@@ -47,9 +69,8 @@ input[type="checkbox"],
   display: none;
 }
 /* #endregion */
-/* #endregion */
 
-/** CHECKOUT **/
+/** CHECKOUT PAGE**/
 /* #region */
 .input {
   display: flex;
@@ -248,7 +269,7 @@ input[value="wallet"]:checked ~ .payment-wallet {
 }
 /* #endregion */
 
-/** CHECKOUT SUCCESS **/
+/** CHECKOUT SUCCESS PAGE**/
 /* #region */
 
 .order-details span {
@@ -260,18 +281,8 @@ input[value="wallet"]:checked ~ .payment-wallet {
 }
 /* #endregion */
 
-/* Complete checkout */
+/** ACCOUNT PAGE**/
 /* #region */
-.complete-checkout .cart-total {
-  justify-self: auto;
-  border-top: none;
-}
-.complete-checkout .cart-total span {
-  margin-top: 0;
-}
-/* #endregion */
-
-/** ACCOUNT **/
 .account-page section {
   margin-bottom: 30px;
 }
@@ -347,7 +358,10 @@ th {
 .account-page > div {
   flex-direction: column;
 }
+/* #endregion */
 
+/** MEDIA QUERIES **/
+/* #region */
 @media (min-width: 700px) {
   .progress-next {
     justify-self: end;
@@ -493,3 +507,4 @@ th {
   }
   /* #endregion */
 }
+/* #endregion */
