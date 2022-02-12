@@ -47,35 +47,6 @@
     z-index: 1001;
   }
   /* #endregion */
-
-  /** PRODUCT CARDS **/
-  /* #region */
-  .product-card {
-    font-size: 1.2rem;
-  }
-
-  .product-card-status,
-  old-price {
-    font-size: 1rem;
-  }
-  /* #endregion */
-
-  /** BANNERS **/
-  /* #region */
-  .sale-banner-content {
-    grid-template-columns: 1fr auto 1fr;
-  }
-
-  .sale-banner-content img {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .sale-banner-content p {
-    align-self: center;
-    grid-column: 3;
-  }
-  /* #endregion */
 }
 
 @media (min-width: 700px) {
@@ -85,8 +56,7 @@
     background: url(../images/background.jpg) no-repeat top;
   }
   /* Footer */
-  .footer-wrapper,
-  .games-section {
+  .footer-wrapper {
     grid-template-columns: repeat(3, 1fr);
   }
   footer .logo {
@@ -108,70 +78,6 @@
 
   .footer-social {
     margin-right: 20px;
-  }
-  /* #endregion */
-  /** PRODUCT CARDS **/
-  /* #region */
-
-  .games-section h2 {
-    grid-column: 1/4;
-  }
-
-  .product-card {
-    flex-direction: column;
-  }
-  .product-card-image {
-    max-width: 100%;
-    max-height: 250px;
-  }
-  .product-card-image img {
-    object-fit: cover;
-    display: revert;
-    height: 100%;
-    border-radius: 2px 2px 0 0;
-  }
-  /* #endregion */
-  /** BANNERS **/
-  /* #region */
-  .pre-order-banner {
-    flex-direction: row;
-  }
-
-  .pre-order-image {
-    flex: 2;
-    height: 300px;
-  }
-  .pre-order-banner img {
-    border-radius: 2px 0 0 2px;
-  }
-
-  .pre-order-content {
-    flex: 1;
-    min-width: 300px;
-    border-radius: 0 2px 2px 0;
-  }
-
-  .index.sale-banner,
-  .index.resell-banner {
-    margin: 30px 20px;
-  }
-
-  .sale-banner-content {
-    background: no-repeat url(../images/sale/sale-bg-large.png);
-    background-size: cover;
-  }
-
-  .sale-banner-content p {
-    font-size: 4rem;
-  }
-
-  .resell-banner-content p {
-    font-weight: 800;
-    font-size: 2rem;
-  }
-
-  .resell-banner-content img {
-    width: 100px;
   }
   /* #endregion */
 }
@@ -223,6 +129,7 @@
     grid-column: 1;
     justify-self: start;
   }
+
   .dark-mode {
     position: absolute;
     right: 10px;
@@ -309,16 +216,6 @@
     padding: 7px;
   }
   /* #endregion */
-  /** GAMES SECTION **/
-  /* #region */
-  .games-section {
-    grid-template-columns: repeat(5, 1fr);
-  }
-
-  .games-section h2 {
-    grid-column: 1/6;
-  }
-  /* #endregion */
 
   /** CARD **/
   .card-right {
@@ -327,14 +224,5 @@
 
   .card-left {
     margin-right: 0;
-  }
-
-  /** INDEX **/
-  main.index {
-    margin-top: 30px;
-  }
-
-  .index .banner {
-    margin: 0 20px;
   }
 }
