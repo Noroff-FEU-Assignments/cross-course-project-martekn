@@ -1,14 +1,13 @@
 /* CSS DIRECTORY
+------------------------------------------------------------
     1. VARIABLES
     2. GENERAL
     3. TYPOGRAPHY
     4. UTILITIES
-    5. LINKS/BUTTONS
-    6. SITE WIDE (header, nav, footer)
-    7. GAMES LIST
-    8. PRODUCT product-card
-    9. BANNERS
-    10. MEDIA QUERIES
+    5. LINKS/CTA
+    6. HEADER & HEADER ICONS 
+    7. OVERLAYS & NAVIGATION
+    8. FOOTER
 */
 
 /** VARIABLES **/
@@ -24,6 +23,8 @@
   --almost-black: #1b1c20;
   --black: #131313;
   --box-shadow: 2px 2px 6px rgba(75, 76, 78, 0.466);
+  --font-heading: "Raleway", sans-serif;
+  --font-body: "Open Sans", sans-serif;
 }
 /* #endregion */
 
@@ -35,13 +36,17 @@ body {
   min-width: 280px;
   min-height: 100vh;
   flex-direction: column;
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--font-body);
   font-size: 1.2rem;
   font-weight: 400;
 }
 
 body .container {
   min-height: 100vh;
+}
+
+main {
+  margin: 30px auto;
 }
 
 main,
@@ -54,14 +59,20 @@ img {
 }
 
 body,
-main,
-.pre-order-banner a,
 .footer-wrapper {
   margin: 0 auto;
 }
 
-h1 {
-  padding: 0 20px;
+section {
+  margin: 0 20px;
+}
+
+input {
+  border-radius: 2px;
+  border: 2px solid var(--light-grey);
+  box-shadow: inset var(--box-shadow);
+  padding: 8px 15px;
+  background-color: var(--almost-white);
 }
 
 /* #endregion */
@@ -71,14 +82,13 @@ h1 {
 h1 {
   font-weight: 800;
   font-size: 2rem;
+  margin: 20px;
 }
 h1,
 h2,
 .menu a,
-.btn,
-.sale-banner-content p,
-.resell-banner-content p {
-  font-family: "Raleway", sans-serif;
+.btn {
+  font-family: var(--font-heading);
 }
 
 h3 {
@@ -88,44 +98,29 @@ h3 {
 h2,
 h3,
 .menu a,
-.resell-banner-content p,
 .cart-total {
   font-size: 1.4rem;
-}
-
-.pre-order-content h2 {
-  font-size: 1.8rem;
-  font-weight: 800;
 }
 
 h2,
 .menu a,
 .cart-price,
-.resell-banner-content,
 .btn,
-.product-card,
-.sale-banner-content,
 .cart-total,
 .back-label,
 .link {
   font-weight: 600;
 }
 
-.icons,
-.sale-banner-content {
+.icons {
   font-size: 2.5rem;
 }
 
-.product-card {
-  font-size: 1rem;
-}
-
 .cart-icon,
-.product-card-status,
-.old-price,
 footer p {
   font-size: 0.9rem;
 }
+
 /* #endregion */
 
 /** UTILITIES **/
@@ -150,12 +145,12 @@ footer p {
   display: grid;
 }
 
-.icons {
-  color: var(--white);
-}
-
-.icons:hover {
-  color: rgb(219, 216, 216);
+.card {
+  background-color: var(--white);
+  color: black;
+  box-shadow: var(--box-shadow);
+  border-radius: 2px;
+  padding: 20px;
 }
 
 .image-center {
@@ -184,8 +179,8 @@ footer p {
 }
 /* #endregion */
 
-/** LINKS/BUTTONS */
-/* #region links/buttons */
+/** LINKS/CTA */
+/* #region links/cta */
 a,
 a:hover,
 a:focus,
@@ -210,6 +205,7 @@ a:active {
   text-align: center;
   display: block;
   font-size: inherit;
+  min-width: 140px;
 }
 
 .btn:focus,
@@ -228,11 +224,26 @@ a:active {
 .search-icon:active {
   background-color: var(--main-color-light);
 }
+
+.icons {
+  color: var(--white);
+}
+
+.icons:hover {
+  color: rgb(219, 216, 216);
+}
+.icons-secondary {
+  color: var(--main-color);
+}
+
+.icons-secondary:hover {
+  color: var(--main-color-dark);
+}
+
 /* #endregion */
 
-/** SITE WIDE **/
+/** HEADER & HEADER ICONS **/
 /* #region */
-/* #region Header*/
 header label,
 .icons {
   cursor: pointer;
@@ -329,7 +340,8 @@ nav,
 }
 /* #endregion */
 
-/* #region Overlays / navigation */
+/** OVERLAYS & NAVIGATION **/
+/* #region */
 .cart-overlay,
 nav {
   min-width: 280px;
@@ -342,6 +354,8 @@ nav {
   top: 0;
 }
 
+/* Navigation */
+/* #region */
 .menu-checkbox:checked ~ nav {
   display: revert;
   width: 100%;
@@ -383,8 +397,10 @@ nav .menu {
   background-color: #b6b8bc;
   border-right: 10px double var(--black);
 }
+/* #endregion */
 
-/* search overlay */
+/* Search */
+/* #region */
 .search-checkbox:checked ~ .search-overlay {
   display: revert;
   background-color: var(--white);
@@ -407,6 +423,7 @@ nav .menu {
   margin-right: 20px;
   border-radius: 0 2px 2px 0;
   display: inherit;
+  min-width: revert;
 }
 
 .search-container input {
@@ -416,8 +433,10 @@ nav .menu {
   border: 2px solid var(--main-color);
   box-shadow: inset var(--box-shadow);
 }
+/* #endregion */
 
-/* cart overlay */
+/* Cart */
+/* #region */
 .cart-checkbox:checked ~ .cart-overlay {
   display: flex;
   flex-direction: column;
@@ -451,7 +470,6 @@ nav .menu {
 }
 
 .cart-remove {
-  color: var(--main-color);
   text-align: right;
   grid-column: 2;
   grid-row: 1;
@@ -485,12 +503,15 @@ nav .menu {
 }
 /* #endregion */
 
-/* #region Footer */
+/* #endregion */
+
+/** FOOTER **/
+/* #region */
 footer {
   padding-top: 20px;
   gap: 10px;
   justify-self: end;
-  margin-top: 40px;
+  margin-top: 30px;
   background-color: var(--black);
   color: var(--white);
 }
@@ -534,179 +555,4 @@ footer p {
   margin-bottom: 5px;
 }
 
-/* #endregion */
-/* #endregion */
-
-/** GAMES LIST **/
-/* #region */
-.main-games {
-  flex-direction: column;
-}
-
-.main-games h1 {
-  margin-bottom: 0;
-}
-
-.main-games .banner {
-  order: -1;
-}
-/* #endregion */
-
-/** PRODUCT CARDS **/
-/* #region */
-.games-section {
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  gap: 15px;
-  margin: 30px 20px;
-}
-.games-section h2,
-.product-card-title {
-  margin: 0;
-}
-
-.product-card {
-  background-color: var(--white);
-  color: black;
-  box-shadow: var(--box-shadow);
-  border-radius: 2px;
-  min-width: 100px;
-}
-
-.product-card:hover {
-  background-color: #eff1f5;
-}
-
-.product-card-image {
-  max-width: 40%;
-}
-
-.product-card-image img {
-  display: block;
-  object-fit: cover;
-  width: 100%;
-  border-radius: 2px 0px 0px 2px;
-}
-
-.product-card-details {
-  flex: auto;
-  padding: 10px;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-columns: 1fr auto;
-  align-content: space-between;
-  min-height: 100px;
-}
-
-.product-card-title {
-  grid-column: 1 / span 2;
-}
-
-.product-card-status,
-.old-price {
-  color: var(--light-grey);
-}
-
-.product-card-status {
-  margin: 0px;
-  align-self: end;
-}
-
-.current-price,
-.old-price {
-  margin: 0px;
-  text-align: right;
-}
-/* #endregion */
-
-/** BANNERS **/
-/* #region */
-.sale-banner a:focus,
-.resell-banner a:focus,
-.product-card:focus {
-  outline: 2px solid var(--main-color);
-}
-
-.sale-banner a,
-.resell-banner a {
-  display: block;
-}
-
-/* #region Pre-order banner */
-.pre-order-banner,
-.pre-order-content {
-  flex-direction: column;
-}
-
-.pre-order-content {
-  padding: 30px 20px;
-  text-align: center;
-  background-color: var(--black);
-  color: var(--white);
-  justify-content: center;
-}
-
-.pre-order-content h2 {
-  margin: 0;
-}
-
-.pre-order-image {
-  height: 200px;
-}
-
-.pre-order-content p {
-  margin-top: 5px;
-  margin-bottom: 20px;
-}
-
-.pre-order-banner img {
-  background-repeat: no-repeat;
-  object-fit: cover;
-  height: 100%;
-}
-
-/* #endregion */
-
-/* #region sales banner */
-.sale-banner-content {
-  background: no-repeat url(../images/sale/sale-bg-small.png);
-  background-size: cover;
-  color: #f89523;
-  text-align: center;
-}
-
-.sale-banner-content img {
-  max-width: 500px;
-  justify-self: center;
-  grid-row: 2;
-}
-
-.sale-banner-content p {
-  justify-self: end;
-  transform: rotate(10deg);
-  margin: 5px 0;
-}
-
-.sale-banner-content,
-.resell-banner-content {
-  padding: 10px 20px;
-  border-radius: 2px;
-}
-/* #endregion */
-
-/* #region resell banner */
-.resell-banner-content {
-  justify-content: space-between;
-  gap: 30px;
-  background-color: var(--black);
-  color: var(--white);
-}
-
-.resell-banner-image {
-  align-self: center;
-}
-
-.resell-banner-image img {
-  width: 50px;
-}
-/* #endregion */
 /* #endregion */

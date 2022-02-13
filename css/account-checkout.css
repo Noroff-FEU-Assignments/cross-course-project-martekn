@@ -1,26 +1,35 @@
-/** SHARED **/
+/* CSS DIRECTORY
+------------------------------------------------------------
+    1. GENERAL
+    2. HIDDEN
+    3. CHECKOUT PAGE
+    4. CHECKOUT SUCCESS PAGE
+    5. ACCOUNT PAGE
+    6. MEDIA QUERIES
+*/
+
+/** GENERAL **/
 /* #region */
-/* Order-summary */
-.information-details,
-.payment,
-.complete-checkout,
+
+/* order summary*/
+/* #region */
 .progress,
-.progress-next,
-.order-details {
+.progress-next {
   margin: 0 20px;
 }
 
-.order-summary {
-  padding: 20px 0px 20px 20px;
-}
-
 .item-container,
-.information-edit .btn {
-  margin: 30px 0;
+.information-edit .btn,
+.change-password .btn {
+  margin: 15px 0;
 }
 
-.cart-item {
-  grid-template-rows: auto 1fr;
+.cart-total {
+  margin: 0;
+}
+
+.item-container {
+  padding: 0;
 }
 
 .cart-item img {
@@ -31,8 +40,23 @@
   height: 80px;
   margin-left: 20px;
 }
+/* #endregion */
 
-/* hidden */
+/* Complete checkout */
+/* #region */
+.complete-checkout .cart-total {
+  justify-self: auto;
+  border-top: none;
+}
+.complete-checkout .cart-total span {
+  margin-top: 0;
+}
+/* #endregion */
+
+/* #endregion */
+
+/** HIDDEN **/
+/* #region */
 input[type="checkbox"],
 .checkout .information-details,
 .payment,
@@ -46,30 +70,20 @@ input[type="checkbox"],
 }
 /* #endregion */
 
-/** CHECKOUT **/
+/** CHECKOUT PAGE**/
 /* #region */
 .input {
   display: flex;
   flex-direction: column;
 }
 
-input {
-  border-radius: 2px 0 0 2px;
-  border: 2px solid var(--light-grey);
-  box-shadow: inset var(--box-shadow);
-  padding: 8px 15px;
-  background-color: var(--almost-white);
+.checkout > div,
+.checkout section {
+  margin-bottom: 30px;
 }
 
-main.checkout {
-  grid-template-columns: 1fr auto;
-}
-
-.checkout h1,
-.checkout .order-summary,
-.checkout .information-details,
-.payment {
-  grid-column: 1/3;
+.complete-checkout {
+  padding: 0 20px;
 }
 
 .complete-checkout > div {
@@ -80,12 +94,8 @@ main.checkout {
   max-width: revert;
 }
 
-.order-summary .btn {
-  margin-right: 20px;
-}
-
-/* progress */
-
+/* progress & steps */
+/* #region */
 .progress {
   grid-template-columns: repeat(2, auto 1fr);
   align-items: center;
@@ -102,14 +112,7 @@ main.checkout {
 .info-checkout-progress div:last-of-type {
   background-color: var(--main-color);
 }
-.progress > :nth-child(1),
-.progress > :nth-child(3) {
-  grid-column: 1;
-}
 
-.progress > :nth-child(3) {
-  grid-column: 3;
-}
 .progress div {
   height: 8px;
 }
@@ -125,10 +128,6 @@ main.checkout {
   align-items: center;
 }
 
-.progress-next .btn {
-  max-width: revert;
-}
-
 .checkbox-steps:checked ~ .information-details,
 .checkbox-steps:checked ~ .payment,
 .checkbox-steps:checked ~ .complete-checkout,
@@ -141,36 +140,9 @@ main.checkout {
 .checkbox-steps:checked ~ .progress-next {
   display: none;
 }
-
-.complete-checkout .cart-total {
-  justify-self: auto;
-  border-top: none;
-  margin-right: 0;
-}
-.complete-checkout .cart-total span {
-  margin-top: 0;
-}
-
-/* checkout order */
-.checkout .order-summary {
-  background-color: var(--white);
-  box-shadow: var(--box-shadow);
-  margin: 30px 20px;
-}
+/* #endregion */
 
 /* Your information */
-
-.information-details,
-.payment {
-  background-color: var(--white);
-  box-shadow: var(--box-shadow);
-  padding: 20px;
-}
-.checkout .information-details,
-.payment {
-  margin-top: 30px;
-}
-
 .information-summary,
 .information-edit {
   gap: 15px;
@@ -195,7 +167,6 @@ main.checkout {
 
 .edit-info i {
   font-size: 2rem;
-  color: var(--main-color);
 }
 
 .checkout .information-summary,
@@ -293,15 +264,8 @@ input[value="wallet"]:checked ~ .payment-wallet {
 }
 /* #endregion */
 
-/** CHECKOUT SUCCESS **/
+/** CHECKOUT SUCCESS PAGE**/
 /* #region */
-main.checkout-success {
-  flex: auto;
-}
-
-.checkout-success h1 {
-  margin: 60px 0 0 0;
-}
 
 .order-details span {
   font-weight: 600;
@@ -312,7 +276,8 @@ main.checkout-success {
 }
 /* #endregion */
 
-/** ACCOUNT **/
+/** ACCOUNT PAGE**/
+/* #region */
 .account-page section {
   margin-bottom: 30px;
 }
@@ -324,21 +289,11 @@ main.checkout-success {
 }
 
 .change-password .btn {
-  margin: 15px 0;
-  /* align-self: flex-end; */
   box-sizing: content-box;
 }
 
 .change-password {
   flex-direction: column;
-}
-.change-password,
-.gamehub-wallet,
-.order-history {
-  margin: 0 20px;
-  background-color: var(--white);
-  box-shadow: var(--box-shadow);
-  padding: 20px;
 }
 
 .gamehub-wallet {
@@ -382,70 +337,48 @@ tbody tr :nth-child(3) {
   grid-row: 1;
 }
 
+.order-history thead {
+  text-align: left;
+}
+
+.order-history tr :nth-child(2) {
+  width: auto;
+}
+
+td,
+th {
+  padding: 5px 20px 5px 0;
+}
+
 .account-page > div {
   flex-direction: column;
 }
+/* #endregion */
 
+/** MEDIA QUERIES **/
+/* #region */
 @media (min-width: 700px) {
-  body {
-    background: url(../images/background.jpg) no-repeat top;
-  }
-
-  main.checkout-success {
-    grid-template-columns: 1fr auto;
-  }
-
-  .checkout-success h1 {
-    font-size: 2.5rem;
-  }
-
-  .checkout-success .order-summary {
-    background-color: var(--white);
-    border-radius: 2px;
-    padding: 20px 20px 20px 40px;
-    box-shadow: var(--box-shadow);
-    grid-column: 2;
-    margin: 60px 20px 0 0;
-    grid-row: 1/4;
-    max-width: 400px;
-  }
-
-  .progress {
-    grid-column: 1/3;
-  }
-
   .progress-next {
-    grid-column: 2;
-  }
-
-  .checkout {
-    gap: 30px;
+    justify-self: end;
   }
 
   .information-details {
     margin-top: 0;
   }
 
-  .checkout .order-summary {
-    margin: 0 20px;
-  }
-
   .information-edit,
-  .complete-checkout {
+  .complete-checkout,
+  .payment-card {
     grid-template-columns: 1fr 1fr;
+  }
+  .information-edit,
+  .payment-card {
     gap: 20px;
   }
 
-  .complete-checkout {
-    margin: 0 20px 0 40px;
-  }
-
-  .checkout .btn,
-  .account-page .btn,
-  .account-page .label-btn,
-  .checkout .label-btn {
+  .btn,
+  .label-btn {
     justify-self: end;
-    min-width: 140px;
   }
 
   .information-edit > :nth-child(5),
@@ -461,16 +394,10 @@ tbody tr :nth-child(3) {
     margin: 15px 0;
   }
 
-  .payment-card {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-
   .payment-card > :nth-child(1) {
     grid-column: 1/3;
   }
   .complete-checkout .cart-total {
-    margin-top: 0;
     flex-direction: column;
   }
 
@@ -481,59 +408,60 @@ tbody tr :nth-child(3) {
   .complete-checkout .btn {
     align-self: center;
   }
-  .checkout h1 {
-    margin: 20px 0 0 0;
-  }
-  .information-details,
-  .payment {
-    margin: 0 20px 0 20px;
-  }
 
   .change-password .btn {
     align-self: flex-end;
   }
+  /** CHECKOUT SUCCESS **/
+  /* #region */
+  main.checkout-success {
+    grid-template-columns: 1fr auto;
+  }
+
+  .checkout-success h1 {
+    font-size: 2.5rem;
+  }
+
+  .checkout-success .order-summary {
+    grid-column: 2;
+    padding: 20px 40px;
+    grid-row: 1/4;
+    margin-top: 20px;
+  }
+  /* #endregion */
+
   /** ACCOUNT PAGE **/
   /* #region */
-  .account-page {
-    margin-bottom: 60px;
-  }
   .order-history thead {
     display: revert;
-    text-align: left;
   }
 
   .order-history tr {
     display: revert;
   }
 
-  .order-history tr :nth-child(2) {
-    width: auto;
+  tbody tr :nth-child(2),
+  tbody tr :nth-child(4) {
+    font-weight: inherit;
   }
 
-  td,
-  th {
-    padding: 5px 20px 5px 0;
-  }
   /* #endregion */
 }
 
 @media (min-width: 980px) {
-  /** Checkout page **/
-  .checkout h1 {
-    margin-top: 60px;
+  .checkout,
+  .account-page {
+    gap: 0 30px;
   }
 
+  /** Checkout page **/
+  /* #region */
   .checkout {
     grid-template-columns: 1fr auto;
   }
   .progress,
   .progress-next {
     display: none;
-  }
-
-  .checkout .information-details,
-  .payment {
-    margin-top: 0px;
   }
 
   .checkout .information-details,
@@ -544,57 +472,31 @@ tbody tr :nth-child(3) {
   }
 
   .checkout .order-summary {
-    margin: 0 20px 0 0;
-  }
-
-  .checkout .order-summary {
     grid-column: 2;
     grid-row: 2 / 5;
     align-self: start;
   }
-  .information-details,
-  .payment,
+
   .complete-checkout {
-    margin-right: 0;
+    margin-left: 20px;
   }
-  .complete-checkout {
-    margin-right: 20px;
-  }
+  /* #endregion */
+
   /** ACCOUNT PAGE **/
   /* #region */
   .account-page {
     grid-template-columns: 5fr 3fr;
+    grid-template-rows: auto auto 1fr;
     align-items: start;
-    gap: 0 30px;
   }
   .account-page h1 {
     grid-column: 1/3;
-    margin-top: 60px;
   }
 
   .account-page > div {
     grid-column: 2;
     grid-row: 2/4;
-    flex-direction: column;
-    gap: 30px;
   }
-
-  .account-page > div section {
-    margin: 0;
-    margin: 0;
-  }
-
-  .order-history {
-    margin-right: 0px;
-  }
-
-  .account-page .information-details,
-  .account-page .order-history {
-    margin-left: 20px;
-  }
-  .account-page > div {
-    margin-right: 20px;
-  }
-
   /* #endregion */
 }
+/* #endregion */

@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="css/media.css" />
   </head>
 
-  <body class="flex">
+  <body class="flex bg">
     <div class="container">
       <header>
         <div class="header-wrapper grid">
@@ -58,7 +58,7 @@
           <div class="menu-wrapper flex">
             <ul>
               <li>
-                <a href="index.html" class="active">Home</a>
+                <a href="index.html">Home</a>
               </li>
               <li>
                 <a href="product-list.html">Games</a>
@@ -94,17 +94,17 @@
           <a href="product.html" class="cart-item grid">
             <p class="cart-title">Cyberpunk 2077</p>
             <p class="cart-price">$59.99</p>
-            <span class="material-icons cart-remove"> remove_shopping_cart </span>
+            <span class="material-icons cart-remove icons-secondary"> remove_shopping_cart </span>
           </a>
           <a href="product.html" class="cart-item grid">
             <p class="cart-title">The Witcher 3: Wild Hunt</p>
             <p class="cart-price">$39.99</p>
-            <span class="material-icons cart-remove"> remove_shopping_cart </span>
+            <span class="material-icons cart-remove icons-secondary"> remove_shopping_cart </span>
           </a>
           <a href="product.html" class="cart-item grid">
             <p class="cart-title">Ori and the Will of the Wisps</p>
             <p class="cart-price">$23.99</p>
-            <span class="material-icons cart-remove"> remove_shopping_cart </span>
+            <span class="material-icons cart-remove icons-secondary"> remove_shopping_cart </span>
           </a>
         </div>
         <div class="cart-total flex">
@@ -114,13 +114,14 @@
         <a href="checkout.html" class="btn">Go to checkout</a>
         <label for="cart-checkbox" class="link">Continue shopping</label>
       </div>
+
       <main id="main-content" class="checkout-success grid">
         <h1>Thank you for your purchase!</h1>
         <section class="order-details">
           <p>Order number: <span>12345678</span></p>
           <p>We will email you an order confirmation with details regarding your purchase.</p>
         </section>
-        <section class="order-summary">
+        <section class="order-summary card card-right">
           <h2>Order summary</h2>
           <div class="item-container flex">
             <a href="product.html" class="cart-item grid">
