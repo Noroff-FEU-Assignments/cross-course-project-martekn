@@ -381,12 +381,9 @@ th {
     gap: 20px;
   }
 
-  .checkout .btn,
-  .account-page .btn,
-  .account-page .label-btn,
-  .checkout .label-btn {
+  .btn,
+  .label-btn {
     justify-self: end;
-    min-width: 140px;
   }
 
   .information-edit > :nth-child(5),

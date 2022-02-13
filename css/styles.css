@@ -209,6 +209,7 @@ a:active {
   text-align: center;
   display: block;
   font-size: inherit;
+  min-width: 140px;
 }
 
 .btn:focus,
@@ -406,6 +407,7 @@ nav .menu {
   margin-right: 20px;
   border-radius: 0 2px 2px 0;
   display: inherit;
+  min-width: revert;
 }
 
 .search-container input {
