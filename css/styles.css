@@ -21,6 +21,8 @@
   --almost-black: #1b1c20;
   --black: #131313;
   --box-shadow: 2px 2px 6px rgba(75, 76, 78, 0.466);
+  --font-heading: "Raleway", sans-serif;
+  --font-body: "Open Sans", sans-serif;
 }
 /* #endregion */
 
@@ -32,7 +34,7 @@ body {
   min-width: 280px;
   min-height: 100vh;
   flex-direction: column;
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--font-body);
   font-size: 1.2rem;
   font-weight: 400;
 }
@@ -84,7 +86,7 @@ h1,
 h2,
 .menu a,
 .btn {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-heading);
 }
 
 h3 {

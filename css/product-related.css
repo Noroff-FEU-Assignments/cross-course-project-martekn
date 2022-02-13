@@ -27,7 +27,7 @@
 
 .sale-banner-content p,
 .resell-banner-content p {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-heading);
 }
 
 .resell-banner-content p {
