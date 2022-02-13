@@ -1,7 +1,6 @@
 @media (min-width: 330px) {
-  /** SITE WIDE **/
+  /** NAVIGATION & CART **/
   /* #region */
-  /* Nav */
   .cart-checkbox:checked ~ .cart-overlay {
     right: 0;
     padding: 40px 0 40px 40px;
@@ -50,12 +49,12 @@
 }
 
 @media (min-width: 700px) {
-  /** SITE WIDE **/
-  /* #region */
   body.bg {
     background: url(../images/background.jpg) no-repeat top;
   }
-  /* Footer */
+
+  /** FOOTER **/
+  /* #region */
   .footer-wrapper {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -83,9 +82,11 @@
 }
 
 @media (min-width: 980px) {
-  /** SITE WIDE **/
+  /** HEADER & NAVIGATION **/
   /* #region */
+
   /* Incase of menu wasn't closed when on bigger screen */
+  /* #region */
   .menu-checkbox:checked ~ .overlay {
     display: none;
   }
@@ -97,8 +98,8 @@
   .cart-checkbox:checked ~ .overlay {
     display: block;
   }
+  /* #endregion */
 
-  /* Header and nav */
   .skip,
   .account,
   .dark-mode {
@@ -218,6 +219,7 @@
   /* #endregion */
 
   /** CARD **/
+  /* #region */
   .card-right {
     margin-left: 0;
   }
@@ -225,4 +227,5 @@
   .card-left {
     margin-right: 0;
   }
+  /* #endregion */
 }

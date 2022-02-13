@@ -4,8 +4,10 @@
     2. GENERAL
     3. TYPOGRAPHY
     4. UTILITIES
-    5. LINKS/BUTTONS
-    6. SITE WIDE (header, nav, footer)
+    5. LINKS/CTA
+    6. HEADER & HEADER ICONS 
+    7. OVERLAYS & NAVIGATION
+    8. FOOTER
 */
 
 /** VARIABLES **/
@@ -143,21 +145,6 @@ footer p {
   display: grid;
 }
 
-.icons {
-  color: var(--white);
-}
-
-.icons:hover {
-  color: rgb(219, 216, 216);
-}
-.icons-secondary {
-  color: var(--main-color);
-}
-
-.icons-secondary:hover {
-  color: var(--main-color-dark);
-}
-
 .card {
   background-color: var(--white);
   color: black;
@@ -192,8 +179,8 @@ footer p {
 }
 /* #endregion */
 
-/** LINKS/BUTTONS */
-/* #region links/buttons */
+/** LINKS/CTA */
+/* #region links/cta */
 a,
 a:hover,
 a:focus,
@@ -237,11 +224,26 @@ a:active {
 .search-icon:active {
   background-color: var(--main-color-light);
 }
+
+.icons {
+  color: var(--white);
+}
+
+.icons:hover {
+  color: rgb(219, 216, 216);
+}
+.icons-secondary {
+  color: var(--main-color);
+}
+
+.icons-secondary:hover {
+  color: var(--main-color-dark);
+}
+
 /* #endregion */
 
-/** SITE WIDE **/
+/** HEADER & HEADER ICONS **/
 /* #region */
-/* #region Header*/
 header label,
 .icons {
   cursor: pointer;
@@ -338,7 +340,8 @@ nav,
 }
 /* #endregion */
 
-/* #region Overlays / navigation */
+/** OVERLAYS & NAVIGATION **/
+/* #region */
 .cart-overlay,
 nav {
   min-width: 280px;
@@ -351,6 +354,8 @@ nav {
   top: 0;
 }
 
+/* Navigation */
+/* #region */
 .menu-checkbox:checked ~ nav {
   display: revert;
   width: 100%;
@@ -392,8 +397,10 @@ nav .menu {
   background-color: #b6b8bc;
   border-right: 10px double var(--black);
 }
+/* #endregion */
 
-/* search overlay */
+/* Search */
+/* #region */
 .search-checkbox:checked ~ .search-overlay {
   display: revert;
   background-color: var(--white);
@@ -426,8 +433,10 @@ nav .menu {
   border: 2px solid var(--main-color);
   box-shadow: inset var(--box-shadow);
 }
+/* #endregion */
 
-/* cart overlay */
+/* Cart */
+/* #region */
 .cart-checkbox:checked ~ .cart-overlay {
   display: flex;
   flex-direction: column;
@@ -494,7 +503,10 @@ nav .menu {
 }
 /* #endregion */
 
-/* #region Footer */
+/* #endregion */
+
+/** FOOTER **/
+/* #region */
 footer {
   padding-top: 20px;
   gap: 10px;
@@ -543,5 +555,4 @@ footer p {
   margin-bottom: 5px;
 }
 
-/* #endregion */
 /* #endregion */

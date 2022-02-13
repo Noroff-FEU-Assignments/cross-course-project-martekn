@@ -12,7 +12,8 @@
 /* #region */
 .resell-banner-content,
 .product-card,
-.sale-banner-content {
+.sale-banner-content,
+.system-req span:nth-child(1) {
   font-weight: 600;
 }
 
@@ -47,13 +48,9 @@
 
 /** GAMES SECTIONS, LAYOUT **/
 /* #region */
-.index,
-.main-games {
-  margin-top: 0;
-}
-
 .main-games {
   flex-direction: column;
+  margin-top: 0;
 }
 
 .main-games .banner {
@@ -70,7 +67,6 @@
 
 /** PRODUCT CARDS **/
 /* #region */
-
 .card.product-card {
   padding: 0;
   min-width: 100px;
@@ -232,6 +228,7 @@
 /* #region */
 .index {
   gap: 30px;
+  margin-top: 0;
 }
 
 .product-page {
@@ -314,10 +311,6 @@ select {
 .system-req li {
   flex-direction: column;
   margin: 15px 0;
-}
-
-.system-req span:nth-child(1) {
-  font-weight: 600;
 }
 /* #endregion */
 
