@@ -146,7 +146,7 @@
 }
 
 .pre-order-content {
-  /* padding: 30px 20px; */
+  padding: 30px 20px;
   text-align: center;
   background-color: var(--black);
   color: var(--white);
