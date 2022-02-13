@@ -150,6 +150,13 @@ footer p {
 .icons:hover {
   color: rgb(219, 216, 216);
 }
+.icons-secondary {
+  color: var(--main-color);
+}
+
+.icons-secondary:hover {
+  color: var(--main-color-dark);
+}
 
 .card {
   background-color: var(--white);
@@ -454,7 +461,6 @@ nav .menu {
 }
 
 .cart-remove {
-  color: var(--main-color);
   text-align: right;
   grid-column: 2;
   grid-row: 1;
