@@ -82,10 +82,6 @@ input[type="checkbox"],
   margin-bottom: 30px;
 }
 
-.payment {
-  grid-column: 1/3;
-}
-
 .complete-checkout {
   padding: 0 20px;
 }
