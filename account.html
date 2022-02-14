@@ -58,10 +58,10 @@
           <div class="menu-wrapper flex">
             <ul>
               <li>
-                <a href="index.html" >Home</a>
+                <a href="index.html">Home</a>
               </li>
               <li>
-                <a href="product-list.html">Games</a>
+                <a href="games.html">Games</a>
               </li>
               <li>
                 <a href="pre-order.html">Pre-orders</a>
@@ -81,7 +81,7 @@
               <label for="search-checkbox" id="search-back" class="back-label">Back</label>
               <div class="search-container flex">
                 <input type="text" />
-                <a href="product-list.html" class="btn"><span class="material-icons"> search </span></a>
+                <a href="games.html" class="btn"><span class="material-icons"> search </span></a>
               </div>
             </div>
           </div>
@@ -119,8 +119,10 @@
         <h1>Account</h1>
         <section class="information-details grid card card-left">
           <h2>Your information</h2>
-          <label for="edit-info" class="edit-info"><i class="fas fa-user-edit icons-secondary" aria-label="edit"></i></label>
-          <input type="checkbox" name="" id="edit-info" class="checkbox-edit" />
+          <label for="edit-info" class="edit-info" aria-label="edit information"
+            ><i class="fas fa-user-edit icons-secondary"></i
+          ></label>
+          <input type="checkbox" name="edit-info" id="edit-info" class="checkbox-edit" />
           <div class="information-summary flex">
             <div class="flex">
               <span>Jane Doe</span>
@@ -133,39 +135,39 @@
             <!-- #region inputfields -->
             <div class="input first-name">
               <label for="first-name">First name</label>
-              <input type="text" id="first-name" />
+              <input type="text" name="first-name" id="first-name" />
             </div>
             <div class="input last-name">
               <label for="last-name">Last name</label>
-              <input type="text" id="last-name" />
+              <input type="text" name="last-name" id="last-name" />
             </div>
             <div class="input email">
               <label for="email">Email</label>
-              <input type="email" id="email" />
+              <input type="email" name="email" id="email" />
             </div>
             <div class="input phone">
               <label for="phone">Phone number</label>
-              <input type="tel" id="phone" />
+              <input type="tel" name="phone" id="phone" />
             </div>
             <div class="input address-one">
               <label for="address-one">Address field 1</label>
-              <input type="text" id="address-one" />
+              <input type="text" name="address-one" id="address-one" />
             </div>
             <div class="input address-two">
               <label for="address-two">Address field 2</label>
-              <input type="text" id="address-two" />
+              <input type="text" name="address-two" id="address-two" />
             </div>
             <div class="input postal">
               <label for="postal">Postal code / Zip code</label>
-              <input type="text" id="postal" />
+              <input type="text" name="postal" id="postal" />
             </div>
             <div class="input city">
               <label for="city">City</label>
-              <input type="text" id="city" />
+              <input type="text" name="city" id="city" />
             </div>
             <div class="input country">
               <label for="country">Country</label>
-              <input type="text" id="country" />
+              <input type="text" name="country" id="country" />
             </div>
             <!-- #endregion -->
             <label for="edit-info" class="label-btn"><span class="btn">Save changes</span></label>
@@ -175,16 +177,16 @@
           <section class="gamehub-wallet grid card card-right">
             <h2>GameHub Wallet</h2>
             <span>$100</span>
-            <img src="images/gamehub.png" alt="Digital drawing of a controller inside a circle.">
+            <img src="images/gamehub.png" alt="Digital drawing of a controller inside a circle." />
           </section>
           <section class="change-password flex card card-right">
             <h2>Change password</h2>
             <label for="account-email">Email</label>
-            <input type="email" name="" id="account-email">
+            <input type="email" name="email" id="account-email" />
             <label for="old-password">Old password</label>
-            <input type="password" name="" id="old-password">
+            <input type="password" name="old-password" id="old-password" />
             <label for="new-password">New password</label>
-            <input type="password" name="" id="new-password">
+            <input type="password" name="new-password" id="new-password" />
             <button type="submit" class="btn">Save password</button>
           </section>
         </div>
@@ -201,19 +203,19 @@
             </thead>
             <tbody>
               <tr>
-                <td><time datetime="2021-11-07">07/11/21</td>
+                <td><time datetime="2021-11-07">07/11/21</time></td>
                 <td>Cyberpunk 2077</td>
                 <td>12345678</td>
                 <td>Complete</td>
               </tr>
               <tr>
-                <td><time datetime="2021-11-07">07/11/21</td>
+                <td><time datetime="2021-11-07">07/11/21</time></td>
                 <td>The Witcher 3: Wild Hunt</td>
                 <td>12345678</td>
                 <td>Complete</td>
               </tr>
               <tr>
-                <td><time datetime="2021-11-07">07/11/21</td>
+                <td><time datetime="2021-11-07">07/11/21</time></td>
                 <td>Ori and the Will of the Wisps</td>
                 <td>12345678</td>
                 <td>Complete</td>

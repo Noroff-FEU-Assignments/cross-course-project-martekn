@@ -61,7 +61,7 @@
                 <a href="index.html">Home</a>
               </li>
               <li>
-                <a href="product-list.html">Games</a>
+                <a href="games.html">Games</a>
               </li>
               <li>
                 <a href="pre-order.html">Pre-orders</a>
@@ -81,7 +81,7 @@
               <label for="search-checkbox" id="search-back" class="back-label">Back</label>
               <div class="search-container flex">
                 <input type="text" />
-                <a href="product-list.html" class="btn"><span class="material-icons"> search </span></a>
+                <a href="games.html" class="btn"><span class="material-icons"> search </span></a>
               </div>
             </div>
           </div>
@@ -117,7 +117,7 @@
 
       <main id="main-content" class="checkout grid">
         <h1>Checkout</h1>
-        <input type="checkbox" name="" id="mobile-steps" class="checkbox-steps" />
+        <input type="checkbox" name="mobile-steps" id="mobile-steps" class="checkbox-steps" />
 
         <div class="cart-checkout-progress progress grid">
           <label for="mobile-steps"><span class="screen-reader-only">Step</span> <span>1</span></label>
@@ -169,10 +169,10 @@
 
         <section class="information-details card card-left grid">
           <h2>Your information</h2>
-          <label for="edit-info" class="edit-info"
-            ><i class="fas fa-user-edit icons-secondary" aria-label="edit"></i
+          <label for="edit-info" class="edit-info" aria-label="edit information"
+            ><i class="fas fa-user-edit icons-secondary"></i
           ></label>
-          <input type="checkbox" name="" id="edit-info" class="checkbox-edit" />
+          <input type="checkbox" name="edit-info" id="edit-info" class="checkbox-edit" />
           <div class="information-summary flex">
             <div class="flex">
               <span>Jane Doe</span>
@@ -185,47 +185,47 @@
             <!-- #region inputfields -->
             <div class="input first-name">
               <label for="first-name">First name</label>
-              <input type="text" id="first-name" />
+              <input type="text" name="first-name" id="first-name" />
             </div>
 
             <div class="input last-name">
               <label for="last-name">Last name</label>
-              <input type="text" id="last-name" />
+              <input type="text" name="last-name" id="last-name" />
             </div>
 
             <div class="input email">
               <label for="email">Email</label>
-              <input type="email" id="email" />
+              <input type="email" name="email" id="email" />
             </div>
 
             <div class="input phone">
               <label for="phone">Phone number</label>
-              <input type="tel" id="phone" />
+              <input type="tel" name="phone" id="phone" />
             </div>
 
             <div class="input address-one">
               <label for="address-one">Address field 1</label>
-              <input type="text" id="address-one" />
+              <input type="text" name="address-one" id="address-one" />
             </div>
 
             <div class="input address-two">
               <label for="address-two">Address field 2</label>
-              <input type="text" id="address-two" />
+              <input type="text" name="address-two" id="address-two" />
             </div>
 
             <div class="input postal">
               <label for="postal">Postal code / Zip code</label>
-              <input type="text" id="postal" />
+              <input type="text" name="postal" id="postal" />
             </div>
 
             <div class="input city">
               <label for="city">City</label>
-              <input type="text" id="city" />
+              <input type="text" name="city" id="city" />
             </div>
 
             <div class="input country">
               <label for="country">Country</label>
-              <input type="text" id="country" />
+              <input type="text" name="country" id="country" />
             </div>
             <!-- #endregion -->
             <label for="edit-info" class="label-btn"><span class="btn">Save changes</span></label>
@@ -235,13 +235,15 @@
         <section class="payment card card-left grid">
           <h2>Payment</h2>
           <!-- #region payment radio buttons -->
-          <label for="payment-method" class="payment-label">Select payment method</label>
-
+          <!--Not using the fieldsets due to 'checkbox hack' -->
+          <!-- <fieldset>   -->
+          <!-- <legend>Select payment method</legend> -->
+          <label class="payment-label">Select payment method</label>
           <input type="radio" name="payment-method" id="radio-card" value="card" />
           <label for="radio-card">Credit Card</label>
-
           <input type="radio" name="payment-method" id="radio-wallet" value="wallet" />
           <label for="radio-wallet">GameHub Wallet</label>
+          <!-- </fieldset> -->
 
           <!-- #endregion -->
           <div class="payment-card grid">
@@ -257,8 +259,8 @@
             <div class="input flex ccv">
               <label for="security-code">Security Code</label>
               <input type="text" name="" id="security-code" />
-              <label for="checkbox-ccv">
-                <i class="fas fa-question-circle" aria-label="help for security code"></i
+              <label for="checkbox-ccv" aria-label="help for security code">
+                <i class="fas fa-question-circle"></i
               ></label>
               <input type="checkbox" name="" id="checkbox-ccv" class="checkbox-ccv" />
 
