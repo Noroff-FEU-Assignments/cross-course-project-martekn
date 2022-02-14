@@ -57,7 +57,6 @@
 
 /** HIDDEN **/
 /* #region */
-input[type="checkbox"],
 .checkout .information-details,
 .payment,
 .complete-checkout,
@@ -457,7 +456,7 @@ th {
   /** Checkout page **/
   /* #region */
   .checkout {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 2fr 1fr;
   }
   .progress,
   .progress-next {

@@ -186,7 +186,7 @@
 }
 
 .sale-banner-content img {
-  max-width: 500px;
+  max-width: 495px;
   justify-self: center;
   grid-row: 2;
 }
@@ -247,6 +247,7 @@
 .product-images {
   flex-direction: column;
   justify-content: space-between;
+  max-height: 600px;
 }
 
 .main-image {
