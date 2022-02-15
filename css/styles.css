@@ -145,6 +145,11 @@ footer p {
   display: grid;
 }
 
+.input {
+  display: flex;
+  flex-direction: column;
+}
+
 .card {
   background-color: var(--white);
   color: black;
