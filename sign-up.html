@@ -4,11 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GameHub</title>
-    <meta
-      name="description"
-      content="GameHub sells pc games with the customers in mind. Focusing on competitive prices, having a big variety of games and the option to resell games."
-    />
+    <title>Sign up | GameHub</title>
+    <meta name="description" content="Sign up to GameHub for the option of buying and reselling games." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,123 +17,35 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/7674273682.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/log-in.css" />
+    <link rel="stylesheet" href="css/signup-login.css" />
     <link rel="stylesheet" href="css/media.css" />
   </head>
 
-  <body class="flex">
-    <header>
-      <div class="header-wrapper grid">
-        <div class="skip"><a class="screen-reader-only" href="#main-content">Skip to content</a></div>
-        <label for="menu-checkbox" class="hamburger-icon">
-          <span class="material-icons icons"> menu </span>
-        </label>
-        <a href="index.html" class="logo"><img src="images/logo.png" alt="Gamehub, the universe of games." /></a>
-        <a href="account.html" aria-label="My account" class="account"><i class="fas fa-user-circle icons"></i></a>
-        <label for="cart-checkbox" class="cart-label cart-icon">
-          <span class="material-icons icons"> shopping_cart </span>
-          <span class="cart-number">3</span>
-        </label>
-        <span class="material-icons dark-mode icons"> nightlight </span>
-      </div>
+  <body class="flex bg">
+    <header class="flex">
+      <a href="index.html"><img src="images/logo.png" alt="Gamehub, the universe of games." /></a>
+      <span class="material-icons dark-mode icons"> nightlight </span>
     </header>
-    <input type="checkbox" name="menu-checkbox" id="menu-checkbox" class="menu-checkbox checkbox-hack" />
-    <input type="checkbox" name="cart-checkbox" id="cart-checkbox" class="cart-checkbox checkbox-hack" />
-    <div class="overlay"></div>
-    <nav>
-      <div class="sub-menu flex">
-        <label for="menu-checkbox" id="close-checkbox" class="close-icon">
-          <span class="material-icons icon-close icons"> close </span>
-        </label>
-        <div class="sub-menu-icons flex">
-          <a href="account.html" aria-label="My account"><i class="fas fa-user-circle icons"></i></a>
-          <span class="material-icons icons"> nightlight </span>
-        </div>
-      </div>
-      <div class="menu">
-        <div class="menu-wrapper flex">
-          <ul>
-            <li>
-              <a href="index.html" class="active">Home</a>
-            </li>
-            <li>
-              <a href="games.html">Games</a>
-            </li>
-            <li>
-              <a href="pre-order.html">Pre-orders</a>
-            </li>
-            <li>
-              <a href="sale.html">Special deals</a>
-            </li>
-            <li>
-              <a href="resell.html">Resell games</a>
-            </li>
-          </ul>
-          <input type="checkbox" name="search-checkbox" id="search-checkbox" class="search-checkbox checkbox-hack" />
-          <label for="search-checkbox" class="search-icon">
-            <span class="material-icons icons"> search </span>
-          </label>
-          <div class="search-overlay flex">
-            <label for="search-checkbox" id="search-back" class="back-label">Back</label>
-            <div class="search-container flex">
-              <input type="text" />
-              <a href="games.html" class="btn"><span class="material-icons"> search </span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <div class="cart-overlay">
-      <label for="cart-checkbox" class="back-label">Back</label>
-      <h2>Cart summary</h2>
-      <div class="item-container flex">
-        <a href="product.html" class="cart-item grid">
-          <p class="cart-title">Cyberpunk 2077</p>
-          <p class="cart-price">$59.99</p>
-          <span class="material-icons cart-remove icons-secondary"> remove_shopping_cart </span>
-        </a>
-        <a href="product.html" class="cart-item grid">
-          <p class="cart-title">The Witcher 3: Wild Hunt</p>
-          <p class="cart-price">$39.99</p>
-          <span class="material-icons cart-remove icons-secondary"> remove_shopping_cart </span>
-        </a>
-        <a href="product.html" class="cart-item grid">
-          <p class="cart-title">Ori and the Will of the Wisps</p>
-          <p class="cart-price">$23.99</p>
-          <span class="material-icons cart-remove icons-secondary"> remove_shopping_cart </span>
-        </a>
-      </div>
-      <div class="cart-total flex">
-        <span>Total price</span>
-        <span>$123.97</span>
-      </div>
-      <a href="checkout.html" class="btn">Go to checkout</a>
-      <label for="cart-checkbox" class="link">Continue shopping</label>
-    </div>
 
-    <main id="main-content">
-      <section>
+    <main id="main-content" class="flex">
+      <form class="flex">
         <h1>Sign up</h1>
-      </section>
-    </main>
+        <div class="input">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" />
+        </div>
+        <div class="input">
+          <label for="create-password">Create password</label>
+          <input type="password" name="create-password" id="create-password" />
+        </div>
+        <div class="input">
+          <label for="Confirm-password">Confirm password</label>
+          <input type="password" name="Confirm-password" id="Confirm-password" />
+        </div>
+        <a href="index.html" class="btn">Sign up</a>
 
-    <footer>
-      <div class="footer-wrapper grid">
-        <a href="index.html" class="logo"><img src="images/logo.png" alt="Gamehub, the universe of games." /></a>
-        <div class="footer-links flex">
-          <a href="faq.html">F.A.Q.</a>
-          <a href="contact-us.html">Contact us</a>
-        </div>
-        <div class="footer-social flex">
-          <a href="#" class="icons"
-            ><i class="fab fa-facebook-f"><span class="screen-reader-only">Facebook</span></i></a
-          >
-          <a href="#" class="icons"
-            ><i class="fab fa-twitter"><span class="screen-reader-only">Twitter</span></i></a
-          >
-        </div>
-        <p>Copyright &copy; 2021 All Rights Reserved</p>
-      </div>
-    </footer>
+        <span>Already have an account?<a href="log-in.html" class="link">Log in</a></span>
+      </form>
+    </main>
   </body>
 </html>
