@@ -276,9 +276,33 @@ input[value="wallet"]:checked ~ .payment-wallet {
 
 /** ACCOUNT PAGE**/
 /* #region */
+.account-page {
+  grid-template-columns: 1fr 1fr;
+}
+
+.account-page > section,
+.account-page > div {
+  grid-column: 1/3;
+}
+
 .account-page section {
   margin-bottom: 30px;
 }
+
+.account-page > a {
+  justify-self: end;
+  align-self: center;
+  margin-right: 20px;
+  color: var(--black);
+}
+.account-page > a > i {
+  color: var(--main-color);
+}
+
+.account-page > a:hover > i {
+  color: var(--main-color-dark);
+}
+
 .change-password label {
   display: block;
 }
@@ -483,8 +507,8 @@ th {
     grid-template-rows: auto auto 1fr;
     align-items: start;
   }
-  .account-page h1 {
-    grid-column: 1/3;
+  .account-page > section {
+    grid-column: 1;
   }
 
   .account-page > div {
