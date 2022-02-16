@@ -292,6 +292,7 @@ input[value="wallet"]:checked ~ .payment-wallet {
 .account-page > a {
   justify-self: end;
   align-self: center;
+  text-align: right;
   margin-right: 20px;
   color: var(--black);
 }
@@ -301,6 +302,22 @@ input[value="wallet"]:checked ~ .payment-wallet {
 
 .account-page > a:hover > i {
   color: var(--main-color-dark);
+}
+
+.account-page > div {
+  flex-direction: column;
+}
+
+.gamehub-wallet {
+  grid-template-columns: 1fr auto;
+}
+
+.gamehub-wallet img {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  max-width: 100px;
+  justify-self: end;
+  align-self: center;
 }
 
 .change-password label {
@@ -316,18 +333,6 @@ input[value="wallet"]:checked ~ .payment-wallet {
 
 .change-password {
   flex-direction: column;
-}
-
-.gamehub-wallet {
-  grid-template-columns: 1fr auto;
-}
-
-.gamehub-wallet img {
-  grid-column: 2;
-  grid-row: 1 / 3;
-  max-width: 100px;
-  justify-self: end;
-  align-self: center;
 }
 
 table {
@@ -349,9 +354,19 @@ tbody > :nth-child(2) {
   margin: 30px 0;
 }
 
+td,
+th {
+  padding: 5px 20px 5px 0;
+}
+
 tbody tr :nth-child(2),
 tbody tr :nth-child(4) {
   font-weight: 600;
+}
+
+tbody tr :nth-child(3),
+tbody tr :nth-child(4) {
+  padding-right: 0;
 }
 
 tbody tr :nth-child(3) {
@@ -367,14 +382,6 @@ tbody tr :nth-child(3) {
   width: auto;
 }
 
-td,
-th {
-  padding: 5px 20px 5px 0;
-}
-
-.account-page > div {
-  flex-direction: column;
-}
 /* #endregion */
 
 /** MEDIA QUERIES **/
@@ -514,7 +521,13 @@ th {
   .account-page > div {
     grid-column: 2;
     grid-row: 2/4;
+    margin: 0;
   }
+
+  .account-page > div > section {
+    margin-right: 20px;
+  }
+
   /* #endregion */
 }
 /* #endregion */

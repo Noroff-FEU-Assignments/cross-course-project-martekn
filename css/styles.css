@@ -206,11 +206,10 @@ a:active {
   color: var(--white);
   border: none;
   border-radius: 2px;
-  padding: 12px 70px;
+  padding: 12px 55px;
   text-align: center;
   display: block;
   font-size: inherit;
-  min-width: 140px;
 }
 
 .btn:focus,

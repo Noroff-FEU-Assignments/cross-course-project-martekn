@@ -60,6 +60,10 @@
     );
   }
 
+  .btn {
+    min-width: 135px;
+  }
+
   /** FOOTER **/
   /* #region */
   .footer-wrapper {
