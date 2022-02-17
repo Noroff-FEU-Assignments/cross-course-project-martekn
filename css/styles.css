@@ -74,8 +74,8 @@ textarea {
   box-shadow: inset var(--box-shadow);
   padding: 8px 10px;
   background-color: var(--almost-white);
-  font-family: inherit;
-  font-size: 1rem;
+  margin-bottom: 15px;
+  font-family: sans-serif;
 }
 
 /* #endregion */
@@ -148,10 +148,10 @@ footer p {
   display: grid;
 }
 
-.input {
+/* .input {
   display: flex;
   flex-direction: column;
-}
+} */
 
 .card {
   background-color: var(--white);
@@ -435,6 +435,7 @@ nav .menu {
 
 .search-container input {
   flex: auto;
+  margin-bottom: 0;
   margin-left: 20px;
   border-radius: 2px 0 0 2px;
   border: 2px solid var(--main-color);
