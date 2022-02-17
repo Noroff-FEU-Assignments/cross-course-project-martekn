@@ -67,12 +67,15 @@ section {
   margin: 0 20px;
 }
 
-input {
+input,
+textarea {
   border-radius: 2px;
-  border: 2px solid var(--light-grey);
+  border: 1px solid var(--light-grey);
   box-shadow: inset var(--box-shadow);
-  padding: 8px 15px;
+  padding: 8px 10px;
   background-color: var(--almost-white);
+  margin-bottom: 15px;
+  font-family: sans-serif;
 }
 
 /* #endregion */
@@ -145,10 +148,10 @@ footer p {
   display: grid;
 }
 
-.input {
+/* .input {
   display: flex;
   flex-direction: column;
-}
+} */
 
 .card {
   background-color: var(--white);
@@ -432,6 +435,7 @@ nav .menu {
 
 .search-container input {
   flex: auto;
+  margin-bottom: 0;
   margin-left: 20px;
   border-radius: 2px 0 0 2px;
   border: 2px solid var(--main-color);

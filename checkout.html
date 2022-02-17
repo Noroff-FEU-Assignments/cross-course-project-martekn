@@ -164,125 +164,103 @@
         </section>
         <label for="mobile-steps" class="progress-next"><span class="btn">Next</span></label>
 
-        <section class="information-details card card-left grid">
-          <h2>Your information</h2>
-          <label for="edit-info" class="edit-info" aria-label="edit information"
-            ><i class="fas fa-user-edit icons-secondary"></i
-          ></label>
-          <input type="checkbox" name="edit-info" id="edit-info" class="checkbox-edit checkbox-hack" />
-          <div class="information-summary flex">
-            <div class="flex">
-              <span>Jane Doe</span>
-              <span>example@email.com</span>
-              <span>11223344</span>
+        <form action="checkout-success.html" method="GET">
+          <fieldset class="information-details card card-left grid">
+            <legend>Your information</legend>
+            <label for="edit-info" class="edit-info" aria-label="edit information"
+              ><i class="fas fa-user-edit icons-secondary"></i
+            ></label>
+            <input type="checkbox" name="edit-info" id="edit-info" class="checkbox-edit checkbox-hack" />
+            <div class="information-summary flex">
+              <div class="flex">
+                <span>Jane Doe</span>
+                <span>example@email.com</span>
+                <span>11223344</span>
+              </div>
+              <div class="flex"><span>Real street 11</span><span>1234, Cityname, Countryname</span></div>
             </div>
-            <div class="flex"><span>Real street 11</span><span>1234, Cityname, Countryname</span></div>
-          </div>
-          <div class="information-edit grid">
-            <!-- #region inputfields -->
-            <div class="input first-name">
+            <div class="information-edit grid">
+              <!-- #region inputfields -->
+
               <label for="first-name">First name</label>
               <input type="text" name="first-name" id="first-name" />
-            </div>
 
-            <div class="input last-name">
               <label for="last-name">Last name</label>
               <input type="text" name="last-name" id="last-name" />
-            </div>
 
-            <div class="input email">
               <label for="email">Email</label>
               <input type="email" name="email" id="email" />
-            </div>
 
-            <div class="input phone">
               <label for="phone">Phone number</label>
               <input type="tel" name="phone" id="phone" />
-            </div>
 
-            <div class="input address-one">
               <label for="address-one">Address field 1</label>
               <input type="text" name="address-one" id="address-one" />
-            </div>
 
-            <div class="input address-two">
               <label for="address-two">Address field 2</label>
               <input type="text" name="address-two" id="address-two" />
-            </div>
 
-            <div class="input postal">
               <label for="postal">Postal code / Zip code</label>
               <input type="text" name="postal" id="postal" />
-            </div>
 
-            <div class="input city">
               <label for="city">City</label>
               <input type="text" name="city" id="city" />
-            </div>
 
-            <div class="input country">
               <label for="country">Country</label>
               <input type="text" name="country" id="country" />
+
+              <!-- #endregion -->
+              <label for="edit-info" class="label-btn btn">Save changes</label>
             </div>
+          </fieldset>
+          <fieldset class="payment card card-left grid">
+            <legend>Payment</legend>
+            <!-- #region payment radio buttons -->
+            <!--Not using the fieldsets due to 'checkbox hack' -->
+            <!-- <fieldset>   -->
+            <!-- <legend>Select payment method</legend> -->
+            <label class="payment-label">Select payment method</label>
+            <input type="radio" name="payment-method" id="radio-card" value="card" />
+            <label for="radio-card">Credit Card</label>
+            <input type="radio" name="payment-method" id="radio-wallet" value="wallet" />
+            <label for="radio-wallet">GameHub Wallet</label>
+            <!-- </fieldset> -->
             <!-- #endregion -->
-            <label for="edit-info" class="label-btn"><span class="btn">Save changes</span></label>
-          </div>
-        </section>
-
-        <section class="payment card card-left grid">
-          <h2>Payment</h2>
-          <!-- #region payment radio buttons -->
-          <!--Not using the fieldsets due to 'checkbox hack' -->
-          <!-- <fieldset>   -->
-          <!-- <legend>Select payment method</legend> -->
-          <label class="payment-label">Select payment method</label>
-          <input type="radio" name="payment-method" id="radio-card" value="card" />
-          <label for="radio-card">Credit Card</label>
-          <input type="radio" name="payment-method" id="radio-wallet" value="wallet" />
-          <label for="radio-wallet">GameHub Wallet</label>
-          <!-- </fieldset> -->
-
-          <!-- #endregion -->
-          <div class="payment-card grid">
-            <div class="input">
+            <div class="payment-card grid">
               <label for="credit-card">Credit Card Number</label><input type="text" name="" id="credit-card" />
-            </div>
 
-            <div class="input">
               <label for="expiration-date">Expiration Date</label>
               <input type="text" name="" id="expiration-date" />
-            </div>
 
-            <div class="input flex ccv">
               <label for="security-code">Security Code</label>
-              <input type="text" name="" id="security-code" />
-              <label for="checkbox-ccv" aria-label="help for security code">
-                <i class="fas fa-question-circle"></i
-              ></label>
-              <input type="checkbox" name="" id="checkbox-ccv" class="checkbox-ccv checkbox-hack" />
-
-              <div class="ccv-help">
-                <img
-                  src="images/ccv-help.png"
-                  alt="Shows the security code being a 3 numbers located at the back of the card"
-                />
+              <div class="flex ccv">
+                <input type="text" name="" id="security-code" />
+                <label for="checkbox-ccv" aria-label="help for security code">
+                  <i class="fas fa-question-circle"></i
+                ></label>
+                <input type="checkbox" name="" id="checkbox-ccv" class="checkbox-ccv checkbox-hack" />
+                <div class="ccv-help">
+                  <img
+                    src="images/ccv-help.png"
+                    alt="Shows the security code being a 3 numbers located at the back of the card"
+                  />
+                </div>
               </div>
             </div>
+            <div class="payment-wallet">
+              <span class="wallet-list flex"><span>Current balance</span> <span>$200.00</span></span>
+              <span class="wallet-list flex"><span>Purchase</span> <span>$123.97</span></span>
+              <span class="wallet-list flex"><span>Balance after resell</span> <span>$76.03</span></span>
+            </div>
+          </fieldset>
+          <div class="complete-checkout card-left grid">
+            <div class="cart-total flex">
+              <span>Total price</span>
+              <span>$123.97</span>
+            </div>
+            <button type="submit" class="btn">Place order</button>
           </div>
-
-          <div class="payment-wallet">
-            <span class="wallet-list flex"><span>Current balance</span> <span>$200.00</span></span>
-            <span class="wallet-list flex"><span>Purchase</span> <span>$123.97</span></span>
-            <span class="wallet-list flex"><span>Balance after resell</span> <span>$76.03</span></span>
-          </div>
-        </section>
-        <div class="complete-checkout card-left grid">
-          <div class="cart-total flex">
-            <span>Total price</span>
-            <span>$123.97</span>
-          </div>
-          <a href="checkout-success.html" class="btn">Place order</a>
-        </div>
+        </form>
       </main>
     </div>
 

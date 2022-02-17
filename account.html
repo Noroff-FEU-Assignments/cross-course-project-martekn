@@ -115,8 +115,8 @@
       <main id="main-content" class="account-page grid">
         <h1>Account</h1>
         <a href="log-in.html" class="link"><i class="fa-solid fa-right-from-bracket"></i> Log out</a>
-        <section class="information-details grid card card-left">
-          <h2>Your information</h2>
+        <form method="post" class="information-details grid card">
+          <legend>Your information</legend>
           <label for="edit-info" class="edit-info" aria-label="edit information"
             ><i class="fas fa-user-edit icons-secondary"></i
           ></label>
@@ -131,53 +131,44 @@
           </div>
           <div class="information-edit grid">
             <!-- #region inputfields -->
-            <div class="input first-name">
-              <label for="first-name">First name</label>
-              <input type="text" name="first-name" id="first-name" />
-            </div>
-            <div class="input last-name">
-              <label for="last-name">Last name</label>
-              <input type="text" name="last-name" id="last-name" />
-            </div>
-            <div class="input email">
-              <label for="email">Email</label>
-              <input type="email" name="email" id="email" />
-            </div>
-            <div class="input phone">
-              <label for="phone">Phone number</label>
-              <input type="tel" name="phone" id="phone" />
-            </div>
-            <div class="input address-one">
-              <label for="address-one">Address field 1</label>
-              <input type="text" name="address-one" id="address-one" />
-            </div>
-            <div class="input address-two">
-              <label for="address-two">Address field 2</label>
-              <input type="text" name="address-two" id="address-two" />
-            </div>
-            <div class="input postal">
-              <label for="postal">Postal code / Zip code</label>
-              <input type="text" name="postal" id="postal" />
-            </div>
-            <div class="input city">
-              <label for="city">City</label>
-              <input type="text" name="city" id="city" />
-            </div>
-            <div class="input country">
-              <label for="country">Country</label>
-              <input type="text" name="country" id="country" />
-            </div>
+            <label for="first-name">First name</label>
+            <input type="text" name="first-name" id="first-name" />
+
+            <label for="last-name">Last name</label>
+            <input type="text" name="last-name" id="last-name" />
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" />
+
+            <label for="phone">Phone number</label>
+            <input type="tel" name="phone" id="phone" />
+
+            <label for="address-one">Address field 1</label>
+            <input type="text" name="address-one" id="address-one" />
+
+            <label for="address-two">Address field 2</label>
+            <input type="text" name="address-two" id="address-two" />
+
+            <label for="postal">Postal code / Zip code</label>
+            <input type="text" name="postal" id="postal" />
+
+            <label for="city">City</label>
+            <input type="text" name="city" id="city" />
+
+            <label for="country">Country</label>
+            <input type="text" name="country" id="country" />
+
             <!-- #endregion -->
-            <label for="edit-info" class="label-btn"><span class="btn">Save changes</span></label>
+            <label for="edit-info" class="label-btn"><button class="btn">Save changes</button></label>
           </div>
-        </section>
+        </form>
         <div class="flex">
           <section class="gamehub-wallet grid card card-right">
             <h2>GameHub Wallet</h2>
             <span>$100</span>
             <img src="images/gamehub.png" alt="Digital drawing of a controller inside a circle." />
           </section>
-          <section class="change-password flex card card-right">
+          <form class="change-password flex card card-right">
             <h2>Change password</h2>
             <label for="account-email">Email</label>
             <input type="email" name="email" id="account-email" />
@@ -186,7 +177,7 @@
             <label for="new-password">New password</label>
             <input type="password" name="new-password" id="new-password" />
             <button type="submit" class="btn">Save password</button>
-          </section>
+          </form>
         </div>
         <section class="order-history card card-left">
           <h2>Order history</h2>
