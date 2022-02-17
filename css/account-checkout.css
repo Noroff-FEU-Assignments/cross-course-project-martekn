@@ -522,11 +522,12 @@ tbody tr :nth-child(3) {
     align-items: start;
   }
 
-  .account-page form {
+  .account-page .information-details {
     margin-right: 0;
   }
+
   .order-history,
-  .account-page form {
+  .account-page .information-details {
     grid-column: 1;
   }
 
@@ -536,8 +537,8 @@ tbody tr :nth-child(3) {
     margin: 0;
   }
 
-  .account-page > div > section {
-    margin-right: 20px;
+  .account-page .change-password {
+    margin-left: 0;
   }
 
   /* #endregion */
