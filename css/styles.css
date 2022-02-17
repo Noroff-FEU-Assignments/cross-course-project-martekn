@@ -67,12 +67,15 @@ section {
   margin: 0 20px;
 }
 
-input {
+input,
+textarea {
   border-radius: 2px;
-  border: 2px solid var(--light-grey);
+  border: 1px solid var(--light-grey);
   box-shadow: inset var(--box-shadow);
-  padding: 8px 15px;
+  padding: 8px 10px;
   background-color: var(--almost-white);
+  font-family: inherit;
+  font-size: 1rem;
 }
 
 /* #endregion */
