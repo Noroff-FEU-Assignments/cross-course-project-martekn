@@ -155,7 +155,7 @@ footer p {
 
 .card {
   background-color: var(--white);
-  color: black;
+  color: var(--black);
   box-shadow: var(--box-shadow);
   border-radius: 2px;
   padding: 20px;
