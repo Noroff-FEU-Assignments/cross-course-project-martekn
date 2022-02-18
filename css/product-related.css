@@ -284,14 +284,6 @@
   margin-top: 20px;
 }
 
-select {
-  padding: 12px 7px;
-  border-radius: 2px;
-  border: 1px solid var(--black);
-  background-color: var(--dark-grey);
-  color: var(--white);
-  font-size: inherit;
-}
 /* #endregion */
 
 /* System requirements */
