@@ -216,6 +216,7 @@ a:focus,
 a:active {
   text-decoration: none;
 }
+
 .link {
   color: var(--main-color);
   text-align: center;
@@ -225,6 +226,7 @@ a:active {
   text-decoration: underline;
   color: var(--main-color-dark);
 }
+
 .btn {
   background-color: var(--main-color);
   color: var(--white);
