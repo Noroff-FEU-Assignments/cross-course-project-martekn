@@ -470,8 +470,7 @@ tbody tr :nth-child(3) {
     grid-template-columns: 1fr 1fr;
   }
 
-  .btn,
-  .label-btn {
+  .btn {
     justify-self: end;
   }
 
@@ -501,12 +500,9 @@ tbody tr :nth-child(3) {
     grid-row: 9;
   }
 
-  .information-edit .label-btn {
-    grid-column: 2;
-  }
-
   .information-edit .btn {
     margin: 15px 0;
+    grid-column: 2;
   }
   /* #endregion */
 
