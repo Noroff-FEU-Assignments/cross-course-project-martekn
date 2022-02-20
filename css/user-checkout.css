@@ -189,7 +189,7 @@ form {
 
 .payment-label {
   font-weight: 600;
-  padding-bottom: 7px 0;
+  padding-bottom: 7px;
 }
 
 .payment legend,
@@ -213,7 +213,7 @@ input[value="card"]:checked ~ .payment-card {
 }
 
 .ccv label:last-of-type {
-  margin-left: 0 0 15px 7px;
+  margin: 0 0 15px 7px;
 }
 
 .ccv {
@@ -330,8 +330,8 @@ table {
 
 .order-history tr {
   display: grid;
-  grid-template: 1fr 1fr;
-  justify-content: space-between;
+  grid-template-columns: 1fr auto;
+  column-gap: 15px;
 }
 
 tbody > :nth-child(2) {
