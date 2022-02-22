@@ -27,7 +27,7 @@
   align-self: center;
   margin: 0 20px;
   grid-template-rows: auto 1fr auto;
-  max-width: 850px;
+  max-width: 900px;
   width: 100%;
 }
 
@@ -37,6 +37,7 @@
 
 textarea {
   min-height: 160px;
+  resize: vertical;
 }
 
 .contact .btn {
@@ -51,7 +52,6 @@ textarea {
 .contact-methods div {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-rows: 1fr 1fr;
   column-gap: 10px;
   min-height: 80px;
 }
@@ -198,7 +198,7 @@ h2 {
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
     padding: 20px 60px;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 1fr auto;
     grid-template-rows: 1fr auto;
     column-gap: 60px;
   }
