@@ -192,6 +192,10 @@ form {
   padding-bottom: 7px;
 }
 
+input[type="radio"] {
+  margin: 0;
+}
+
 .payment legend,
 .payment-label,
 .payment-card {
