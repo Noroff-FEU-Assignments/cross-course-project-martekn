@@ -89,7 +89,7 @@
   display: block;
   object-fit: cover;
   width: 100%;
-  border-radius: 2px 0px 0px 2px;
+  border-radius: var(--border-radius) 0px 0px var(--border-radius);
 }
 
 .product-card-details {
@@ -200,7 +200,7 @@
 .sale-banner-content,
 .resell-banner-content {
   padding: 10px 20px;
-  border-radius: 2px;
+  border-radius: var(--border-radius);
 }
 /* #endregion */
 
@@ -376,7 +376,7 @@
     object-fit: cover;
     display: revert;
     height: 100%;
-    border-radius: 2px 2px 0 0;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
   }
   /* #endregion */
 
@@ -391,13 +391,13 @@
     height: 300px;
   }
   .pre-order-banner img {
-    border-radius: 2px 0 0 2px;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
   }
 
   .pre-order-content {
     flex: 1;
     min-width: 300px;
-    border-radius: 0 2px 2px 0;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
   }
 
   .sale-banner-content {
