@@ -25,6 +25,7 @@
   --box-shadow: 2px 2px 6px rgba(75, 76, 78, 0.466);
   --font-heading: "Raleway", sans-serif;
   --font-body: "Open Sans", sans-serif;
+  --border-radius: 2px;
 }
 /* #endregion */
 
@@ -47,6 +48,17 @@ body .container {
 
 main {
   margin: 30px auto;
+  animation-name: fade-in;
+  animation-duration: 500ms;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 main,
@@ -67,9 +79,14 @@ section {
   margin: 0 20px;
 }
 
+input,
+textarea,
+select {
+  border-radius: var(--border-radius);
+}
+
 select {
   padding: 12px 7px;
-  border-radius: 2px;
   border: 1px solid var(--black);
   background-color: var(--dark-grey);
   color: var(--white);
@@ -78,7 +95,6 @@ select {
 
 input,
 textarea {
-  border-radius: 2px;
   border: 1px solid var(--light-grey);
   box-shadow: inset var(--box-shadow);
   padding: 8px 10px;
@@ -178,7 +194,7 @@ footer p {
   background-color: var(--white);
   color: var(--black);
   box-shadow: var(--box-shadow);
-  border-radius: 2px;
+  border-radius: var(--border-radius);
   padding: 20px;
 }
 
@@ -231,11 +247,12 @@ a:active {
   background-color: var(--main-color);
   color: var(--white);
   border: none;
-  border-radius: 2px;
+  border-radius: var(--border-radius);
   padding: 12px 55px;
   text-align: center;
   display: block;
   font-size: inherit;
+  transition: background-color 500ms;
 }
 
 .btn:focus,
@@ -258,9 +275,13 @@ a:active {
 .icons {
   color: var(--white);
 }
+.icons,
+.icons-secondary {
+  transition: color 500ms;
+}
 
 .icons:hover {
-  color: rgb(219, 216, 216);
+  color: rgb(192, 192, 201);
 }
 .icons-secondary {
   color: var(--main-color);
@@ -360,7 +381,7 @@ nav,
 .cart-number {
   background-color: var(--black);
   color: white;
-  border-radius: 3px;
+  border-radius: var(--border-radius);
   padding: 5px;
   max-width: min-content;
   text-align: center;
@@ -422,6 +443,7 @@ nav .menu {
   display: block;
   color: black;
   padding: 15px 20px;
+  transition: background-color 500ms;
 }
 .menu a.active {
   background-color: #b6b8bc;
@@ -451,7 +473,7 @@ nav .menu {
 .search-container a {
   padding: 10px;
   margin-right: 20px;
-  border-radius: 0 2px 2px 0;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
   display: inherit;
   min-width: revert;
 }
@@ -460,7 +482,7 @@ nav .menu {
   flex: auto;
   margin-bottom: 0;
   margin-left: 20px;
-  border-radius: 2px 0 0 2px;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
   border: 2px solid var(--main-color);
   box-shadow: inset var(--box-shadow);
 }

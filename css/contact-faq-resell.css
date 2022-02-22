@@ -99,7 +99,7 @@ textarea {
 }
 
 .answer {
-  border-radius: 0 0 2px 2px;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
   padding: 5px 20px;
   display: none;
 }
@@ -196,7 +196,7 @@ h2 {
   .wrapper {
     background-color: var(--white);
     box-shadow: var(--box-shadow);
-    border-radius: 2px;
+    border-radius: var(--border-radius);
     padding: 20px 60px;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr auto;
