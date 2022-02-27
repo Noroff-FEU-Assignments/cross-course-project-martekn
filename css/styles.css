@@ -348,6 +348,10 @@ nav,
   max-width: fit-content;
 }
 
+.logo img {
+  width: revert;
+}
+
 .logo img,
 .logo,
 .hamburger-icon {
@@ -480,8 +484,7 @@ nav .menu {
 
 .search-container input {
   flex: auto;
-  margin-bottom: 0;
-  margin-left: 20px;
+  margin: 0 0 0 20px;
   border-radius: var(--border-radius) 0 0 var(--border-radius);
   border: 2px solid var(--main-color);
   box-shadow: inset var(--box-shadow);

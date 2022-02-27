@@ -16,15 +16,11 @@ fieldset {
   margin: 0 20px 30px 20px;
 }
 
-legend {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 1.4rem;
-  color: var(--black);
-  float: left;
+form h1 {
   margin: 20px 0;
 }
 /* order summary*/
+
 /* #region */
 .progress,
 .progress-next {
@@ -194,9 +190,10 @@ form {
 
 input[type="radio"] {
   margin: 0;
+  align-self: center;
 }
 
-.payment legend,
+.payment h2,
 .payment-label,
 .payment-card {
   grid-column: 1 / 3;
@@ -366,7 +363,6 @@ tbody tr :nth-child(3) {
 .order-history tr :nth-child(2) {
   width: auto;
 }
-
 /* #endregion */
 
 /** REGISTER PAGES **/
@@ -403,9 +399,9 @@ tbody tr :nth-child(3) {
   margin: 5px 0;
 }
 
-.register :last-of-type a {
-  display: block;
-  text-align: left;
+.register span:last-of-type {
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .link-faded {
@@ -442,6 +438,10 @@ tbody tr :nth-child(3) {
   .register :is(h1, p, span:last-of-type),
   .register span:last-of-type a {
     text-align: center;
+  }
+
+  .register span:last-of-type {
+    align-items: center;
   }
   /* #endregion */
 }

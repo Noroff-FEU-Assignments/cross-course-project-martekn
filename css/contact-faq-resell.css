@@ -112,12 +112,13 @@ input[type="checkbox"]:checked ~ label {
   color: var(--white);
 }
 /* #endregion */
+
 /** RESELL **/
 /* #region */
 .resell {
   flex: auto;
   align-items: center;
-  margin: 30px 0;
+  margin: 60px 0 30px 0;
   justify-self: center;
   align-self: center;
   width: 100%;
