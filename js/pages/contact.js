@@ -9,7 +9,7 @@ const button = document.querySelector("#submit-btn");
 const form = document.querySelector("#contact-form");
 const nameErrorText = "Please enter your full name";
 const nameErrorId = "name-error";
-const messageErrorText = "Please enter your full message";
+const messageErrorText = "Please enter your message";
 const messageErrorId = "message-error";
 
 const submitForm = (nameValidationStatus, emailValidationStatus, messageValidationStatus) => {
