@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Account | GameHub</title>
-    <meta name="description" content="Find account related information" />
+    <title>Order #12123536 | Gamehub</title>
+    <meta name="description" content="View information regarding order #12123536" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -96,63 +96,57 @@
         </nav>
       </header>
 
-      <main class="account" id="main-content">
+      <main id="main-content">
         <nav class="secondary-navigation" aria-label="breadcrumbs">
           <div class="container flex">
             <span>You are here:</span>
             <ol class="flex">
               <li><a href="./index.html">Home</a></li>
-              <li><a href="./account.html" aria-current="page">My account</a></li>
+              <li><a href="./account.html">My account</a></li>
+              <li><a href="./sale-history.html">Sale history</a></li>
+              <li><a href="./sale-details.html" aria-current="page">Order: 12123536</a></li>
             </ol>
           </div>
         </nav>
 
-        <div class="account-sections | container grid grid--even-col2">
-          <h1>My account</h1>
-          <button id="logout" class="link link--logout">Log out</button>
-          <div class="grid grid--even-col2">
-            <section class="bg-card rounded-corners shadow flex flex--col">
-              <h2>My orders</h2>
-              <p>View your purchase history</p>
-              <ul class="flow-content">
-                <li>
-                  <a href="./purchase-history.html" class="link link--link">Order history</a>
-                </li>
-              </ul>
-            </section>
-            <section class="bg-card rounded-corners shadow flex flex--col">
-              <h2>My profile</h2>
-              <p>Administrate you account information, passwords and other settings</p>
-              <ul class="flow-content">
-                <li>
-                  <a href="./account-settings.html" class="link link--link">Account settings</a>
-                </li>
-              </ul>
-            </section>
-            <section class="bg-card rounded-corners shadow flex flex--col">
-              <h2>Games library & sale</h2>
-              <p>View my games library or sale history. In games library you can view, download and sell your games.</p>
-              <ul class="flow-content">
-                <li>
-                  <a href="./sale-history.html" class="link link--link">Sale history</a>
-                </li>
-                <li>
-                  <a href="./library.html" class="link link--link">Games library</a>
-                </li>
-              </ul>
-            </section>
-            <section class="bg-card rounded-corners shadow flex flex--col">
-              <h2>Customer support</h2>
-              <p>Dont hesitate to contact for support</p>
-              <ul class="flow-content">
-                <li>
-                  <a href="./contact.html" class="link link--link">Contact us</a>
-                </li>
-                <li>
-                  <a href="./faq.html" class="link link--link">F.A.Q</a>
-                </li>
-              </ul>
-            </section>
+        <div class="order-details | container">
+          <h1>Order details</h1>
+
+          <div class="wrapper">
+            <dl class="details grid">
+              <dt class="h3">Order:</dt>
+              <dd>12123536</dd>
+              <dt class="h3">Date:</dt>
+              <dd>07/11/2021</dd>
+              <dt class="h3">Status:</dt>
+              <dd>Complete</dd>
+            </dl>
+          </div>
+          <div class="table-wrapper wrapper">
+            <table class="purchase">
+              <thead>
+                <tr>
+                  <th class="h3">Product(s)</th>
+                  <th class="h3">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Cyberpunk 2077</td>
+                  <td>$59.99</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="wrapper grid">
+            <dl class="pricing grid">
+              <dt>Price</dt>
+              <dd>$59.99</dd>
+              <dt>Price</dt>
+              <dd>$59.99</dd>
+              <dt class="h3">You recieved</dt>
+              <dd>$8.99</dd>
+            </dl>
           </div>
         </div>
       </main>
@@ -161,7 +155,12 @@
     <footer class="primary-footer | bg-dark">
       <div class="container grid grid--even-col2">
         <a href="./index.html" class="logo"><img src="./assets/logo/logo.png" alt="Gamehub" /></a>
-        <button id="theme-toggle" class="btn btn--light-focus theme-toggle" aria-pressed="false">
+        <button
+          id="theme-toggle"
+          class="btn btn--light-focus theme-toggle"
+          aria-pressed="false"
+          aria-label="theme toggle"
+        >
           <span>Darkmode</span>
           <span class="pill d-block" aria-hidden="true"><span class="ball | d-block"></span> </span>
         </button>
@@ -169,10 +168,7 @@
         <span>Copyright @ Martemkn 2022</span>
       </div>
     </footer>
+
     <script type="module" src="./js/app.js"></script>
-    <script type="module">
-      import { setupAccount } from "./js/pages/account.js";
-      setupAccount();
-    </script>
   </body>
 </html>

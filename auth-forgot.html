@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Forgot password | GameHub</title>
+    <meta name="description" content="Reset your password if you have forgotten it" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!-- Css -->
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <script src="./js/hotjar.js"></script>
+  </head>
+  <body>
+    <div class="min-full-height">
+      <a href="#main-content" class="skip-nav">Skip to content</a>
+      <nav class="sm-nav | bg-dark">
+        <div class="container">
+          <div class="logo">
+            <a href="./index.html"><img src="./assets/logo/logo.png" alt="Gamehub" /></a>
+          </div>
+        </div>
+      </nav>
+
+      <main id="main-content" class="auth | container flex">
+        <form method="post" class="flow-content flow-form bg-card rounded-corners shadow">
+          <h1>Forgot password?</h1>
+          <label for="email">Email</label>
+          <input type="email" id="email" />
+
+          <button id="recovery-btn" class="btn auth-btn">Send recovery email</button>
+          <div class="alternative flex flex--col">
+            <span class="fg-low-contrast">Just remembered?</span
+            ><a id="log-in" href="./auth-login.html" class="link">Log in</a>
+          </div>
+        </form>
+      </main>
+    </div>
+
+    <footer class="primary-footer | bg-dark">
+      <div class="container grid grid--even-col2">
+        <a href="./index.html" class="logo"><img src="./assets/logo/logo.png" alt="Gamehub" /></a>
+        <button
+          id="theme-toggle"
+          class="btn btn--light-focus theme-toggle"
+          aria-pressed="false"
+          aria-label="theme toggle"
+        >
+          <span>Darkmode</span>
+          <span class="pill d-block" aria-hidden="true"><span class="ball | d-block"></span> </span>
+        </button>
+
+        <span>Copyright @ Martemkn 2022</span>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+    <script type="module">
+      import { setupForgotPassword } from "./js/pages/forgot-password.js";
+      setupForgotPassword();
+    </script>
+  </body>
+</html>

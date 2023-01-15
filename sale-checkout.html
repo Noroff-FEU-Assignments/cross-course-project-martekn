@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sell game | Gamehub</title>
+    <meta name="description" content="Sell your old game" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!-- Css -->
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <script src="./js/hotjar.js"></script>
+  </head>
+  <body>
+    <div class="min-full-height">
+      <a href="#main-content" class="skip-nav">Skip to content</a>
+      <nav class="sm-nav | bg-dark">
+        <div class="container flex flex--wrap">
+          <div class="logo">
+            <a href="./index.html"><img src="./assets/logo/logo.png" alt="Gamehub" /></a>
+          </div>
+
+          <a href="./library.html" class="link link--back">Return to library</a>
+        </div>
+      </nav>
+      <main class="checkout purchase-checkout | container" id="main-content">
+        <h1>Sell Cyberpunk 2077</h1>
+
+        <form action="./sale-confirmation.html" method="get" class="grid">
+          <div id="details-container" class="details checkout-step | bg-card rounded-corners shadow">
+            <div class="header | flex">
+              <span class="visually-hidden">Step 1 out of 3</span>
+              <span class="step | h3 rounded-corners" aria-hidden="true">1</span>
+              <h2 class="title | h3">Personal details</h2>
+              <button id="edit-details" class="link link--edit">Edit</button>
+            </div>
+          </div>
+
+          <div class="payment checkout-step | bg-card rounded-corners shadow">
+            <div class="header | flex">
+              <span class="visually-hidden">Step 2 out of 3</span>
+              <span class="step | h3 rounded-corners" aria-hidden="true">2</span>
+              <h2 class="title | h3">Payment</h2>
+            </div>
+            <div class="main | flow-content flow-form">
+              <label for="accountnr">Bank account number</label>
+              <input type="number" id="accountnr" required />
+            </div>
+          </div>
+
+          <div class="summary checkout-step | bg-card rounded-corners shadow">
+            <div class="header | flex">
+              <span class="visually-hidden">Step 3 out of 3</span>
+              <span class="step | h3 rounded-corners" aria-hidden="true">3</span>
+              <h2 class="title h3">Order</h2>
+            </div>
+            <div class="main | flow-content flow-form">
+              <div class="item | flex">
+                <span>Cyberpunk 2077</span>
+                <span>$59.99</span>
+              </div>
+
+              <dl class="grid">
+                <dt>Price</dt>
+                <dd>$123.97</dd>
+                <dt>Your cut</dt>
+                <dd>%15</dd>
+                <dt class="h3">You recieve</dt>
+                <dd class="h3">$8.99</dd>
+              </dl>
+              <div class="flow-content">
+                <button class="btn">Complete sale</button>
+                <div class="terms">
+                  By clicking 'Complete sale' you accept our
+                  <button id="sell-btn" class="link fg-low-contrast">terms & conditions</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </main>
+    </div>
+    <footer class="primary-footer | bg-dark">
+      <div class="container grid grid--even-col2">
+        <a href="./index.html" class="logo"><img src="./assets/logo/logo.png" alt="Gamehub" /></a>
+        <button
+          id="theme-toggle"
+          class="btn btn--light-focus theme-toggle"
+          aria-pressed="false"
+          aria-label="theme toggle"
+        >
+          <span>Darkmode</span>
+          <span class="pill d-block" aria-hidden="true"><span class="ball | d-block"></span> </span>
+        </button>
+
+        <span>Copyright @ Martemkn 2022</span>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+    <script type="module">
+      import { setupSaleCheckout } from "./js/pages/sale-checkout.js";
+      setupSaleCheckout();
+    </script>
+  </body>
+</html>

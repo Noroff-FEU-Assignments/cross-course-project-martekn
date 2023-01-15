@@ -4,214 +4,281 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Ori and the will of the wisps | GameHub</title>
     <meta
       name="description"
       content="Buy new or used version of ori and the will of the wisps, a beautiful game with emotional storytelling"
     />
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@400;600;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
 
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/7674273682.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="/css/product-related.css" />
-    <link rel="stylesheet" href="css/media.css" />
+
+    <!-- Css -->
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <script src="./js/hotjar.js"></script>
   </head>
+  <body>
+    <div class="min-full-height">
+      <a href="#main-content" class="skip-nav">Skip to content</a>
+      <header class="primary-header | bg-card">
+        <div class="top-bar | container grid">
+          <button
+            id="mobile-hamburger"
+            class="mobile-nav-toggle hamburger"
+            aria-controls="primary-navigation"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            <span class="material-symbols-outlined | text-600"> menu </span>
+          </button>
 
-  <body class="flex">
-    <div class="container">
-      <header>
-        <div class="header-wrapper grid">
-          <div class="skip"><a class="screen-reader-only" href="#main-content">Skip to content</a></div>
-          <label for="menu-checkbox" class="hamburger-icon">
-            <span class="material-icons icons"> menu </span>
-          </label>
-          <a href="index.html" class="logo"><img src="images/logo.png" alt="Gamehub, the universe of games." /></a>
-          <a href="account.html" aria-label="My account" class="account"><i class="fas fa-user-circle icons"></i></a>
-          <label for="cart-checkbox" class="cart-label cart-icon">
-            <span class="material-icons icons"> shopping_cart </span>
-            <span class="cart-number">3</span>
-          </label>
-          <span class="material-icons dark-mode icons"> nightlight </span>
+          <div class="logo">
+            <a href="./index.html"><img src="./assets/logo/logo.png" alt="Gamehub" /></a>
+          </div>
+
+          <div class="search | flex">
+            <label for="search-input" class="visually-hidden">Search for games</label>
+            <input type="text" name="search-input" id="search-input" placeholder="Search..." />
+            <button id="search-btn">
+              <span class="material-symbols-outlined"> search </span>
+            </button>
+          </div>
+
+          <div class="cta-group | flex">
+            <a id="auth" href="./auth-login.html" class="user | flex">
+              <span id="auth-icon" class="material-symbols-outlined"> login </span>
+              <span id="auth-text">Log in</span>
+            </a>
+            <a href="./shopping-cart.html" class="cart | flex">
+              <span class="material-symbols-outlined | text-550"> shopping_cart </span>
+              <span id="counter-container" class="counter | rounded-corners">
+                <span class="visually-hidden">Items in cart:</span>
+                <span id="count">3</span>
+              </span>
+            </a>
+          </div>
         </div>
+
+        <nav id="primary-navigation-wrapper" class="primary-navigation-wrapper | bg-dark" data-visible="false">
+          <div class="container">
+            <button
+              id="mobile-close"
+              class="mobile-nav-toggle close"
+              aria-controls="primary-navigation"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              <span class="material-symbols-outlined text-550"> close </span>
+            </button>
+            <ul id="primary-navigation" class="primary-navigation | flex" aria-label="primary navigation">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./games-all.html">Games</a></li>
+              <li><a href="./games-preorder.html">Pre-orders</a></li>
+              <li><a href="./games-deals.html">Special deals</a></li>
+              <a href="./faq.html"
+                ><span clasS="visually-hidden">Frequently asked questions</span
+                ><span aria-hidden="True">F.A.Q.</span></a
+              >
+              <li><a href="./contact.html">Contact us</a></li>
+            </ul>
+          </div>
+        </nav>
       </header>
-      <input type="checkbox" name="menu-checkbox" id="menu-checkbox" class="menu-checkbox checkbox-hack" />
-      <input type="checkbox" name="cart-checkbox" id="cart-checkbox" class="cart-checkbox checkbox-hack" />
-      <div class="overlay"></div>
-      <nav>
-        <div class="sub-menu flex">
-          <label for="menu-checkbox" id="close-checkbox" class="close-icon">
-            <span class="material-icons icon-close icons"> close </span>
-          </label>
-          <div class="sub-menu-icons flex">
-            <a href="account.html" aria-label="My account"><i class="fas fa-user-circle icons"></i></a>
-            <span class="material-icons icons"> nightlight </span>
-          </div>
-        </div>
-        <div class="menu">
-          <div class="menu-wrapper flex">
-            <ul>
-              <li>
-                <a href="index.html">Home</a>
-              </li>
-              <li>
-                <a href="games.html">Games</a>
-              </li>
-              <li>
-                <a href="pre-order.html">Pre-orders</a>
-              </li>
-              <li>
-                <a href="sale.html">Special deals</a>
-              </li>
-              <li>
-                <a href="resell.html">Resell games</a>
-              </li>
-            </ul>
-            <input type="checkbox" name="search-checkbox" id="search-checkbox" class="search-checkbox checkbox-hack" />
-            <label for="search-checkbox" class="search-icon">
-              <span class="material-icons icons"> search </span>
-            </label>
-            <div class="search-overlay flex">
-              <label for="search-checkbox" id="search-back" class="back-label">Back</label>
-              <div class="search-container flex">
-                <input type="text" />
-                <a href="games.html" class="btn"><span class="material-icons"> search </span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <div class="cart-overlay">
-        <label for="cart-checkbox" class="back-label">Back</label>
-        <h2>Cart summary</h2>
-        <div class="item-container flex">
-          <a href="product.html" class="cart-item grid">
-            <p class="cart-title">Cyberpunk 2077</p>
-            <p class="cart-price">$59.99</p>
-            <span class="material-icons cart-remove icons-secondary"> remove_shopping_cart </span>
-          </a>
-          <a href="product.html" class="cart-item grid">
-            <p class="cart-title">The Witcher 3: Wild Hunt</p>
-            <p class="cart-price">$39.99</p>
-            <span class="material-icons cart-remove icons-secondary"> remove_shopping_cart </span>
-          </a>
-          <a href="product.html" class="cart-item grid">
-            <p class="cart-title">Ori and the Will of the Wisps</p>
-            <p class="cart-price">$23.99</p>
-            <span class="material-icons cart-remove icons-secondary"> remove_shopping_cart </span>
-          </a>
-        </div>
-        <div class="cart-total flex">
-          <span>Total price</span>
-          <span>$123.97</span>
-        </div>
-        <a href="checkout.html" class="btn">Go to checkout</a>
-        <label for="cart-checkbox" class="link">Continue shopping</label>
-      </div>
 
-      <main id="main-content" class="product-page grid">
-        <h1>Ori and the Will of the Wisps</h1>
-        <section class="product-images flex">
-          <div class="main-image flex">
-            <img
-              src="images/product/product-cover.png"
-              alt="A white creature with an owl standing on the edge of a cliff."
-            />
+      <main class="product" id="main-content">
+        <nav class="secondary-navigation" aria-label="breadcrumbs">
+          <div class="container flex">
+            <span>You are here:</span>
+            <ol class="flex">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./games-all.html">Games</a></li>
+              <li>
+                <a href="./product.html" aria-current="page">Ori and the Will of the Wisps</a>
+              </li>
+            </ol>
           </div>
-          <div class="flex image-scroll scroll">
-            <img
-              src="images/product/product-image-1.jpg"
-              alt="Bird of stone looking towards and owl and a lighting creature."
-            />
-            <img
-              src="images/product/product-image-2.jpg"
-              alt="A creature that lights up, flying on the back of an owl."
-            />
-            <img
-              src="images/product/product-image-3.jpg"
-              alt="Creatures in a green forest with waterfalls and light shining through."
-            />
-            <img src="images/product/product-image-4.jpg" alt="Huge spider with green glowing eyes and details." />
-            <img src="images/product/product-image-5.jpg" alt="Group of various creatures looking at a tiny owl. " />
-            <img
-              src="images/product/product-image-6.jpg"
-              alt="Creature that lights up running over a tree on the ground."
-            />
-            <img
-              src="images/product/product-image-7.jpg"
-              alt="A scenery of a tiny creature that lights up with the sun in the background."
-            />
-          </div>
-        </section>
-        <section class="product-description flex">
-          <h2>Description</h2>
-          <p>
-            The little spirit Ori is no stranger to peril, but when a fateful flight puts the owlet Ku in harm's way, it
-            will take more than bravery to bring a family back together, heal a broken land, and discover Ori's true
-            destiny.
-          </p>
-          <p>
-            From the creators of the acclaimed action-platformer Ori and the Blind Forest comes the highly anticipated
-            sequel. Embark on an all-new adventure in a vast world filled with new friends and foes that come to life in
-            stunning, hand-painted artwork. Set to a fully orchestrated original score, Ori and the Will of the Wisps
-            continues the Moon Studios tradition of tightly crafted platforming action and deeply emotional
-            storytelling.
-          </p>
-          <div class="grid">
-            <select name="price-option" id="price-option">
-              <option value="new">New $29.99</option>
-              <option value="pre-owned">Pre-Owned $23.99</option>
-            </select>
-            <button class="btn">Add to cart</button>
-          </div>
-        </section>
-        <section class="system-req grid">
-          <h2>System Requirements</h2>
-          <div>
-            <h3>Minimum</h3>
-            <ul>
-              <li class="flex"><span>OS:</span> <span>Windows 10 Version 18362.0 or higher</span></li>
-              <li class="flex"><span>Processor:</span> <span>AMD Athlon X4 | Intel Core i5 4460</span></li>
-              <li class="flex"><span>Memory:</span> <span>8 GB RAM</span></li>
-              <li class="flex"><span>Graphics:</span> <span>Nvidia GTX 950 | AMD R7 370</span></li>
-              <li class="flex"><span>DirectX:</span> <span>Version 11</span></li>
-              <li class="flex"><span>Storage:</span> <span>20 GB available space</span></li>
+        </nav>
+
+        <div class="product-view | container grid">
+          <h1>Ori and the Will of the Wisps</h1>
+          <div class="slider-container | flex flex--col" aria-label="image slider">
+            <div id="main-view" class="main-view | flex bg-card rounded-corners shadow">
+              <button class="slider-button slider-button--left" aria-label="previous" aria-controls="main-view">
+                <span class="material-symbols-outlined"> chevron_left </span>
+              </button>
+              <button
+                class="slider-button slider-button--dark slider-button--right"
+                aria-label="next"
+                aria-controls="main-view"
+              >
+                <span class="material-symbols-outlined"> chevron_right </span>
+              </button>
+              <div id="image-container" class="image-container"></div>
+            </div>
+            <ul id="slider" class="slider | flex">
+              <li data-image="cover">
+                <img
+                  src="./assets/product/prod-cover.jpg"
+                  alt="A white creature with an owl standing on the edge of a cliff."
+                />
+              </li>
+              <li><img src="./assets/product/prod-img1.jpg" alt="Ori flying on an owl" /></li>
+              <li><img src="./assets/product/prod-img2.jpg" alt="Large wolf with mouth open infront of Ori" /></li>
+              <li>
+                <img src="./assets/product/prod-img3.jpg" alt="Ori looking at a tree with something glowing in it" />
+              </li>
+              <li><img src="./assets/product/prod-img4.jpg" alt="Ori walking up a hill" /></li>
+              <li><img src="./assets/product/prod-img5.jpg" alt="Platform with beams" /></li>
+              <li><img src="./assets/product/prod-img6.jpg" alt="Large spider with green glowing bits and eyes" /></li>
             </ul>
           </div>
-          <div>
-            <h3>Recommended</h3>
-            <ul>
-              <li class="flex"><span>OS:</span> <span>Windows 10 Version 18362.0 or higher</span></li>
-              <li class="flex"><span>Processor:</span> <span>AMD Ryzen 3 | Intel i5 Skylake</span></li>
-              <li class="flex"><span>Memory:</span> <span>8 GB RAM</span></li>
-              <li class="flex"><span>Graphics:</span> <span>Nvidia GTX 970 | AMD RX 570</span></li>
-              <li class="flex"><span>DirectX:</span> <span>Version 11</span></li>
-              <li class="flex"><span>Storage:</span> <span>20 GB available space</span></li>
-            </ul>
+          <div class="product-info">
+            <div class="price | text-550">$29.99</div>
+            <div class="condition | flow-content">
+              <span class="fg-low-contrast">Condition: <span class="state | text-bold">New</span></span>
+              <ul class="grid grid--even-columns">
+                <li><a href="./product.html" class="active">New</a></li>
+                <li><a href="./product.html" class="">Pre-owned</a></li>
+              </ul>
+            </div>
+            <div><button id="btn-cart" class="btn">Add to cart</button></div>
+            <div>
+              <section class="rating | flow-content bg-card rounded-corners">
+                <div class="flex">
+                  <h2 class="h3">Metascore</h2>
+                  <span class="score | text-450 grid">88</span>
+                </div>
+                <footer>
+                  <div>Metacritic.com</div>
+                  <div>Updated 20.11.2021</div>
+                </footer>
+              </section>
+            </div>
+            <dl class="grid">
+              <dt>Genre</dt>
+              <dd>Adventure, platform</dd>
+              <dt>Release date</dt>
+              <dd>March 10, 2020</dd>
+              <dt>Developer</dt>
+              <dd>Moon Studios</dd>
+            </dl>
           </div>
-        </section>
+          <section class="about flow-content">
+            <h2>About the game</h2>
+            <p>
+              The little spirit Ori is no stranger to peril, but when a fateful flight puts the owlet Ku in harm’s way,
+              it will take more than bravery to bring a family back together, heal a broken land, and discover Ori’s
+              true destiny.
+            </p>
+            <p>
+              From the creators of the acclaimed action-platformer Ori and the Blind Forest comes the highly anticipated
+              sequel. Embark on an all-new adventure in a vast world filled with new friends and foes that come to life
+              in stunning, hand-painted artwork. Set to a fully orchestrated original score, Ori and the Will of the
+              Wisps continues the Moon Studios tradition of tightly crafted platforming action and deeply emotional
+              storytelling.
+            </p>
+          </section>
+
+          <section class="system-req flow-content">
+            <h2>System requirements</h2>
+            <section class="flow-content">
+              <h3>Minimum requirements:</h3>
+              <dl class="flow-content">
+                <div class="grid">
+                  <dt>OS:</dt>
+                  <dd>Windows 10 Version 18362.0 or higher</dd>
+                </div>
+                <div class="grid">
+                  <dt>Processor:</dt>
+                  <dd>AMD Athlon X4 | Intel Core i5 4460</dd>
+                </div>
+                <div class="grid">
+                  <dt>Memory:</dt>
+                  <dd>8 GB RAM</dd>
+                </div>
+                <div class="grid">
+                  <dt>Graphics:</dt>
+                  <dd>Nvidia GTX 950 | AMD R7 370</dd>
+                </div>
+                <div class="grid">
+                  <dt>DirectX:</dt>
+                  <dd>Version 11</dd>
+                </div>
+                <div class="grid">
+                  <dt>Storage:</dt>
+                  <dd>20 GB available space</dd>
+                </div>
+              </dl>
+            </section>
+            <section class="flow-content">
+              <h3>Recommended requirements:</h3>
+              <dl class="flow-content">
+                <div class="grid">
+                  <dt>OS:</dt>
+                  <dd>Windows 10 Version 18362.0 or higher</dd>
+                </div>
+                <div class="grid">
+                  <dt>Processor:</dt>
+                  <dd>AMD Athlon X4 | Intel Core i5 4460</dd>
+                </div>
+                <div class="grid">
+                  <dt>Memory:</dt>
+                  <dd>8 GB RAM</dd>
+                </div>
+                <div class="grid">
+                  <dt>Graphics:</dt>
+                  <dd>Nvidia GTX 950 | AMD R7 370</dd>
+                </div>
+                <div class="grid">
+                  <dt>DirectX:</dt>
+                  <dd>Version 11</dd>
+                </div>
+                <div class="grid">
+                  <dt>Storage:</dt>
+                  <dd>20 GB available space</dd>
+                </div>
+              </dl>
+            </section>
+          </section>
+        </div>
       </main>
     </div>
 
-    <footer>
-      <div class="footer-wrapper grid">
-        <a href="index.html" class="logo"><img src="images/logo.png" alt="Gamehub, the universe of games." /></a>
-        <div class="footer-links flex">
-          <a href="faq.html">F.A.Q.</a>
-          <a href="contact-us.html">Contact us</a>
-        </div>
-        <div class="footer-social flex">
-          <a href="#" class="icons" aria-label="facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="icons" aria-label="twitter"><i class="fab fa-twitter"></i></a>
-        </div>
-        <p>Copyright &copy; 2021 All Rights Reserved</p>
+    <footer class="primary-footer | bg-dark">
+      <div class="container grid grid--even-col2">
+        <a href="./index.html" class="logo"><img src="./assets/logo/logo.png" alt="Gamehub" /></a>
+        <button
+          id="theme-toggle"
+          class="btn btn--light-focus theme-toggle"
+          aria-pressed="false"
+          aria-label="theme toggle"
+        >
+          <span>Darkmode</span>
+          <span class="pill d-block" aria-hidden="true"><span class="ball | d-block"></span> </span>
+        </button>
+
+        <span>Copyright @ Martemkn 2022</span>
       </div>
     </footer>
+
+    <script type="module" src="./js/app.js"></script>
+    <script type="module">
+      import { setupProductPage } from "./js/pages/product-page.js";
+      setupProductPage();
+    </script>
   </body>
 </html>
