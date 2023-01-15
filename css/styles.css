@@ -991,21 +991,21 @@ body {
 /** 13. Confirmation / thank you page
 -------------------------*/
 /* #region */
-.checkout-confirmation {
+.confirmation-page {
   margin-top: var(--space-1000);
   --flow-space: var(--space-375);
 }
 
-.checkout-confirmation p:first-of-type {
+.confirmation-page p:first-of-type {
   --flow-space: var(--space-500);
   max-width: 70ch;
 }
 
 @media (max-width: 45em) {
-  .checkout-confirmation {
+  .confirmation-page {
     margin-top: var(--space-600);
   }
-  .checkout-confirmation h1 {
+  .confirmation-page h1 {
     font-size: var(--fs-550);
   }
 }

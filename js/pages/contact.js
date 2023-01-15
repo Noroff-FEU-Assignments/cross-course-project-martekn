@@ -17,6 +17,7 @@ const submitForm = (nameValidationStatus, emailValidationStatus, messageValidati
     button.disabled = true;
     button.innerText = "Message is sent";
     form.reset();
+    location.href = "./message-success.html";
   } else {
     const nameError = document.querySelector(`#${nameErrorId}`);
     const emailError = document.querySelector("#email-error");

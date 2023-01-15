@@ -82,7 +82,7 @@ export const setupAuth = () => {
     } else {
       authLink.setAttribute("href", "./auth-login.html");
       authIcon.innerText = "login";
-      authText.innerText = "log in";
+      authText.innerText = "Log in";
     }
   }
 };
