@@ -166,6 +166,7 @@ input[type="number"] {
 }
 
 .select-wrapper select {
+  cursor: pointer;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -459,7 +460,6 @@ a.card:focus-visible {
 }
 
 .filter select {
-  cursor: pointer;
   background-color: var(--clr-bg);
   padding-left: 0;
   outline: none;
