@@ -1,5 +1,4 @@
 const themeButton = document.querySelector("#theme-toggle");
-
 /**
  * Toggles the theme
  * @param {HTMLElement} button or element with aria-pressed attribute
@@ -8,7 +7,11 @@ const themeButton = document.querySelector("#theme-toggle");
 const toggleTheme = (button, themeState) => {
   const html = document.querySelector("html");
   button.setAttribute("aria-pressed", themeState);
-  html.classList.toggle("dark");
+  if (themeState) {
+    html.classList.add("dark");
+  } else {
+    html.classList.remove("dark");
+  }
 };
 
 const getThemeFromLS = () => {
@@ -25,6 +28,14 @@ const updateTheme = () => {
   toggleTheme(themeButton, newState);
 
   localStorage.setItem("theme", JSON.stringify(newState));
+};
+
+export const pageLoadTheme = () => {
+  const themeState = JSON.parse(localStorage.getItem("theme"));
+  if (themeState) {
+    const html = document.querySelector("html");
+    html.classList.add("dark");
+  }
 };
 
 export const setupTheme = () => {
