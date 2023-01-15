@@ -5,7 +5,7 @@
     3. Index | homepage
     4. Games pages
     5. Product
-      5.1. Image viewer
+      5.1. Slider
       5.2. General product info
       5.3 System requirements
     6. Account
@@ -251,7 +251,7 @@ body {
   }
 }
 
-/* 5.1. Slider component
+/* 5.1. Slider
 -------------------------*/
 .slider-container {
   min-height: min(60vh, 600px);
@@ -350,64 +350,6 @@ body {
 .slider-container .slider .active {
   outline: 2px solid var(--clr-font);
 }
-
-/* 5.1. Image viewer
--------------------------*/
-/* .image-viewer .current-image {
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-}
-
-.image-viewer {
-  min-height: max(40vh, 500px);
-}
-
-.image-viewer .image-fill {
-  height: 100%;
-  object-fit: cover;
-}
-
-.image-viewer .slider {
-  --fg-scroll: var(--clr-border-contrast);
-  --bg-scroll: var(--clr-card);
-  --gap: var(--space-300);
-  overflow-x: scroll;
-  scrollbar-color: var(--fg-scroll) var(--bg-scroll);
-  scrollbar-width: thin;
-}
-
-.image-viewer .slider::-webkit-scrollbar {
-  height: 10px;
-}
-
-.image-viewer .slider::-webkit-scrollbar-thumb {
-  background: var(--fg-scroll);
-}
-
-.image-viewer .slider::-webkit-scrollbar-track {
-  background: var(--bg-scroll);
-}
-
-.image-viewer .slider img {
-  object-fit: cover;
-  height: 60px;
-  aspect-ratio: 1.4 / 1;
-}
-
-@media (min-width: 45em) {
-  .image-viewer {
-    min-height: max(65vh, 600px);
-  }
-
-  .image-viewer .slider {
-    --gap: var(--space-300);
-  }
-
-  .image-viewer .slider img {
-    height: 90px;
-  }
-} */
 
 /* 5.2. General product info
 -------------------------*/
@@ -525,7 +467,7 @@ body {
 
 /* #endregion */
 
-/** 6. Account page
+/** 6. Account
 -------------------------*/
 /* #region */
 .account-sections {
@@ -1013,6 +955,12 @@ body {
 .checkout .editing .controls button {
   width: fit-content;
 }
+
+.expiration-select {
+  grid-template-columns: 1fr 1fr;
+  --gap: var(--space-350);
+}
+
 @media (min-width: 55em) {
   .checkout form {
     grid-template-columns: 4fr 3fr;

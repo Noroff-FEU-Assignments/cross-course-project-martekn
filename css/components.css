@@ -2,11 +2,12 @@
 --------------------------------------------------
     1. Skip nav link
     2. Button
-    3. Form Elements: input & textarea, custom checkbox
+    3. Form Elements: input & textarea, custom checkbox, select
     4. Card
     5. Search
     6. Summary
     7. Filter select
+    8. Alert
 */
 
 /** 1. Skip nav link
@@ -101,7 +102,7 @@
 
 /* #endregion */
 
-/** 3. Form Elements: input & textarea, custom checkbox
+/** 3. Form Elements: input & textarea, custom checkbox, select
 -------------------------*/
 /* #region */
 
@@ -139,6 +140,38 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
   letter-spacing: 0.05rem;
+}
+
+.select.placeholder {
+  color: var(--clr-font-contrast);
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  font-family: "Material Icons";
+  content: "\e5cf";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: var(--space-300);
+}
+
+.select-wrapper select:active,
+.select-wrapper select:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.select-wrapper select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  width: 100%;
+  padding: var(--space-350) calc(var(--space-500) + var(--space-350)) var(--space-350) var(--space-350);
 }
 
 .password-container {
@@ -197,18 +230,6 @@ input[type="number"] {
 
 .custom-checkbox input:focus-visible + label::before {
   outline: 1px solid var(--clr-accent);
-}
-
-.select {
-  box-shadow: none;
-  width: 100%;
-  -webkit-appearance: button;
-}
-.select.placeholder {
-  color: var(--clr-font-contrast);
-}
-.expiration-select {
-  --gap: var(--space-350);
 }
 
 /* #endregion */
@@ -432,35 +453,18 @@ a.card:focus-visible {
   grid-column: 1 / -1;
 }
 
-.filter .select-wrapper {
-  display: flex;
-  align-items: center;
-  gap: var(--space-350);
-}
-
-.filter .select-wrapper,
-.filter select {
-  cursor: pointer;
-}
-
 .filter .select-wrapper:hover,
 .filter .select-wrapper:focus-within {
   box-shadow: 0px 1px 0px var(--clr-font-contrast);
 }
 
 .filter select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  outline: none;
+  cursor: pointer;
   background-color: var(--clr-bg);
+  padding-left: 0;
+  outline: none;
   border: none;
   color: var(--clr-font);
-}
-
-.filter .select-wrapper::after {
-  font-family: "Material Icons";
-  content: "\e5cf";
 }
 
 /* #endregion */
