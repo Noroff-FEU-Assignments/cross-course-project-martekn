@@ -260,7 +260,7 @@ a.card:focus-visible {
   align-items: center;
   justify-content: center;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
-  background: url(../assets/covers/image1.jpg) no-repeat center;
+  /* background: url(../assets/covers/image1.jpg) no-repeat center; */
   background-size: cover;
   position: relative;
 }
@@ -468,25 +468,34 @@ a.card:focus-visible {
 }
 
 /* #endregion */
-/** 7. Alert
+/** 8. Alert
 -------------------------*/
 /* #region */
+
 input + .alert,
 .input + .alert,
 textarea + .alert {
   --flow-space: var(--space-300);
 }
 
-input.text-alert {
-  border: 1px solid var(--border-color, var(--clr-warning));
+input.text-alert,
+.alert-dialog {
+  --clr-error_type: var(--clr-font);
+  border: 1px solid var(--clr-error_type);
+}
+input.text-alert.alert,
+.alert-dialog.warning {
+  --clr-error_type: var(--clr-warning);
 }
 
-.text-alert.error {
-  --border-color: var(--clr-error);
+.text-alert.error,
+.alert-dialog.error {
+  --clr-error_type: var(--clr-error);
 }
 
-.text-alert.success {
-  --border-color: var(--clr-success);
+.text-alert.success,
+.alert-dialog.success {
+  --clr-error_type: var(--clr-success);
 }
 
 .alert {
@@ -518,6 +527,53 @@ input.text-alert {
 .alert#password-error li.success,
 .alert#password-error li.success :first-child {
   color: var(--clr-success);
+}
+
+.alert-dialog {
+  margin-block: 100px;
+  background-color: var(--clr-card);
+  border-radius: var(--border-radius);
+  padding: var(--space-400);
+}
+
+.alert-dialog .icon {
+  color: var(--clr-error_type);
+}
+
+/* #endregion */
+/** 9. Loader
+-------------------------*/
+/* #region */
+
+.loader {
+  position: relative;
+  margin: 100px auto;
+  background: conic-gradient(var(--clr-primary-400), var(--clr-neutral-100));
+  height: 70px;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  animation: rotate 800ms linear infinite;
+}
+.loader::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: var(--clr-bg);
+  height: 60px;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  z-index: 100;
+  inset: 0;
+  margin: auto;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* #endregion */

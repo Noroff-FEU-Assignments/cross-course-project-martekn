@@ -3,8 +3,9 @@ import { createHTML } from "../util/createHTML.js";
 export const createCard = (game, owned) => {
   let card;
   const imgContainer = createHTML("div", "image-container");
-  imgContainer.style.backgroundImage = `url(${game.imageUrl})`;
-  const image = createHTML("img", "rounded-corners", null, { src: game.imageUrl, alt: game.imageAlt });
+  imgContainer.style.backgroundImage = `url(${game.images[0].src})`;
+  const image = createHTML("img", "rounded-corners", null, { src: game.images[0].src, alt: game.images[0].alt });
+
   imgContainer.appendChild(image);
 
   const content = createHTML("div", ["info", "flex", "flex--col"]);
@@ -19,24 +20,47 @@ export const createCard = (game, owned) => {
     btnContainer.append(downloadBtn, sellBtn);
     content.appendChild(btnContainer);
   } else {
-    card = createHTML("a", ["card", "bg-card", "rounded-corners", "shadow"], null, { href: "./product.html" });
     const pricingContainer = createHTML("div", ["pricing", "grid"]);
+    const preownedGamesId = [];
+    let gameCondition = "new";
 
-    if (game.preOrder) {
-      const release = createHTML("span", ["preorder", "fg-low-contrast"], game.released);
-      pricingContainer.appendChild(release);
+    for (const [key, value] of Object.entries(game.meta_data.conditions)) {
+      if (key === "preorder") {
+        const releaseDate = game.meta_data.release_date.split("-").reverse().join(".");
+        const release = createHTML("span", ["preorder", "fg-low-contrast"], releaseDate);
+        pricingContainer.appendChild(release);
+        gameCondition = key;
+      }
+
+      if (key === "preowned") {
+        preownedGamesId.push(game.id);
+        const discount = Math.round((Number(value) / game.regular_price) * 100);
+        const discountContainer = createHTML("span", "discount", `-${discount}%`);
+
+        const originalPrice = createHTML("s", "original-price", `$${game.regular_price}`);
+        const currentPrice = createHTML("span", "current-price", `$${value}`);
+        pricingContainer.append(discountContainer, originalPrice, currentPrice);
+        gameCondition = key;
+      }
     }
 
-    if (game.sale.onSale) {
-      const discount = createHTML("span", "discount", `-${game.sale.discount}%`);
+    if (game.on_sale) {
+      const discount = Math.round((game.sale_price / game.regular_price) * 100);
+      const discountContainer = createHTML("span", "discount", `-${discount}%`);
 
-      const originalPrice = createHTML("s", "original-price", `$${game.price}`);
-      const currentPrice = createHTML("span", "current-price", `$${game.sale.discountedPrice}`);
-      pricingContainer.append(discount, originalPrice, currentPrice);
+      const originalPrice = createHTML("s", "original-price", `$${game.regular_price}`);
+      const currentPrice = createHTML("span", "current-price", `$${game.sale_price}`);
+      pricingContainer.append(discountContainer, originalPrice, currentPrice);
     } else {
-      const currentPrice = createHTML("span", "current-price", `$${game.price}`);
-      pricingContainer.appendChild(currentPrice);
+      if (!preownedGamesId.includes(game.id)) {
+        const currentPrice = createHTML("span", "current-price", `$${game.regular_price}`);
+        pricingContainer.appendChild(currentPrice);
+      }
     }
+
+    card = createHTML("a", ["card", "bg-card", "rounded-corners", "shadow"], null, {
+      href: `./product.html?id=${game.id}&condition=${gameCondition}`,
+    });
 
     content.append(pricingContainer);
   }

@@ -119,36 +119,16 @@
         </nav>
       </header>
 
-      <main class="homepage | flex flex--col" id="main-content">
-        <section class="pre-order banner banner--image-bg | container bg-dark shadow">
-          <div class="flow-content">
-            <h2 class="text-bold text-700">God of War</h2>
-            <p class="text-450">Coming 14th January, 2022</p>
-            <a href="./product.html" class="btn btn--light-focus">Pre-order now</a>
-          </div>
-        </section>
+      <div class="loader"></div>
+      <main class="homepage | flex flex--col d-none" id="main-content">
+        <section id="preorder" class="pre-order banner banner--image-bg | container bg-dark shadow"></section>
 
         <section class="container flow-content">
           <h2>Latest games</h2>
           <div id="latest-games" class="games-container | grid"></div>
         </section>
 
-        <section class="sale banner banner--image-bg | bg-dark container shadow">
-          <div class="flex">
-            <div class="image-wrapper">
-              <img src="./assets/banner/rise-of-the-tomb-raider.jpg" alt="Rise of the tomb raider" />
-            </div>
-            <div class="content grid">
-              <h2>This months deal</h2>
-              <span class="subtitle | h1">Rise of the tomb raider</span>
-              <div class="price flex flex--col">
-                <span><s class="original-price">$16.99</s></span>
-                <span class="new-price">$6.79</span>
-              </div>
-              <a href="./product.html" class="btn btn--light-focus btn--arrow">View</a>
-            </div>
-          </div>
-        </section>
+        <section id="monthly-deal" class="sale banner banner--image-bg | bg-dark container shadow"></section>
 
         <section class="container flow-content">
           <h2>Special deals</h2>
@@ -165,7 +145,7 @@
         </div>
 
         <section class="container flow-content">
-          <h2>Featured games</h2>
+          <h2>Games to explore</h2>
           <div id="featured-games" class="games-container | grid"></div>
         </section>
       </main>
