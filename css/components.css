@@ -157,6 +157,7 @@ input[type="number"] {
   top: 50%;
   transform: translateY(-50%);
   right: var(--space-300);
+  pointer-events: none;
 }
 
 .select-wrapper select:active,

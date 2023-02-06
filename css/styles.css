@@ -54,6 +54,10 @@ body {
   gap: 0;
 }
 
+main.d-none {
+  display: none;
+}
+
 /* #endregion */
 
 /** 3. Index | homepage
@@ -62,10 +66,6 @@ body {
 
 .homepage {
   gap: var(--space-600);
-}
-
-.homepage.d-none {
-  display: none;
 }
 
 /* 1.2. Banners
