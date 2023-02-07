@@ -1,6 +1,5 @@
-import { setupEmailEventListener, emailValidation } from "../util/validation/email-validation.js";
-import { displayError, clearError } from "../components/text-error.js";
-import { characterValidation } from "../util/validation/character-validation.js";
+import { setupEmailEventListener, emailValidation, characterValidation } from "../util/validation.js";
+import { displayTextError, clearTextError } from "../components/error.js";
 
 const name = document.querySelector("#name");
 const email = document.querySelector("#email");
@@ -24,15 +23,15 @@ const submitForm = (nameValidationStatus, emailValidationStatus, messageValidati
     const messageError = document.querySelector(`#${messageErrorId}`);
 
     if (!nameValidationStatus && !nameError) {
-      displayError(nameValidationStatus, name, nameErrorText, nameErrorId);
+      displayTextError(nameValidationStatus, name, nameErrorText, nameErrorId);
     }
 
     if (!emailValidationStatus && !emailError) {
-      displayError(emailValidationStatus, email, "Please enter valid email address", "email-error");
+      displayTextError(emailValidationStatus, email, "Please enter valid email address", "email-error");
     }
 
     if (!messageValidationStatus && !messageError) {
-      displayError(messageValidationStatus, message, messageErrorText, messageErrorId);
+      displayTextError(messageValidationStatus, message, messageErrorText, messageErrorId);
     }
   }
 };
@@ -40,24 +39,24 @@ const submitForm = (nameValidationStatus, emailValidationStatus, messageValidati
 export const setupContact = () => {
   name.addEventListener("focusout", function (e) {
     const validated = characterValidation(name.value.trim());
-    displayError(validated, name, nameErrorText, nameErrorId);
+    displayTextError(validated, name, nameErrorText, nameErrorId);
   });
 
   name.addEventListener("input", function (e) {
     const validated = characterValidation(name.value.trim());
-    clearError(validated, name, nameErrorId);
+    clearTextError(validated, name, nameErrorId);
   });
 
   setupEmailEventListener(email);
 
   message.addEventListener("focusout", function (e) {
     const validated = characterValidation(message.value.trim());
-    displayError(validated, message, messageErrorText, messageErrorId);
+    displayTextError(validated, message, messageErrorText, messageErrorId);
   });
 
   message.addEventListener("input", function (e) {
     const validated = characterValidation(message.value.trim());
-    clearError(validated, message, messageErrorId);
+    clearTextError(validated, message, messageErrorId);
   });
 
   button.addEventListener("click", function (e) {

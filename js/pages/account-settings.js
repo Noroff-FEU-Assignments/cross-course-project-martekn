@@ -1,10 +1,9 @@
 import { logout } from "../features/auth.js";
 import { passwordVisibilityToggle } from "../features/auth.js";
-import { setupUserDetails } from "../util/set-user-details/setupUserDetails.js";
+import { setupUserDetails } from "../util/user-details.js";
 import { users } from "../../data/users.js";
-import { displayError, clearError } from "../components/text-error.js";
-import { characterValidation } from "../util/validation/character-validation.js";
-import { setupPasswordEventListener, passwordValidation } from "../util/validation/password-validation.js";
+import { displayTextError, clearTextError } from "../components/error.js";
+import { characterValidation, setupPasswordEventListener, passwordValidation } from "../util/validation.js";
 
 const logoutButton = document.querySelector("#logout");
 
@@ -37,12 +36,12 @@ export const setupAccountSettings = () => {
 
   currentPassword.addEventListener("focusout", function (e) {
     const validated = characterValidation(currentPassword.value.trim());
-    displayError(validated, currentPassword, "Password is required", "current-password-error");
+    displayTextError(validated, currentPassword, "Password is required", "current-password-error");
   });
 
   currentPassword.addEventListener("input", function (e) {
     const validated = characterValidation(currentPassword.value.trim());
-    clearError(validated, currentPassword, "current-password-error");
+    clearTextError(validated, currentPassword, "current-password-error");
   });
 
   passwordButton.addEventListener("click", (e) => {

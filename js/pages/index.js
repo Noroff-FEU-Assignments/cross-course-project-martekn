@@ -1,8 +1,7 @@
 import { setupBanner } from "../components/banner.js";
 import { createCard } from "../components/card.js";
-import { fetchApiResults } from "../util/api/get-api.js";
-import { parseGameRes } from "../util/api/parse-api.js";
-import { createErrorDialog } from "../components/dialog-error.js";
+import { fetchApiResults, parseGameRes } from "../util/api.js";
+import { createBoxError } from "../components/error.js";
 
 export const setupIndex = async () => {
   const latestGamesContainer = document.querySelector("#latest-games");
@@ -62,7 +61,7 @@ export const setupIndex = async () => {
     main.classList.add("d-none");
     document.querySelector(".loader").classList.add("d-none");
 
-    const errorAlert = createErrorDialog(
+    const errorAlert = createBoxError(
       "There has been an error on our end, please refresh the page or try again later",
       "error"
     );

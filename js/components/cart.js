@@ -1,11 +1,12 @@
-import { createHTML } from "../../util/createHTML.js";
-import { removeFromCart } from "../../features/cart.js";
+import { createHTML } from "../util/createHTML.js";
+import { removeFromCart } from "../features/cart.js";
+import { getSummaryPrices } from "../features/cart.js";
 
-export const displayEmptyCartError = () => {
-  const container = createHTML("div", "empty-cart", "There are no products in your cart");
-  document.querySelector("#cart").appendChild(container);
-};
-
+/**
+ * Creates list item for cart with the relevant information
+ * @param {Object} productDetails
+ * @returns List item
+ */
 const createCartItem = (productDetails) => {
   const li = createHTML("li", "grid", null, { id: productDetails.productId });
   const img = createHTML("img", null, null, { src: productDetails.image, alt: productDetails.title });
@@ -35,6 +36,11 @@ const createCartItem = (productDetails) => {
   return li;
 };
 
+/**
+ * Creates the cart component with each product added
+ * @param {Array} array - Array containing the products in cart
+ * @returns HTMLElement
+ */
 export const createCart = (array) => {
   const container = createHTML("div", ["shopping-cart", "bg-card", "rounded-corners", "shadow"], null, {
     id: "cart-container",
@@ -57,4 +63,50 @@ export const createCart = (array) => {
   }
 
   return container;
+};
+
+/**
+ * Creates and displays cart error
+ */
+export const displayEmptyCartError = () => {
+  const container = createHTML(
+    "div",
+    ["empty-cart", "bg-card", "border-radius", "flex"],
+    "There are no products in your cart"
+  );
+  document.querySelector("#cart").appendChild(container);
+};
+
+/**
+ * Creates summary, the overall pricing
+ * @returns HTMLElement
+ */
+export const createSummary = () => {
+  const prices = getSummaryPrices();
+  const summary = createHTML(
+    "div",
+    ["summary", "flow-content", "flow-form", "bg-card", "rounded-corners", "shadow"],
+    null,
+    {
+      id: "summary-container",
+    }
+  );
+  const main = createHTML("div", ["main", "flow-content", "flow-form"]);
+
+  const dl = createHTML("dl", "grid");
+  const sumTitle = createHTML("dt", null, "Price");
+  const sumContent = createHTML("dd", null, `$${prices.price}`, { id: "summary-price" });
+  const discountTitle = createHTML("dt", null, "Discount");
+  const discountContent = createHTML("dd", null, `-$${prices.discountedPrice}`, { id: "summary-discount" });
+  const totalTitle = createHTML("dt", null, "Total");
+  const totalContent = createHTML("dd", null, `$${prices.totalPrice}`, { id: "summary-total" });
+
+  const buttonContainer = createHTML("div", "flow-content");
+  const button = createHTML("a", "btn", "Go to checkout", { href: "./purchase-checkout.html" });
+  buttonContainer.appendChild(button);
+
+  dl.append(sumTitle, sumContent, discountTitle, discountContent, totalTitle, totalContent);
+  main.append(dl, buttonContainer);
+  summary.appendChild(main);
+  return summary;
 };

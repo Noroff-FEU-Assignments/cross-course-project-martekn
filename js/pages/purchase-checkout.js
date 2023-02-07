@@ -1,11 +1,13 @@
 import { setupCheckoutCart } from "../features/cart.js";
-import { displayError, clearError } from "../components/text-error.js";
-import { dateValidation, setupDateEventListener } from "../util/validation/date-validation.js";
-import { setupDigitEventListener, digitValidation } from "../util/validation/digit-validation.js";
-import { setupUserDetails } from "../util/set-user-details/setupUserDetails.js";
-import { displayDetailsErrors, validateDetails } from "../util/set-user-details/validate-details.js";
+import { displayTextError, clearTextError } from "../components/error.js";
+import {
+  dateValidation,
+  setupDateEventListener,
+  digitValidation,
+  setupDigitEventListener,
+} from "../util/validation.js";
+import { setupUserDetails, displayDetailsErrors, validateDetails, updateUserFromInput } from "../util/user-details.js";
 import { users } from "../../data/users.js";
-import { updateUserFromInput } from "../util/set-user-details/updateUser.js";
 
 const detailsContainer = document.querySelector("#details-container");
 const userId = 1;
@@ -32,15 +34,15 @@ const submitForm = () => {
     location.href = "./purchase-confirmation.html";
   } else {
     if (!cardValidated) {
-      displayError(cardValidated, card, "Please enter valid card number with 16 digits", "card-error");
+      displayTextError(cardValidated, card, "Please enter valid card number with 16 digits", "card-error");
     }
     if (!dateValidated) {
-      displayError(dateValidated, dateSelector, "This date has expired", "date-error");
+      displayTextError(dateValidated, dateSelector, "This date has expired", "date-error");
     } else {
-      clearError(dateValidated, dateSelector, "date-error");
+      clearTextError(dateValidated, dateSelector, "date-error");
     }
     if (!cvvValidated) {
-      displayError(cvvValidated, cvv, "Enter the 3 digit code at the back of your card", "cvv-error");
+      displayTextError(cvvValidated, cvv, "Enter the 3 digit code at the back of your card", "cvv-error");
     }
     displayDetailsErrors(detailsValidationResults);
   }

@@ -1,5 +1,5 @@
-import { setupEmailEventListener, emailValidation } from "../util/validation/email-validation.js";
-import { displayError } from "../components/text-error.js";
+import { setupEmailEventListener, emailValidation } from "../util/validation.js";
+import { displayTextError } from "../components/error.js";
 
 const email = document.querySelector("#email");
 const button = document.querySelector("#recovery-btn");
@@ -25,7 +25,7 @@ export const setupForgotPassword = () => {
     }
     const emailError = document.querySelector("#email-error");
     if (!emailValidated && !emailError) {
-      displayError(emailValidated, email, "Please enter valid email address", "email-error");
+      displayTextError(emailValidated, email, "Please enter valid email address", "email-error");
     }
   });
 };

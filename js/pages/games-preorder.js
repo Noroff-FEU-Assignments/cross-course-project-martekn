@@ -1,6 +1,5 @@
-import { fetchApiResults } from "../util/api/get-api.js";
-import { parseGameRes } from "../util/api/parse-api.js";
-import { createErrorDialog } from "../components/dialog-error.js";
+import { fetchApiResults, parseGameRes } from "../util/api.js";
+import { createBoxError } from "../components/error.js";
 import { filterGames } from "../util/filter-games.js";
 
 export const setupGamesPreorder = async () => {
@@ -39,7 +38,7 @@ export const setupGamesPreorder = async () => {
     main.classList.add("d-none");
     document.querySelector(".loader").classList.add("d-none");
 
-    const errorAlert = createErrorDialog(
+    const errorAlert = createBoxError(
       "There has been an error on our end, please refresh the page or try again later",
       "error"
     );

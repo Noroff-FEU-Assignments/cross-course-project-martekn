@@ -13,17 +13,14 @@ export const setupBanner = (game) => {
     let text;
     let button;
     const releaseDate = game.meta_data.release_date;
-    console.log(todaysDate);
     if (todaysDate >= releaseDate) {
       text = createHTML("p", "text-450", `Is now available`);
       button = createHTML("a", ["btn", "btn--light-focus"], "View game");
-      console.log(">= released", todaysDate, releaseDate);
     } else {
       text = createHTML("p", "text-450", `Coming ${releaseDate.split("-").reverse().join(".")}`);
       button = createHTML("a", ["btn", "btn--light-focus"], "Pre-order now", {
         href: `./product.html?id=${game.id}&condition=preorder`,
       });
-      console.log("< preorder", todaysDate, releaseDate);
     }
     content.append(title, text, button);
   }

@@ -1,8 +1,8 @@
 import { createHTML } from "../util/createHTML.js";
-import { saveUser } from "../util/set-user-details/updateUser.js";
-import { displayError, clearError } from "./text-error.js";
-import { characterValidation } from "../util/validation/character-validation.js";
-import { setupEmailEventListener } from "../util/validation/email-validation.js";
+import { saveUser } from "../util/user-details.js";
+import { displayTextError, clearTextError } from "./error.js";
+import { characterValidation } from "../util/validation.js";
+import { setupEmailEventListener } from "../util/validation.js";
 
 const createLabelAndInput = (idName, label, data, parent, required, validationType, errorId, errorMessage) => {
   const labelElement = createHTML("label", null, label, { for: idName });
@@ -20,12 +20,12 @@ const createLabelAndInput = (idName, label, data, parent, required, validationTy
   if (validationType === "character") {
     inputElement.addEventListener("focusout", (e) => {
       const validated = characterValidation(inputElement.value);
-      displayError(validated, inputElement, errorMessage, errorId);
+      displayTextError(validated, inputElement, errorMessage, errorId);
     });
     inputElement.addEventListener("input", (e) => {
       const validated = characterValidation(inputElement.value);
       if (validated && inputElement.classList.contains("error")) {
-        clearError(validated, inputElement, errorId);
+        clearTextError(validated, inputElement, errorId);
       }
     });
   }
@@ -102,7 +102,7 @@ export const createEditDetails = (user) => {
 
   element.appendChild(button);
   button.addEventListener("click", (e) => {
-    saveUser(e, user);
+    saveUser(user);
   });
   return element;
 };

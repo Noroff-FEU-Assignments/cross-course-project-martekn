@@ -1,7 +1,5 @@
-import { emailValidation, setupEmailEventListener } from "../util/validation/email-validation.js";
-import { displayError, clearError } from "../components/text-error.js";
-
-import { characterValidation } from "../util/validation/character-validation.js";
+import { displayTextError, clearTextError } from "../components/error.js";
+import { emailValidation, setupEmailEventListener, characterValidation } from "../util/validation.js";
 import { passwordVisibilityToggle } from "../features/auth.js";
 
 const email = document.querySelector("#email");
@@ -32,10 +30,10 @@ const submitForm = (emailValidationStatus, passwordValidationStatus) => {
     const emailError = document.querySelector("#email-error");
     const passwordError = document.querySelector("#password-error");
     if (!emailValidationStatus && !emailError) {
-      displayError(emailValidationStatus, email, "Please enter valid email address", "email-error");
+      displayTextError(emailValidationStatus, email, "Please enter valid email address", "email-error");
     }
     if (!passwordValidationStatus && !passwordError) {
-      displayError(passwordValidationStatus, password, "Password is required", "password-error");
+      displayTextError(passwordValidationStatus, password, "Password is required", "password-error");
     }
   }
 };
@@ -45,12 +43,12 @@ export const setupLogin = () => {
 
   password.addEventListener("focusout", function (e) {
     const validated = characterValidation(password.value.trim());
-    displayError(validated, password, "Password is required", "password-error");
+    displayTextError(validated, password, "Password is required", "password-error");
   });
 
   password.addEventListener("input", function (e) {
     const validated = characterValidation(password.value.trim());
-    clearError(validated, password, "password-error");
+    clearTextError(validated, password, "password-error");
   });
 
   passwordVisibilityToggle(password);

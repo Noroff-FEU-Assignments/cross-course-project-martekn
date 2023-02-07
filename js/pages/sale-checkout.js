@@ -1,9 +1,7 @@
-import { setupDigitEventListener, digitValidation } from "../util/validation/digit-validation.js";
-import { setupUserDetails } from "../util/set-user-details/setupUserDetails.js";
-import { displayDetailsErrors, validateDetails } from "../util/set-user-details/validate-details.js";
+import { setupUserDetails, displayDetailsErrors, validateDetails, updateUserFromInput } from "../util/user-details.js";
 import { users } from "../../data/users.js";
-import { updateUserFromInput } from "../util/set-user-details/updateUser.js";
-import { displayError } from "../components/text-error.js";
+import { displayTextError } from "../components/error.js";
+import { setupDigitEventListener, digitValidation } from "../util/validation.js";
 
 const detailsContainer = document.querySelector("#details-container");
 const userId = 1;
@@ -24,7 +22,12 @@ const submitForm = () => {
     location.href = "./sale-confirmation.html";
   } else {
     if (!accountnrValidated) {
-      displayError(accountnrValidated, accountnr, "Please enter account number, minimum 5 digits", "accountnr-error");
+      displayTextError(
+        accountnrValidated,
+        accountnr,
+        "Please enter account number, minimum 5 digits",
+        "accountnr-error"
+      );
     }
     displayDetailsErrors(detailsValidationResults);
   }

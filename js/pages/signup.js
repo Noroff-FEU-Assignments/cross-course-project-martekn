@@ -1,11 +1,11 @@
-import { setupEmailEventListener, emailValidation } from "../util/validation/email-validation.js";
-import { displayError } from "../components/text-error.js";
 import {
+  setupEmailEventListener,
+  emailValidation,
   setupPasswordEventListener,
   passwordValidation,
   hideShowPasswordError,
-} from "../util/validation/password-validation.js";
-
+} from "../util/validation.js";
+import { displayTextError } from "../components/error.js";
 import { passwordVisibilityToggle } from "../features/auth.js";
 
 const form = document.querySelector("#signup-form");
@@ -34,7 +34,7 @@ const submitForm = (emailValidationStatus, passwordValidationStatus) => {
     const emailError = document.querySelector("#email-error");
     const passwordError = document.querySelector("#password-error");
     if (!emailValidationStatus && !emailError) {
-      displayError(emailValidationStatus, email, "Please enter valid email address", "email-error");
+      displayTextError(emailValidationStatus, email, "Please enter valid email address", "email-error");
     }
     if (!passwordValidationStatus.isPasswordValid && !passwordError) {
       hideShowPasswordError(password);

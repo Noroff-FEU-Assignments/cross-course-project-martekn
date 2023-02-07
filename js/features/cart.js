@@ -1,6 +1,4 @@
-import { createCart } from "../components/cart/create-cart.js";
-import { displayEmptyCartError } from "../components/cart/empty-cart-error.js";
-import { createSummary } from "../components/cart/summary.js";
+import { createCart, displayEmptyCartError, createSummary } from "../components/cart.js";
 import { createHTML } from "../util/createHTML.js";
 
 const lsKey = "cartItems";
