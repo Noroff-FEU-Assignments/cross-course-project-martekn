@@ -368,6 +368,7 @@ main.d-none {
 }
 .product-info .price {
   line-height: 1;
+  align-items: center;
 }
 
 .product-info .condition .state {
@@ -440,6 +441,7 @@ main.d-none {
 
 .product-info dd {
   text-align: right;
+  max-width: 25ch;
 }
 
 /* 5.3 System requirements

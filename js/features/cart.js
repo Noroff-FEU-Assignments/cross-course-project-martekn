@@ -15,6 +15,7 @@ export const setCartCounter = () => {
   }
 };
 
+console.log(cartArray);
 const addProductToCart = (product, button) => {
   cartArray.push(product);
   localStorage.setItem(lsKey, JSON.stringify(cartArray));
@@ -25,14 +26,14 @@ const addProductToCart = (product, button) => {
   counterContainer.classList.add("animation-pulse");
 };
 
-export const setupAddToCart = (button, productId, name, img, originalPrice, newPrice, conditionStatus) => {
+export const setupAddToCart = (button, productId, name, img, cPrice, oPrice, conditionStatus) => {
   const product = {
     productId: productId,
     title: name,
     image: img,
     price: {
-      oldPrice: originalPrice,
-      currentPrice: newPrice,
+      originalPrice: oPrice,
+      currentPrice: cPrice,
     },
     condition: conditionStatus,
   };
@@ -69,8 +70,13 @@ export const getSummaryPrices = () => {
   total = 0;
   discount = 0;
   for (const product of cartArray) {
-    sum += product.price.oldPrice;
-    total += product.price.currentPrice;
+    if (product.price.currentPrice === product.price.originalPrice) {
+      sum += Number(product.price.originalPrice);
+      total += Number(product.price.originalPrice);
+    } else {
+      sum += Number(product.price.originalPrice);
+      total += Number(product.price.currentPrice);
+    }
   }
   discount = sum - total;
   return { price: sum, discountedPrice: discount, totalPrice: total };
@@ -119,9 +125,10 @@ const fillCartList = () => {
     const list = createHTML("li", "flex");
     const title = createHTML("span", null, product.title);
     const priceContainer = createHTML("span", "flex");
-    if (product.price.currentPrice !== product.price.oldPrice) {
-      const oldPrice = createHTML("s", null, `$${product.price.oldPrice}`);
-      priceContainer.appendChild(oldPrice);
+
+    if (product.price.currentPrice !== product.price.originalPrice) {
+      const originalPrice = createHTML("s", null, `$${product.price.originalPrice}`);
+      priceContainer.appendChild(originalPrice);
     }
     const price = createHTML("span", null, `$${product.price.currentPrice}`);
     priceContainer.appendChild(price);

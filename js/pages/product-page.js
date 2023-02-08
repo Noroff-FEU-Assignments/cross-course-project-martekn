@@ -1,92 +1,140 @@
+import { fetchApiResults, parseGameRes } from "../util/api.js";
 import { setupAddToCart } from "../features/cart.js";
 import { createHTML } from "../util/createHTML.js";
+import { setupImageSlider } from "../components/image-slider.js";
+
 const button = document.querySelector("#btn-cart");
-const images = Array.from(document.querySelectorAll(".slider li"));
-const imageContainer = document.querySelector("#image-container");
-const slider = document.querySelector(".slider");
-const sliderButtonRight = document.querySelector(".slider-button--right");
-const sliderButtonLeft = document.querySelector(".slider-button--left");
+const id = new URLSearchParams(window.location.search).get("id");
+const condition = new URLSearchParams(window.location.search).get("condition");
+const minReq = document.querySelector("#min-req");
+const recReq = document.querySelector("#rec-req");
 
-const toggleSliderButtons = (index) => {
-  if (index >= 1) {
-    sliderButtonLeft.classList.remove("hide");
-  }
-  if (index === images.length - 1) {
-    sliderButtonRight.classList.add("hide");
-  }
-
-  if (index === 0) {
-    sliderButtonLeft.classList.add("hide");
-  }
-
-  if (index <= images.length - 2) {
-    sliderButtonRight.classList.remove("hide");
-  }
-};
-
-const displayNewImage = (imageLi) => {
-  const imageUrl = imageLi.children[0].getAttribute("src");
-  const imageAlt = imageLi.children[0].getAttribute("alt");
-  const activeImages = Array.from(slider.querySelectorAll(".active"));
-
-  for (const activeImage of activeImages) {
-    activeImage.classList.remove("active");
-  }
-
-  imageLi.classList.add("active");
-
-  if (imageContainer.children[0]) {
-    imageContainer.children[0].remove();
-  }
-  if (imageLi.getAttribute("data-image") === "cover") {
-    const coverContainer = createHTML("div", ["cover", "flex"]);
-    const image = createHTML("img", null, null, { src: imageUrl, alt: imageAlt });
-    coverContainer.appendChild(image);
-    imageContainer.appendChild(coverContainer);
+const createPricing = (cPrice, oPrice) => {
+  const priceContainer = document.querySelector("#price-container");
+  if (cPrice === oPrice) {
+    priceContainer.innerText = `$${oPrice}`;
   } else {
-    const image = createHTML("img", null, null, { src: imageUrl, alt: imageAlt });
-    imageContainer.appendChild(image);
+    const currentPriceContainer = createHTML("span", null, `$${cPrice}`);
+    const originalPriceContainer = createHTML("s", null, `$${oPrice}`);
+    priceContainer.append(currentPriceContainer, originalPriceContainer);
   }
 };
 
-const updateSlider = (imageLi, index) => {
-  const padding = (slider.scrollWidth - images.length * imageLi.clientWidth) / images.length;
-  const imageWidth = imageLi.clientWidth + padding;
-  const sliderWidth = slider.clientWidth;
-
-  slider.scrollLeft = Math.round(index * imageWidth - sliderWidth / 2 + imageWidth / 2);
-
-  displayNewImage(imageLi);
-  toggleSliderButtons(index);
+const setConditions = (conditions) => {
+  document.querySelector("#current-condition").innerHTML = condition;
+  const conditionUl = document.querySelector("#condition-types");
+  if (Object.keys(conditions).length <= 1) {
+    conditionUl.remove();
+  } else {
+    for (const conditionType of Object.entries(conditions)) {
+      const li = createHTML("li");
+      const a = createHTML("a", null, conditionType[0], {
+        href: `./product.html?id=${id}&condition=${conditionType[0]}`,
+      });
+      if (condition === conditionType[0]) {
+        a.classList.add("active");
+      }
+      li.appendChild(a);
+      conditionUl.appendChild(li);
+    }
+  }
 };
 
-updateSlider(images[0], 0);
-
-sliderButtonRight.addEventListener("click", (e) => {
-  let currentImageIndex = images.findIndex((image) => image.classList.contains("active") === true);
-  if (currentImageIndex <= 0) {
-    currentImageIndex = 0;
+const createMetaScore = (metascoreObj) => {
+  if (metascoreObj) {
+    document.querySelector("#meta-rating").innerHTML = metascoreObj.score;
+    document.querySelector("#meta-date").innerHTML = `Updated ${metascoreObj.updated?.split("-").join(".")}`;
+  } else {
+    document.querySelector("#metascore-content").remove();
   }
-  const newIndex = currentImageIndex + 1;
+};
 
-  updateSlider(images[newIndex], newIndex);
-});
+const createDescription = (descriptions) => {
+  const descriptionContainer = document.querySelector("#description");
+  const paragraphs = descriptions.split("\n");
+  for (let paragraph of paragraphs) {
+    if (paragraph === "") {
+      continue;
+    }
 
-sliderButtonLeft.addEventListener("click", (e) => {
-  let currentImageIndex = images.findIndex((image) => image.classList.contains("active") === true);
-  if (currentImageIndex <= 0) {
-    currentImageIndex = 0;
+    paragraph = paragraph.replace("<p>", "").replace("</p>", "");
+
+    const p = createHTML("p", null, paragraph);
+    descriptionContainer.appendChild(p);
   }
-  const newIndex = currentImageIndex - 1;
-  updateSlider(images[newIndex], newIndex);
-});
+};
 
-for (let [i, image] of images.entries()) {
-  image.addEventListener("click", function (e) {
-    updateSlider(this, i);
-  });
-}
+const createReqHTML = (title, value, parent) => {
+  const div = createHTML("div", "grid");
+  const dt = createHTML("dt", null, `${title}:`);
+  const dd = createHTML("dd", null, value);
+  div.append(dt, dd);
+  parent.appendChild(div);
+};
+const createRequirements = (container, requirementsObj) => {
+  if (requirementsObj) {
+    if (requirementsObj.hasOwnProperty("os")) {
+      createReqHTML("OS", requirementsObj.os, container);
+    }
+    if (requirementsObj.hasOwnProperty("processor")) {
+      createReqHTML("Processor", requirementsObj.processor, container);
+    }
+    if (requirementsObj.hasOwnProperty("memory")) {
+      createReqHTML("Memory", requirementsObj.memory, container);
+    }
+    if (requirementsObj.hasOwnProperty("graphics")) {
+      createReqHTML("Graphics", requirementsObj.graphics, container);
+    }
+    if (requirementsObj.hasOwnProperty("directx")) {
+      createReqHTML("DirectX", requirementsObj.directx, container);
+    }
+    if (requirementsObj.hasOwnProperty("storage")) {
+      createReqHTML("Storage", requirementsObj.storage, container);
+    }
+  } else {
+    const missingReq = createHTML("div", null, "Not specified");
+    container.appendChild(missingReq);
+  }
+};
 
-export const setupProductPage = () => {
-  setupAddToCart(button, 13, "Ori and the Will of the Wisps", "/assets/covers/image13.jpg", 29.99, 23.99, "new");
+export const setupProductPage = async () => {
+  const game = parseGameRes(await fetchApiResults(`/products/${id}`));
+  const genre = [];
+  let currentPrice = game.regular_price;
+  let originalPrice = game.regular_price;
+
+  for (const category of game.categories) {
+    genre.push(category.name);
+  }
+
+  document.querySelector("#genre").innerHTML = genre.join(", ");
+  document.querySelector("#release").innerHTML = game.meta_data.release_date.split("-").reverse().join(".");
+  document.querySelector("#developer").innerHTML = game.meta_data.developer;
+  document.querySelector("#title").innerHTML = game.name;
+
+  if (condition === "preorder") {
+    currentPrice = game.meta_data.conditions.preorder;
+  }
+
+  if (condition === "preowned") {
+    currentPrice = game.meta_data.conditions.preowned;
+  }
+
+  if (condition === "new") {
+    currentPrice = game.meta_data.conditions.new;
+  }
+
+  if (game.on_sale) {
+    currentPrice = game.sale_price;
+  }
+
+  createPricing(currentPrice, originalPrice);
+  setConditions(game.meta_data.conditions);
+  createMetaScore(game.meta_data.meta_score);
+  setupImageSlider(game);
+  createDescription(game.description);
+  createRequirements(minReq, game.meta_data.min_system_requirements);
+  createRequirements(recReq, game.meta_data.recommended_system_requirements);
+
+  setupAddToCart(button, game.id, game.name, game.images[0].src, currentPrice, originalPrice, condition);
 };

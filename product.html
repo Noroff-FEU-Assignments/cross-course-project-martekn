@@ -134,8 +134,8 @@
         </nav>
 
         <div class="product-view | container grid">
-          <h1>Ori and the Will of the Wisps</h1>
-          <div class="slider-container | flex flex--col">
+          <h1 id="title"></h1>
+          <div id="slider-container" class="slider-container | flex flex--col">
             <div id="main-view" class="main-view | flex bg-card rounded-corners shadow">
               <button class="slider-button slider-button--left" aria-label="previous" aria-controls="main-view">
                 <span class="material-symbols-outlined"> chevron_left </span>
@@ -149,129 +149,51 @@
               </button>
               <div id="image-container" class="image-container"></div>
             </div>
-            <ul id="slider" class="slider | flex">
-              <li data-image="cover">
-                <img
-                  src="./assets/product/prod-cover.jpg"
-                  alt="A white creature with an owl standing on the edge of a cliff."
-                />
-              </li>
-              <li><img src="./assets/product/prod-img1.jpg" alt="Ori flying on an owl" /></li>
-              <li><img src="./assets/product/prod-img2.jpg" alt="Large wolf with mouth open infront of Ori" /></li>
-              <li>
-                <img src="./assets/product/prod-img3.jpg" alt="Ori looking at a tree with something glowing in it" />
-              </li>
-              <li><img src="./assets/product/prod-img4.jpg" alt="Ori walking up a hill" /></li>
-              <li><img src="./assets/product/prod-img5.jpg" alt="Platform with beams" /></li>
-              <li><img src="./assets/product/prod-img6.jpg" alt="Large spider with green glowing bits and eyes" /></li>
-            </ul>
+            <ul id="slider" class="slider | flex"></ul>
           </div>
           <div class="product-info">
-            <div class="price | text-550">$29.99</div>
+            <div id="price-container" class="price | flex text-550"></div>
             <div class="condition | flow-content">
-              <span class="fg-low-contrast">Condition: <span class="state | text-bold">New</span></span>
-              <ul class="grid grid--even-columns">
-                <li><a href="./product.html" class="active">New</a></li>
-                <li><a href="./product.html" class="">Pre-owned</a></li>
-              </ul>
+              <span class="fg-low-contrast"
+                >Condition: <span id="current-condition" class="state | text-bold"></span
+              ></span>
+              <ul id="condition-types" class="grid grid--even-columns"></ul>
             </div>
             <div><button id="btn-cart" class="btn">Add to cart</button></div>
-            <div>
+            <div id="metascore-content">
               <section class="rating | flow-content bg-card rounded-corners">
                 <div class="flex">
                   <h2 class="h3">Metascore</h2>
-                  <span class="score | text-450 grid">88</span>
+                  <span id="meta-rating" class="score | text-450 grid"></span>
                 </div>
                 <footer>
                   <div>Metacritic.com</div>
-                  <div>Updated 20.11.2021</div>
+                  <div id="meta-date"></div>
                 </footer>
               </section>
             </div>
             <dl class="grid">
               <dt>Genre</dt>
-              <dd>Adventure, platform</dd>
+              <dd id="genre"></dd>
               <dt>Release date</dt>
-              <dd>March 10, 2020</dd>
+              <dd id="release"></dd>
               <dt>Developer</dt>
-              <dd>Moon Studios</dd>
+              <dd id="developer"></dd>
             </dl>
           </div>
-          <section class="about flow-content">
+          <section id="description" class="about flow-content">
             <h2>About the game</h2>
-            <p>
-              The little spirit Ori is no stranger to peril, but when a fateful flight puts the owlet Ku in harm’s way,
-              it will take more than bravery to bring a family back together, heal a broken land, and discover Ori’s
-              true destiny.
-            </p>
-            <p>
-              From the creators of the acclaimed action-platformer Ori and the Blind Forest comes the highly anticipated
-              sequel. Embark on an all-new adventure in a vast world filled with new friends and foes that come to life
-              in stunning, hand-painted artwork. Set to a fully orchestrated original score, Ori and the Will of the
-              Wisps continues the Moon Studios tradition of tightly crafted platforming action and deeply emotional
-              storytelling.
-            </p>
           </section>
 
           <section class="system-req flow-content">
             <h2>System requirements</h2>
             <section class="flow-content">
               <h3>Minimum requirements:</h3>
-              <dl class="flow-content">
-                <div class="grid">
-                  <dt>OS:</dt>
-                  <dd>Windows 10 Version 18362.0 or higher</dd>
-                </div>
-                <div class="grid">
-                  <dt>Processor:</dt>
-                  <dd>AMD Athlon X4 | Intel Core i5 4460</dd>
-                </div>
-                <div class="grid">
-                  <dt>Memory:</dt>
-                  <dd>8 GB RAM</dd>
-                </div>
-                <div class="grid">
-                  <dt>Graphics:</dt>
-                  <dd>Nvidia GTX 950 | AMD R7 370</dd>
-                </div>
-                <div class="grid">
-                  <dt>DirectX:</dt>
-                  <dd>Version 11</dd>
-                </div>
-                <div class="grid">
-                  <dt>Storage:</dt>
-                  <dd>20 GB available space</dd>
-                </div>
-              </dl>
+              <dl id="min-req" class="flow-content"></dl>
             </section>
             <section class="flow-content">
               <h3>Recommended requirements:</h3>
-              <dl class="flow-content">
-                <div class="grid">
-                  <dt>OS:</dt>
-                  <dd>Windows 10 Version 18362.0 or higher</dd>
-                </div>
-                <div class="grid">
-                  <dt>Processor:</dt>
-                  <dd>AMD Athlon X4 | Intel Core i5 4460</dd>
-                </div>
-                <div class="grid">
-                  <dt>Memory:</dt>
-                  <dd>8 GB RAM</dd>
-                </div>
-                <div class="grid">
-                  <dt>Graphics:</dt>
-                  <dd>Nvidia GTX 950 | AMD R7 370</dd>
-                </div>
-                <div class="grid">
-                  <dt>DirectX:</dt>
-                  <dd>Version 11</dd>
-                </div>
-                <div class="grid">
-                  <dt>Storage:</dt>
-                  <dd>20 GB available space</dd>
-                </div>
-              </dl>
+              <dl id="rec-req" class="flow-content"></dl>
             </section>
           </section>
         </div>

@@ -8,14 +8,15 @@ import { getSummaryPrices } from "../features/cart.js";
  * @returns List item
  */
 const createCartItem = (productDetails) => {
+  console.log(productDetails);
   const li = createHTML("li", "grid", null, { id: productDetails.productId });
   const img = createHTML("img", null, null, { src: productDetails.image, alt: productDetails.title });
   const title = createHTML("span", null, productDetails.title);
   const priceContainer = createHTML("div", ["price", "flex", "flex--col"]);
-  if (productDetails.price.oldPrice !== productDetails.price.currentPrice) {
+  if (productDetails.price.originalPrice !== productDetails.price.currentPrice) {
     const priceOld = createHTML("s");
     const helpText = createHTML("span", "visually-hidden", "Original price");
-    const price = createHTML("span", null, `$${productDetails.price.oldPrice}`);
+    const price = createHTML("span", null, `$${productDetails.price.originalPrice}`);
     priceOld.append(helpText, price);
     priceContainer.appendChild(priceOld);
   }
