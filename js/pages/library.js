@@ -1,13 +1,33 @@
-import { data as games } from "../../data/games.js";
 import { createCard } from "../components/card.js";
+import { fetchApiResults, parseGameRes } from "../util/api.js";
+import { createBoxError } from "../components/error.js";
 
-export const setupLibrary = () => {
-  const gamesContainer = document.querySelector("#games-container");
-  const ownedGames = games.splice(0, 3);
+const gamesContainer = document.querySelector("#games-container");
 
-  for (const game of ownedGames) {
-    console.log(game);
-    const card = createCard(game, true);
-    gamesContainer.appendChild(card);
+export const setupLibrary = async () => {
+  try {
+    const games = await fetchApiResults("/products", "?per_page=20");
+    document.querySelector(".loader").classList.add("d-none");
+    const parsedGames = [];
+    for (const game of games) {
+      parsedGames.push(parseGameRes(game));
+    }
+
+    const ownedGames = parsedGames.splice(0, 3);
+
+    for (const game of ownedGames) {
+      console.log(game);
+      const card = createCard(game, true);
+      gamesContainer.appendChild(card);
+    }
+  } catch (error) {
+    document.querySelector(".loader").classList.add("d-none");
+
+    const errorAlert = createBoxError(
+      "There has been an error on our end, please refresh the page or try again later",
+      "error"
+    );
+
+    gamesContainer.appendChild(errorAlert);
   }
 };

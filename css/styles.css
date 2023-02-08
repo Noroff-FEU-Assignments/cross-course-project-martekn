@@ -683,6 +683,11 @@ main.d-none {
   margin-top: var(--space-350);
 }
 
+.library .alert-dialog {
+  margin: 0;
+  grid-column: 1 / -1;
+}
+
 @media (min-width: 45em) {
   .library {
     --flow-space: var(--space-500);
