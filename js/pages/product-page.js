@@ -2,7 +2,9 @@ import { fetchApiResults, parseGameRes } from "../util/api.js";
 import { setupAddToCart } from "../features/cart.js";
 import { createHTML } from "../util/createHTML.js";
 import { setupImageSlider } from "../components/image-slider.js";
+import { createBoxError } from "../components/error.js";
 
+const main = document.querySelector("#main-content");
 const button = document.querySelector("#btn-cart");
 const id = new URLSearchParams(window.location.search).get("id");
 const condition = new URLSearchParams(window.location.search).get("condition");
@@ -98,43 +100,58 @@ const createRequirements = (container, requirementsObj) => {
 };
 
 export const setupProductPage = async () => {
-  const game = parseGameRes(await fetchApiResults(`/products/${id}`));
-  const genre = [];
-  let currentPrice = game.regular_price;
-  let originalPrice = game.regular_price;
+  try {
+    const game = parseGameRes(await fetchApiResults(`/products/${id}`));
+    main.classList.remove("d-none");
+    document.querySelector(".loader").classList.add("d-none");
+    const genre = [];
+    let currentPrice = game.regular_price;
+    let originalPrice = game.regular_price;
 
-  for (const category of game.categories) {
-    genre.push(category.name);
+    for (const category of game.categories) {
+      genre.push(category.name);
+    }
+
+    document.querySelector("#genre").innerHTML = genre.join(", ");
+    document.querySelector("#release").innerHTML = game.meta_data.release_date.split("-").reverse().join(".");
+    document.querySelector("#developer").innerHTML = game.meta_data.developer;
+    document.querySelector("#title").innerHTML = game.name;
+
+    if (condition === "preorder") {
+      currentPrice = game.meta_data.conditions.preorder;
+    }
+
+    if (condition === "preowned") {
+      currentPrice = game.meta_data.conditions.preowned;
+    }
+
+    if (condition === "new") {
+      currentPrice = game.meta_data.conditions.new;
+    }
+
+    if (game.on_sale) {
+      currentPrice = game.sale_price;
+    }
+
+    createPricing(currentPrice, originalPrice);
+    setConditions(game.meta_data.conditions);
+    createMetaScore(game.meta_data.meta_score);
+    setupImageSlider(game);
+    createDescription(game.description);
+    createRequirements(minReq, game.meta_data.min_system_requirements);
+    createRequirements(recReq, game.meta_data.recommended_system_requirements);
+
+    setupAddToCart(button, game.id, game.name, game.images[0].src, currentPrice, originalPrice, condition);
+  } catch (error) {
+    console.log(error);
+    main.classList.add("d-none");
+    document.querySelector(".loader").classList.add("d-none");
+
+    const errorAlert = createBoxError(
+      "There has been an error on our end, please refresh the page or try again later",
+      "error"
+    );
+
+    main.parentNode.insertBefore(errorAlert, main.nextSibling);
   }
-
-  document.querySelector("#genre").innerHTML = genre.join(", ");
-  document.querySelector("#release").innerHTML = game.meta_data.release_date.split("-").reverse().join(".");
-  document.querySelector("#developer").innerHTML = game.meta_data.developer;
-  document.querySelector("#title").innerHTML = game.name;
-
-  if (condition === "preorder") {
-    currentPrice = game.meta_data.conditions.preorder;
-  }
-
-  if (condition === "preowned") {
-    currentPrice = game.meta_data.conditions.preowned;
-  }
-
-  if (condition === "new") {
-    currentPrice = game.meta_data.conditions.new;
-  }
-
-  if (game.on_sale) {
-    currentPrice = game.sale_price;
-  }
-
-  createPricing(currentPrice, originalPrice);
-  setConditions(game.meta_data.conditions);
-  createMetaScore(game.meta_data.meta_score);
-  setupImageSlider(game);
-  createDescription(game.description);
-  createRequirements(minReq, game.meta_data.min_system_requirements);
-  createRequirements(recReq, game.meta_data.recommended_system_requirements);
-
-  setupAddToCart(button, game.id, game.name, game.images[0].src, currentPrice, originalPrice, condition);
 };
