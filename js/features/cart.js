@@ -79,6 +79,9 @@ export const getSummaryPrices = () => {
     }
   }
   discount = sum - total;
+  sum = sum.toFixed(2);
+  total = total.toFixed(2);
+  discount = discount.toFixed(2);
   return { price: sum, discountedPrice: discount, totalPrice: total };
 };
 
