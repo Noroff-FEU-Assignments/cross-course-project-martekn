@@ -6,15 +6,9 @@ const user = JSON.parse(localStorage.getItem("user"));
 const gamesContainer = document.querySelector("#games-container");
 const searchButton = document.querySelector("#library-button");
 const searchInput = document.querySelector("#library-input");
-const ownedGamesId = [];
-const ownedGames = [];
-const parsedGames = [];
+const ownedGamesId = user.ownedGames.map((game) => game.id);
 
-for (const game of user.ownedGames) {
-  ownedGamesId.push(game.id);
-}
-
-const searchLibrary = () => {
+const searchLibrary = (ownedGames) => {
   gamesContainer.innerHTML = "";
   const searchedGames = ownedGames.filter((game) => game.name.toLowerCase().startsWith(searchInput.value));
   searchInput.value = "";
@@ -37,17 +31,9 @@ export const setupLibrary = async () => {
       gamesContainer.appendChild(error);
     } else {
       const games = await fetchApiResults("/products", "?per_page=20");
-      for (const game of games) {
-        parsedGames.push(parseGameRes(game));
-      }
+      const parsedGames = games.map((game) => parseGameRes(game));
 
-      for (const game of parsedGames) {
-        for (const id of ownedGamesId) {
-          if (game.id === id) {
-            ownedGames.push(game);
-          }
-        }
-      }
+      const ownedGames = parsedGames.filter((game) => ownedGamesId.includes(game.id));
 
       for (const game of ownedGames) {
         let card = createCard(game, true);
@@ -55,17 +41,18 @@ export const setupLibrary = async () => {
       }
 
       searchButton.addEventListener("click", (e) => {
-        searchLibrary();
+        searchLibrary(ownedGames);
       });
 
       searchInput.addEventListener("keyup", (e) => {
         if (e.key === "Enter") {
-          searchLibrary();
+          searchLibrary(ownedGames);
         }
       });
     }
     document.querySelector(".loader").classList.add("d-none");
   } catch (error) {
+    console.log(error);
     document.querySelector(".loader").classList.add("d-none");
 
     const errorAlert = createBoxError(

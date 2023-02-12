@@ -110,7 +110,43 @@ export const removeFromCart = function (e) {
   }
 };
 
+const productRemovalAlert = (container) => {
+  const alert = createHTML("div", ["cart-alert", "flex"]);
+  const messageContainer = createHTML("div", "flex");
+  const messageIcon = createHTML("span", "material-symbols-outlined", "warning");
+  const message = createHTML("span", null, `Owned game(s) were removed from the cart`);
+  messageContainer.append(messageIcon, message);
+  const button = createHTML("button", "btn--transparent");
+  const icon = createHTML("span", "material-symbols-outlined", "close");
+  button.addEventListener("click", () => {
+    alert.remove();
+  });
+  button.appendChild(icon);
+  alert.append(messageContainer, button);
+  container.appendChild(alert);
+  setTimeout(() => {
+    alert.remove();
+  }, 3000);
+};
 export const setupCart = (container) => {
+  const auth = JSON.parse(localStorage.getItem("auth"));
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (auth === "true") {
+    const ownedGamesIds = user.ownedGames.map((game) => game.id);
+    const cartArrayLength = cartArray.length;
+
+    cartArray = cartArray.filter((product) => {
+      return !ownedGamesIds.includes(product.productId);
+    });
+
+    localStorage.setItem(lsKey, JSON.stringify(cartArray));
+
+    if (cartArrayLength !== cartArray.length) {
+      productRemovalAlert(container);
+      setCartCounter();
+    }
+  }
+
   if (cartArray.length === 0) {
     displayEmptyCartError();
   } else {

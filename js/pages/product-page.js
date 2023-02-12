@@ -4,6 +4,7 @@ import { createHTML } from "../util/createHTML.js";
 import { setupImageSlider } from "../components/image-slider.js";
 import { createBoxError } from "../components/error.js";
 
+const auth = JSON.parse(localStorage.getItem("auth"));
 const user = JSON.parse(localStorage.getItem("user"));
 const main = document.querySelector("#main-content");
 const button = document.querySelector("#btn-cart");
@@ -109,13 +110,9 @@ export const setupProductPage = async () => {
     const metaDesc = document.querySelector("meta[name='description'");
     metaDesc.setAttribute("content", game.description.split(".")[0].replace("<p>", "").replace("</p>", ""));
     document.querySelector("#breadcrumbs-current").innerText = game.name;
-    const genre = [];
+    const genre = game.categories.map((category) => category.name);
     let currentPrice = game.regular_price;
     let originalPrice = game.regular_price;
-
-    for (const category of game.categories) {
-      genre.push(category.name);
-    }
 
     document.querySelector("#genre").innerHTML = genre.join(", ");
     document.querySelector("#release").innerHTML = game.meta_data.release_date.split("-").reverse().join(".");
@@ -146,12 +143,16 @@ export const setupProductPage = async () => {
     createRequirements(minReq, game.meta_data.min_system_requirements);
     createRequirements(recReq, game.meta_data.recommended_system_requirements);
 
-    const ownedGame = user.ownedGames.find((game) => game.id == id);
-    if (!ownedGame) {
-      setupAddToCart(button, game.id, game.name, game.images[0].src, currentPrice, originalPrice, condition);
+    if (auth === "true") {
+      const ownedGame = user.ownedGames.find((game) => game.id == id);
+      if (!ownedGame) {
+        setupAddToCart(button, game.id, game.name, game.images[0].src, currentPrice, originalPrice, condition);
+      } else {
+        button.innerText = "You own this game";
+        button.disabled = true;
+      }
     } else {
-      button.innerText = "You own this game";
-      button.disabled = true;
+      setupAddToCart(button, game.id, game.name, game.images[0].src, currentPrice, originalPrice, condition);
     }
   } catch (error) {
     console.log(error);

@@ -758,8 +758,28 @@ main.d-none {
 /* #region */
 .cart-page {
   gap: 0;
+  position: relative;
 }
 
+.cart-page .cart-alert {
+  background-color: var(--clr-warning-contrast);
+  border: 1px solid var(--clr-warning);
+  justify-content: space-between;
+  padding: var(--space-500);
+  border-radius: var(--border-radius);
+
+  position: absolute;
+  z-index: 1000;
+  width: 90%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.cart-page .cart-alert button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .cart-page > div {
   padding: var(--space-450);
 }

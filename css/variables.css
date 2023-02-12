@@ -29,12 +29,14 @@
   --clr-neutral-550: #17171a;
   --clr-neutral-600: #0d0d0d;
 
-  --clr-warning-350: #926f16;
-  --clr-warning-450: #cc9b1e;
-  --clr-success-350: #337533;
-  --clr-success-450: #5ab55a;
-  --clr-error-350: #d12929;
-  --clr-error-450: #ea6161;
+  --clr-warning-300: #ead6a2;
+  --clr-warning-350: #cc9b1e;
+  --clr-warning-400: #926f16;
+  --clr-warning-450: #413518;
+  --clr-success-350: #5ab55a;
+  --clr-success-400: #337533;
+  --clr-error-350: #ea6161;
+  --clr-error-400: #d12929;
 
   /** 2. Light theme colors
 -------------------------*/
@@ -47,9 +49,10 @@
   --clr-table: var(--clr-neutral-200);
   --clr-table-dark: var(--clr-neutral-200);
 
-  --clr-warning: var(--clr-warning-350);
-  --clr-success: var(--clr-success-350);
-  --clr-error: var(--clr-error-350);
+  --clr-warning-contrast: var(--clr-warning-300);
+  --clr-warning: var(--clr-warning-400);
+  --clr-success: var(--clr-success-400);
+  --clr-error: var(--clr-error-400);
 
   /* See dark secondary colors under .dark:root */
 
@@ -102,7 +105,8 @@
   --clr-table: var(--clr-neutral-500);
   --clr-table-dark: var(--clr-neutral-550);
 
-  --clr-warning: var(--clr-warning-450);
-  --clr-success: var(--clr-success-450);
-  --clr-error: var(--clr-error-450);
+  --clr-warning-contrast: var(--clr-warning-450);
+  --clr-warning: var(--clr-warning-350);
+  --clr-success: var(--clr-success-350);
+  --clr-error: var(--clr-error-350);
 }
