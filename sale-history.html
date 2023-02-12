@@ -140,24 +140,7 @@
                 <th class="h3">Product(s)</th>
               </tr>
             </thead>
-            <tbody class="odd-table-rows">
-              <tr>
-                <td class="date">07/11/21</td>
-                <td class="order-number"><a href="./sale-details.html" class="link">12123536</a></td>
-                <td class="status">Complete</td>
-                <td class="price">$8.99</td>
-                <td class="products">
-                  <span>Cyberpunk 2077</span>
-                </td>
-              </tr>
-              <tr>
-                <td class="date">28/10/21</td>
-                <td class="order-number"><a href="./sale-details.html" class="link">71250923</a></td>
-                <td class="status">Complete</td>
-                <td class="price">$2.99</td>
-                <td class="products"><span>Fallout 76</span></td>
-              </tr>
-            </tbody>
+            <tbody id="history-container" class="odd-table-rows"></tbody>
           </table>
         </div>
       </main>
@@ -181,5 +164,10 @@
     </footer>
 
     <script type="module" src="./js/app.js"></script>
+    <script type="module">
+      import { setupHistory } from "./js/util/history-details.js";
+
+      setupHistory("sale");
+    </script>
   </body>
 </html>

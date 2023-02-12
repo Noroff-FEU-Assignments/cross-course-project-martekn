@@ -1,10 +1,10 @@
 import { createCart, displayEmptyCartError, createSummary } from "../components/cart.js";
 import { createHTML } from "../util/createHTML.js";
 
-const lsKey = "cartItems";
+export const lsKey = "cartItems";
+export let cartArray = [];
 const counterContainer = document.querySelector("#counter-container");
 const countContainer = document.querySelector("#count");
-let cartArray = [];
 
 export const setCartCounter = () => {
   if (localStorage.getItem(lsKey) !== null) {

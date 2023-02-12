@@ -14,11 +14,23 @@ export const createCard = (game, owned) => {
 
   if (owned) {
     card = createHTML("div", ["card", "card--owned", "bg-card", "rounded-corners", "shadow"]);
-    const btnContainer = createHTML("div", ["cta-group", "flex"]);
-    const downloadBtn = createHTML("button", "btn", "Download");
-    const sellBtn = createHTML("a", ["btn", "btn--accent"], "Sell", { href: "./sale-checkout.html" });
-    btnContainer.append(downloadBtn, sellBtn);
-    content.appendChild(btnContainer);
+    const container = createHTML("div", ["cta-group", "flex"]);
+    console.log(game);
+    if (game.meta_data.conditions.hasOwnProperty("preorder")) {
+      const release = createHTML(
+        "span",
+        ["preorder", "fg-low-contrast"],
+        `Releases ${game.meta_data.release_date.split("-").reverse().join(".")} `
+      );
+      container.append(release);
+    } else {
+      const downloadBtn = createHTML("button", "btn", "Download");
+      const sellBtn = createHTML("a", ["btn", "btn--accent"], "Sell", {
+        href: `./sale-checkout.html?id=${game.id}`,
+      });
+      container.append(downloadBtn, sellBtn);
+    }
+    content.appendChild(container);
   } else {
     const pricingContainer = createHTML("div", ["pricing", "grid"]);
     const preownedGamesId = [];
@@ -34,7 +46,7 @@ export const createCard = (game, owned) => {
 
       if (key === "preowned") {
         preownedGamesId.push(game.id);
-        const discount = Math.round((Number(value) / game.regular_price) * 100);
+        const discount = 100 - Math.round((Number(value) / game.regular_price) * 100);
         const discountContainer = createHTML("span", "discount", `-${discount}%`);
 
         const originalPrice = createHTML("s", "original-price", `$${game.regular_price}`);
@@ -45,7 +57,7 @@ export const createCard = (game, owned) => {
     }
 
     if (game.on_sale) {
-      const discount = Math.round((game.sale_price / game.regular_price) * 100);
+      const discount = 100 - Math.round((game.sale_price / game.regular_price) * 100);
       const discountContainer = createHTML("span", "discount", `-${discount}%`);
 
       const originalPrice = createHTML("s", "original-price", `$${game.regular_price}`);

@@ -4,6 +4,7 @@ import { createHTML } from "../util/createHTML.js";
 import { setupImageSlider } from "../components/image-slider.js";
 import { createBoxError } from "../components/error.js";
 
+const user = JSON.parse(localStorage.getItem("user"));
 const main = document.querySelector("#main-content");
 const button = document.querySelector("#btn-cart");
 const id = new URLSearchParams(window.location.search).get("id");
@@ -141,7 +142,13 @@ export const setupProductPage = async () => {
     createRequirements(minReq, game.meta_data.min_system_requirements);
     createRequirements(recReq, game.meta_data.recommended_system_requirements);
 
-    setupAddToCart(button, game.id, game.name, game.images[0].src, currentPrice, originalPrice, condition);
+    const ownedGame = user.ownedGames.find((game) => game.id == id);
+    if (!ownedGame) {
+      setupAddToCart(button, game.id, game.name, game.images[0].src, currentPrice, originalPrice, condition);
+    } else {
+      button.innerText = "You own this game";
+      button.disabled = true;
+    }
   } catch (error) {
     console.log(error);
     main.classList.add("d-none");

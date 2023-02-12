@@ -340,6 +340,7 @@ a.card:focus-visible {
 }
 .card--owned .info {
   gap: var(--space-400);
+  justify-content: space-between;
 }
 
 .card--owned .cta-group {

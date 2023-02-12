@@ -59,7 +59,7 @@
         </div>
       </nav>
       <main class="checkout purchase-checkout | container" id="main-content">
-        <h1>Sell Cyberpunk 2077</h1>
+        <h1 id="title"></h1>
 
         <form action="./sale-confirmation.html" method="get" class="grid">
           <div id="details-container" class="details checkout-step | bg-card rounded-corners shadow">
@@ -91,23 +91,21 @@
             </div>
             <div class="main | flow-content flow-form">
               <div class="item | flex">
-                <span>Cyberpunk 2077</span>
-                <span>$59.99</span>
+                <span id="game-name"></span>
+                <span id="purchase-price"></span>
               </div>
 
               <dl class="grid">
-                <dt>Price</dt>
-                <dd>$123.97</dd>
                 <dt>Your cut</dt>
-                <dd>%15</dd>
+                <dd id="sale-cut"></dd>
                 <dt class="h3">You recieve</dt>
-                <dd class="h3">$8.99</dd>
+                <dd id="users-cut" class="h3"></dd>
               </dl>
               <div class="flow-content">
-                <button class="btn">Complete sale</button>
+                <button id="sell-btn" class="btn">Complete sale</button>
                 <div class="terms">
                   By clicking 'Complete sale' you accept our
-                  <button id="sell-btn" class="link fg-low-contrast">terms & conditions</button>
+                  <button class="link fg-low-contrast">terms & conditions</button>
                 </div>
               </div>
             </div>

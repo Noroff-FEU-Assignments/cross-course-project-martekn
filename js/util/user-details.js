@@ -42,6 +42,7 @@ export const updateUserFromInput = (user) => {
   user.zip = document.querySelector("#zipcode").value.trim();
   user.city = document.querySelector("#city").value.trim();
   user.country = document.querySelector("#country").value.trim();
+  localStorage.setItem("user", JSON.stringify(user));
 };
 
 /**
@@ -50,7 +51,6 @@ export const updateUserFromInput = (user) => {
  * @param {Object} user
  */
 export const saveUser = (user) => {
-  e.preventDefault();
   updateUserFromInput(user);
 
   const validated = validateDetails(user);
@@ -69,7 +69,6 @@ export const saveUser = (user) => {
  * @param {Object} user
  */
 export const editUser = (user) => {
-  e.preventDefault();
   const addressTwoElement = document.querySelector("#address-two");
 
   user.fullName = document.querySelector("#full-name").innerText;
@@ -153,6 +152,7 @@ export const setupUserDetails = (user, container) => {
   const editButton = document.querySelector("#edit-details");
 
   editButton.addEventListener("click", (e) => {
+    e.preventDefault();
     editUser(user);
   });
   let element;

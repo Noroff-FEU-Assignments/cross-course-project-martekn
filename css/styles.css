@@ -627,6 +627,9 @@ main.d-none {
   padding-top: var(--space-400);
 }
 
+.order-details td s {
+  margin-right: var(--space-400);
+}
 .order-details td:last-of-type {
   text-align: right;
 }

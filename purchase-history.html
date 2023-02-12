@@ -140,39 +140,7 @@
                 <th class="h3">Product(s)</th>
               </tr>
             </thead>
-            <tbody class="odd-table-rows">
-              <tr>
-                <td class="date">07/11/21</td>
-                <td class="order-number"><a href="./purchase-details.html" class="link">71270214</a></td>
-                <td class="status">Complete</td>
-                <td class="price">$123.97</td>
-                <td class="products">
-                  <span>Cyberpunk 2077</span><span>The Witcher 3: Wild Hunt</span
-                  ><span>Ori and the Will of the Wisps</span>
-                </td>
-              </tr>
-              <tr>
-                <td class="date">28/10/21</td>
-                <td class="order-number"><a href="./purchase-details.html" class="link">94536530</a></td>
-                <td class="status">Complete</td>
-                <td class="price">$6.79</td>
-                <td class="products"><span>GRIS</span></td>
-              </tr>
-              <tr>
-                <td class="date">02/08/21</td>
-                <td class="order-number"><a href="./purchase-details.html" class="link">53408512</a></td>
-                <td class="status">Complete</td>
-                <td class="price">$9.99</td>
-                <td class="products"><span>Q.U.B.E. 2</span></td>
-              </tr>
-              <tr>
-                <td class="date">21/03/21</td>
-                <td class="order-number"><a href="./purchase-details.html" class="link">23260841</a></td>
-                <td class="status">Complete</td>
-                <td class="price">$19.99</td>
-                <td class="products"><span>Fallout 76</span></td>
-              </tr>
-            </tbody>
+            <tbody id="history-container" class="odd-table-rows"></tbody>
           </table>
         </div>
       </main>
@@ -196,5 +164,10 @@
     </footer>
 
     <script type="module" src="./js/app.js"></script>
+    <script type="module">
+      import { setupHistory } from "./js/util/history-details.js";
+
+      setupHistory("purchase");
+    </script>
   </body>
 </html>

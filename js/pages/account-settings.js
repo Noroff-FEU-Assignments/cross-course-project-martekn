@@ -1,15 +1,14 @@
 import { logout } from "../features/auth.js";
 import { passwordVisibilityToggle } from "../features/auth.js";
 import { setupUserDetails } from "../util/user-details.js";
-import { users } from "../../data/users.js";
+
 import { displayTextError, clearTextError } from "../components/error.js";
 import { characterValidation, setupPasswordEventListener, passwordValidation } from "../util/validation.js";
 
 const logoutButton = document.querySelector("#logout");
 
 const detailsContainer = document.querySelector("#details-container");
-const userId = 1;
-const user = users.find((users) => users.id === userId);
+const user = JSON.parse(localStorage.getItem("user"));
 
 const form = document.querySelector("#password-form");
 

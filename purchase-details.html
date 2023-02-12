@@ -124,7 +124,9 @@
               <li><a href="./index.html">Home</a></li>
               <li><a href="./account.html">My account</a></li>
               <li><a href="./purchase-history.html">Purchase history</a></li>
-              <li><a href="./purchase-details.html" aria-current="page">Order: 12345678</a></li>
+              <li>
+                <a id="breadcrumbs-current" href="./purchase-details.html" aria-current="page"></a>
+              </li>
             </ol>
           </div>
         </nav>
@@ -134,11 +136,11 @@
           <div class="wrapper">
             <dl class="details grid">
               <dt class="h3">Order:</dt>
-              <dd>12345678</dd>
+              <dd id="order-number"></dd>
               <dt class="h3">Date:</dt>
-              <dd>07/11/2021</dd>
+              <dd id="date"></dd>
               <dt class="h3">Status:</dt>
-              <dd>Complete</dd>
+              <dd id="status"></dd>
             </dl>
           </div>
           <div class="table-wrapper wrapper">
@@ -149,30 +151,17 @@
                   <th class="h3">Price</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>Cyberpunk 2077</td>
-                  <td>$59.99</td>
-                </tr>
-                <tr>
-                  <td>The Witcher 3: Wild Hunt</td>
-                  <td>$39.99</td>
-                </tr>
-                <tr>
-                  <td>Ori and the Will of the Wisps</td>
-                  <td>$23.99</td>
-                </tr>
-              </tbody>
+              <tbody id="products-container"></tbody>
             </table>
           </div>
           <div class="wrapper grid">
             <dl class="pricing grid">
               <dt>Price</dt>
-              <dd>$123.97</dd>
+              <dd id="sum"></dd>
               <dt>Discount</dt>
-              <dd>-$0</dd>
+              <dd id="discount"></dd>
               <dt class="h3">Total</dt>
-              <dd>$123.97</dd>
+              <dd id="total"></dd>
             </dl>
           </div>
         </div>
@@ -197,5 +186,10 @@
     </footer>
 
     <script type="module" src="./js/app.js"></script>
+    <script type="module">
+      import { setupDetails } from "./js/util/history-details.js";
+
+      setupDetails("purchase");
+    </script>
   </body>
 </html>

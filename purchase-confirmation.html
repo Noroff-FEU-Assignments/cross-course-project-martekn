@@ -119,9 +119,7 @@
       <main id="main-content">
         <div class="confirmation-page | container flow-content">
           <h1>Thank you for your purchase!</h1>
-          <span class="order-nr | d-block"
-            >Order number: <a href="./purchase-history.html" class="link">12345678</a></span
-          >
+          <span class="order-nr | d-block">Order number: <a id="order-number" href="#" class="link"></a></span>
           <p>We will email you an order confirmation with details regarding your purchase.</p>
           <a href="./library.html" class="link link--link">View game(s) in library</a>
         </div>
@@ -146,5 +144,10 @@
     </footer>
 
     <script type="module" src="./js/app.js"></script>
+    <script type="module">
+      import { setupConfirmationLink } from "./js/util/confirmation.js";
+
+      setupConfirmationLink("purchase");
+    </script>
   </body>
 </html>
