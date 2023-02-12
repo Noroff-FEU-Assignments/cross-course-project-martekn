@@ -93,7 +93,9 @@ export const setupDetails = (type) => {
     location.href = returnUrl;
   }
 
-  document.title = `Order: #${orderNr}`;
+  document.title = `Order: #${orderNr} | GameHub`;
+  const metaDesc = document.querySelector("meta[name='description'");
+  metaDesc.setAttribute("content", `Information regarding your order details for order #${orderNr}`);
 
   document.querySelector("#breadcrumbs-current").innerText = `Order: #${orderNr}`;
   document.querySelector("#order-number").innerText = orderNr;

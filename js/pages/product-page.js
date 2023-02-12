@@ -105,6 +105,10 @@ export const setupProductPage = async () => {
     const game = parseGameRes(await fetchApiResults(`/products/${id}`));
     main.classList.remove("d-none");
     document.querySelector(".loader").classList.add("d-none");
+    document.title = `${game.name} | GameHub`;
+    const metaDesc = document.querySelector("meta[name='description'");
+    metaDesc.setAttribute("content", game.description.split(".")[0].replace("<p>", "").replace("</p>", ""));
+    document.querySelector("#breadcrumbs-current").innerText = game.name;
     const genre = [];
     let currentPrice = game.regular_price;
     let originalPrice = game.regular_price;
