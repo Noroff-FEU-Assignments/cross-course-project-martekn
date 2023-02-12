@@ -15,7 +15,7 @@ export const setupIndex = async () => {
     for (const game of games) {
       parsedGames.push(parseGameRes(game));
     }
-    console.log(parsedGames);
+
     main.classList.remove("d-none");
     document.querySelector(".loader").classList.add("d-none");
 

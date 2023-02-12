@@ -36,7 +36,6 @@ const submitForm = () => {
     const gamesArray = [];
 
     for (const product of cartArray) {
-      console.log(product);
       const gameObj = {
         id: product.productId,
         name: product.title,

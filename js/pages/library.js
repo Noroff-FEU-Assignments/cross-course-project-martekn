@@ -22,7 +22,7 @@ const searchLibrary = () => {
     let card = createCard(game, true);
     gamesContainer.appendChild(card);
   }
-  console.log(searchedGames);
+
   if (searchedGames.length === 0) {
     const error = createBoxError("No games found matching your search", "error");
     gamesContainer.appendChild(error);

@@ -101,5 +101,4 @@ export const setupDetails = (type) => {
   document.querySelector("#order-number").innerText = orderNr;
   document.querySelector("#date").innerText = order.date.split("-").join("/");
   document.querySelector("#status").innerText = order.status;
-  console.log(order);
 };

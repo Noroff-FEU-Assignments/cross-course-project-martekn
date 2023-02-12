@@ -8,7 +8,6 @@ import { getSummaryPrices } from "../features/cart.js";
  * @returns List item
  */
 const createCartItem = (productDetails) => {
-  console.log(productDetails);
   const li = createHTML("li", "grid", null, { id: productDetails.productId });
   const img = createHTML("img", null, null, { src: productDetails.image, alt: productDetails.title });
   const title = createHTML("span", null, productDetails.title);

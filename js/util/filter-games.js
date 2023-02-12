@@ -22,7 +22,6 @@ export const filterGames = (games, parent) => {
         }
       }
       game.currentPrice = Number(price);
-      console.log(price, game.name);
     }
 
     games.sort((a, b) => a.currentPrice >= b.currentPrice);

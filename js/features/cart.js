@@ -15,7 +15,6 @@ export const setCartCounter = () => {
   }
 };
 
-console.log(cartArray);
 const addProductToCart = (product, button) => {
   cartArray.push(product);
   localStorage.setItem(lsKey, JSON.stringify(cartArray));

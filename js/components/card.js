@@ -15,7 +15,6 @@ export const createCard = (game, owned) => {
   if (owned) {
     card = createHTML("div", ["card", "card--owned", "bg-card", "rounded-corners", "shadow"]);
     const container = createHTML("div", ["cta-group", "flex"]);
-    console.log(game);
     if (game.meta_data.conditions.hasOwnProperty("preorder")) {
       const release = createHTML(
         "span",

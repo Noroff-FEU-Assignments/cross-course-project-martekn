@@ -20,7 +20,6 @@ document.querySelector("#users-cut").innerText = `$${((game.price.purchasePrice 
 const accountnr = document.querySelector("#accountnr");
 const button = document.querySelector("#sell-btn");
 
-console.log(game);
 const submitForm = () => {
   if (document.querySelector("#save-button")) {
     updateUserFromInput(user);
