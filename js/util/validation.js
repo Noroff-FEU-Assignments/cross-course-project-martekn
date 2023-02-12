@@ -16,13 +16,13 @@ export const characterValidation = (value, amountOfChar = 1) => value.length >= 
  * @returns Boolean
  */
 export const dateValidation = (monthValue, yearValue) => {
+  monthValue = Number(monthValue);
+  yearValue = Number(yearValue);
   const thisMonth = new Date().getMonth() + 1;
-  const thisMonthPad = thisMonth.toString();
-  const thisYear = new Date().getFullYear().toString().slice(-2);
-
+  const thisYear = Number(new Date().getFullYear().toString().slice(-2));
   if (yearValue > thisYear) {
     return true;
-  } else if (yearValue === thisYear && monthValue > thisMonthPad) {
+  } else if (yearValue === thisYear && monthValue > thisMonth) {
     return true;
   } else {
     return false;
