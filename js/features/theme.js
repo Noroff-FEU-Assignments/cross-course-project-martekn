@@ -2,7 +2,7 @@ const themeButton = document.querySelector("#theme-toggle");
 /**
  * Toggles the theme
  * @param {HTMLElement} button or element with aria-pressed attribute
- * @param {*} themeState
+ * @param {"true" | "false"} themeState
  */
 const toggleTheme = (button, themeState) => {
   const html = document.querySelector("html");

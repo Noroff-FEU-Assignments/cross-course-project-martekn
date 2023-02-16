@@ -1,4 +1,4 @@
-let url = "https://martekn.com/noroff/gamehub/wp-json/wc/v3";
+const baseUrl = "https://martekn.com/noroff/gamehub/wp-json/wc/v3";
 const consumerKey = "consumer_key=ck_2d8c91c030c68ff6af93c2a2f6d4d685d9c65025";
 const consumerSecret = "consumer_secret=cs_eee8df559ab31e03d7db64b7041fd94f2a745c93";
 
@@ -9,6 +9,7 @@ const consumerSecret = "consumer_secret=cs_eee8df559ab31e03d7db64b7041fd94f2a745
  * @returns Result of the api call
  */
 export const fetchApiResults = async (endpoint, query) => {
+  let url = baseUrl;
   if (endpoint) {
     url += endpoint;
   }

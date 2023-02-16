@@ -6,7 +6,7 @@ import {
   digitValidation,
   setupDigitEventListener,
 } from "../util/validation.js";
-import { setupUserDetails, displayDetailsErrors, validateDetails, updateUserFromInput } from "../util/user-details.js";
+import { setupUserDetails, displayDetailsErrors, validateDetails, updateUserFromInput } from "../features/user.js";
 
 const user = JSON.parse(localStorage.getItem("user"));
 const detailsContainer = document.querySelector("#details-container");

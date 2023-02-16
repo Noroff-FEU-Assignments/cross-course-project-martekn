@@ -7,8 +7,7 @@ const previousPage = new URLSearchParams(window.location.search).get("from");
 const previousPageExists = Boolean(previousPage);
 
 if (previousPageExists) {
-  const login = document.querySelector("#log-in");
-  login.setAttribute("href", `./auth-login.html?from=${previousPage}`);
+  document.querySelector("#log-in").setAttribute("href", `./auth-login.html?from=${previousPage}`);
 }
 
 export const setupForgotPassword = () => {

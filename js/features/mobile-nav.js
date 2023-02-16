@@ -13,6 +13,11 @@ if (nav) {
   lastNavElement = navContent[navContent.length - 1];
 }
 
+/**
+ * Traps the focus inside the navigation to make tab and shift + tab work, if any other key pressed - exit nav
+ * @param {KeyboardEvent} e
+ * @returns
+ */
 const setNavTrapFocus = (e) => {
   const tabPressed = e.key === "Tab";
 

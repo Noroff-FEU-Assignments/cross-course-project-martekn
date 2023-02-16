@@ -1,4 +1,9 @@
 // This is just to mimic the idea of a proper login / account system
+
+/**
+ * Hides / shows the input value and edits the icon
+ * @param {HTMLElement} input
+ */
 export const passwordVisibilityToggle = (input) => {
   const inputId = input.getAttribute("id");
   const button = document.querySelector(`#${inputId} + button`);
@@ -17,29 +22,18 @@ export const passwordVisibilityToggle = (input) => {
   });
 };
 
-export const login = (button) => {
-  const from = new URLSearchParams(window.location.search).get("from");
-  const previousPage = Boolean(from);
-  button.addEventListener("click", (e) => {
-    localStorage.setItem("auth", JSON.stringify("true"));
-
-    if (previousPage) {
-      location.href = `./${from}`;
-    } else {
-      location.href = "./index.html";
-    }
-  });
-};
-
-export const logout = (button) => {
+/**
+ * Sets the logout event listener to button
+ * @param {HTMLElement} button
+ */
+export const setupLogoutButton = (button) => {
   button.addEventListener("click", (e) => {
     localStorage.setItem("auth", JSON.stringify("false"));
     location.href = "./index.html";
   });
 };
 
-const isLoggedIn = () => {
-  const authStatus = JSON.parse(localStorage.getItem("auth"));
+const authGuard = (authStatus) => {
   const url = location.href.split("/");
   const page = url[url.length - 1];
   if (authStatus === "true") {
@@ -68,12 +62,13 @@ const isLoggedIn = () => {
 };
 
 export const setupAuth = () => {
-  isLoggedIn();
+  const authStatus = JSON.parse(localStorage.getItem("auth"));
   const authLink = document.querySelector("#auth");
   const authIcon = document.querySelector("#auth-icon");
   const authText = document.querySelector("#auth-text");
 
-  const authStatus = JSON.parse(localStorage.getItem("auth"));
+  authGuard(authStatus);
+
   if (authLink) {
     if (authStatus === "true") {
       authLink.setAttribute("href", "./account.html");

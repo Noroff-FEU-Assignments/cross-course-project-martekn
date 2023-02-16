@@ -1,6 +1,6 @@
-import { logout } from "../features/auth.js";
+import { setupLogoutButton } from "../features/auth.js";
 import { passwordVisibilityToggle } from "../features/auth.js";
-import { setupUserDetails } from "../util/user-details.js";
+import { setupUserDetails } from "../features/user.js";
 
 import { displayTextError, clearTextError } from "../components/error.js";
 import { characterValidation, setupPasswordEventListener, passwordValidation } from "../util/validation.js";
@@ -25,7 +25,7 @@ const updatePassword = (currentP, newP) => {
 };
 
 export const setupAccountSettings = () => {
-  logout(logoutButton);
+  setupLogoutButton(logoutButton);
 
   passwordVisibilityToggle(currentPassword);
   passwordVisibilityToggle(newPassword);

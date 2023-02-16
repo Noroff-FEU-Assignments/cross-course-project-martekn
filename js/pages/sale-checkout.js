@@ -1,4 +1,5 @@
-import { setupUserDetails, displayDetailsErrors, validateDetails, updateUserFromInput } from "../util/user-details.js";
+import { setupUserDetails, displayDetailsErrors, validateDetails, updateUserFromInput } from "../features/user.js";
+
 import { displayTextError } from "../components/error.js";
 import { setupDigitEventListener, digitValidation } from "../util/validation.js";
 
