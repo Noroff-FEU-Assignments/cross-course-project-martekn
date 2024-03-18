@@ -1,0 +1,112 @@
+/* Table of contents
+--------------------------------------------------
+    1. All colors used in project
+    2. Light theme colors
+    3. Typography
+    4. Spacing
+    5. Other
+    6. Dark theme colors
+*/
+
+:root {
+  /** 1. All colors used in project
+-------------------------*/
+  --clr-primary-300: #b1a3e4;
+  --clr-primary-350: #6c56bd;
+  --clr-primary-400: #5840af;
+  --clr-primary-500: #4924a7;
+
+  --clr-neutral-100: #ffffff;
+  --clr-neutral-150: #eeeff1;
+
+  --clr-neutral-200: #d8dcdf;
+  --clr-neutral-300: #91939c;
+  --clr-neutral-350: #8c8f97;
+  --clr-neutral-400: #686b73;
+
+  --clr-neutral-450: #61646b;
+  --clr-neutral-500: #25262d;
+  --clr-neutral-550: #17171a;
+  --clr-neutral-600: #0d0d0d;
+
+  --clr-warning-300: #ead6a2;
+  --clr-warning-350: #cc9b1e;
+  --clr-warning-400: #926f16;
+  --clr-warning-450: #413518;
+  --clr-success-350: #5ab55a;
+  --clr-success-400: #337533;
+  --clr-error-350: #ea6161;
+  --clr-error-400: #d12929;
+
+  /** 2. Light theme colors
+-------------------------*/
+  --clr-accent: var(--clr-primary-500);
+  --clr-font: var(--clr-neutral-550);
+  --clr-bg: var(--clr-neutral-150);
+  --clr-font-contrast: var(--clr-neutral-400);
+  --clr-card: var(--clr-neutral-100);
+  --clr-border-contrast: var(--clr-neutral-300);
+  --clr-table: var(--clr-neutral-200);
+  --clr-table-dark: var(--clr-neutral-200);
+
+  --clr-warning-contrast: var(--clr-warning-300);
+  --clr-warning: var(--clr-warning-400);
+  --clr-success: var(--clr-success-400);
+  --clr-error: var(--clr-error-400);
+
+  /* See dark secondary colors under .dark:root */
+
+  /** 3. Typography
+-------------------------*/
+  --ff-base: "Roboto", sans-serif;
+  --ff-accent: "Roboto", sans-serif;
+
+  --fs-390: 0.9375rem; /* 15px */
+  --fs-400: 1rem; /* 16px */
+  --fs-450: 1.25rem; /* 20px */
+  --fs-500: 1.56rem; /* 25px */
+  --fs-550: 2rem; /* 32px */
+  --fs-600: 2.56rem; /* 41px */
+  --fs-700: 3.19rem; /* 51px */
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  /** 4. Spacing
+-------------------------*/
+  --space-300: 0.25rem; /* 4px */
+  --space-350: 0.5rem; /* 8px */
+  --space-375: 0.75rem; /* 12px */
+  --space-400: 1rem; /* 16px */
+  --space-450: 1.5rem; /* 24px */
+  --space-500: 2rem; /* 32px */
+  --space-600: 3rem; /* 48px */
+  --space-700: 4rem; /* 64px */
+  --space-900: 6rem; /* 96px */
+  --space-1000: 8rem; /* 128px */
+
+  /** 5. Other
+-------------------------*/
+  --box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  --border-radius: 3px;
+  --border-dark: 1px solid var(--clr-table-dark);
+}
+
+.dark:root {
+  /** 6. Dark theme colors
+---------------------- ---*/
+  --clr-accent: var(--clr-primary-300);
+  --clr-font: var(--clr-neutral-100);
+  --clr-bg: var(--clr-neutral-550);
+  --clr-font-contrast: var(--clr-neutral-350);
+  --clr-card: var(--clr-neutral-500);
+  --clr-border-contrast: var(--clr-neutral-450);
+  --clr-table: var(--clr-neutral-500);
+  --clr-table-dark: var(--clr-neutral-550);
+
+  --clr-warning-contrast: var(--clr-warning-450);
+  --clr-warning: var(--clr-warning-350);
+  --clr-success: var(--clr-success-350);
+  --clr-error: var(--clr-error-350);
+}

@@ -1,0 +1,151 @@
+/* Table of contents
+--------------------------------------------------
+    1. General
+    2. Links
+*/
+
+/** 1. General
+-------------------------*/
+/* #region */
+
+body {
+  font-family: var(--ff-base);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-regular);
+  line-height: 1.6;
+  color: var(--clr-font);
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+h1,
+.h1 {
+  font-family: var(--ff-accent);
+  font-size: var(--fs-600);
+  font-weight: var(--fw-bold);
+}
+
+h2,
+.h2 {
+  font-family: var(--ff-accent);
+  font-size: var(--fs-500);
+  font-weight: var(--fw-bold);
+}
+
+h3,
+.h3 {
+  font-family: var(--ff-accent);
+  font-size: var(--fs-450);
+  font-weight: var(--fw-medium);
+}
+
+s {
+  font-size: var(--fs-390);
+  text-align: right;
+}
+
+.text-450 {
+  font-size: var(--fs-450);
+}
+
+.text-500 {
+  font-size: var(--fs-500);
+}
+
+.text-550 {
+  font-size: var(--fs-550);
+}
+
+.text-600 {
+  font-size: var(--fs-600);
+}
+
+.text-700 {
+  font-size: var(--fs-700);
+}
+
+.text-bold {
+  font-weight: var(--fw-bold);
+}
+/* #endregion */
+
+/** 2. Links
+-------------------------*/
+/* #region */
+.link {
+  color: var(--clr-accent);
+  background-color: transparent;
+  border: none;
+  padding: 0 0 1px 0;
+  max-width: fit-content;
+  cursor: pointer;
+  transition: color 0.1s ease-in-out;
+  position: relative;
+}
+
+button.link {
+  width: fit-content;
+}
+
+.link:after {
+  content: "";
+  display: block;
+  bottom: 0px;
+  height: 1px;
+  width: 100%;
+  grid-column: 2;
+  background: transparent;
+  transition: background-color 0.25s ease-in;
+}
+
+.link:hover:after {
+  background: var(--clr-accent);
+}
+
+.link.fg-low-contrast {
+  color: var(--clr-font-contrast);
+}
+
+.link.fg-low-contrast:hover,
+.link.fg-low-contrast:focus-visible {
+  color: var(--clr-font);
+}
+.link.fg-low-contrast:hover:after {
+  background-color: var(--clr-font);
+}
+
+[class*="link--"] {
+  align-items: center;
+  gap: var(--space-350);
+  display: grid;
+  row-gap: 2px;
+  grid-template-columns: auto 1fr;
+}
+[class*="link--"].hide {
+  display: none;
+}
+
+[class*="link--"]::before {
+  font-family: "Material Icons";
+  grid-row: span 2;
+}
+
+.link--back::before {
+  content: "\e5c4";
+}
+
+.link--link::before {
+  content: "\e157";
+  transform: rotate(45deg);
+}
+
+.link--logout::before {
+  content: "\e9ba";
+}
+
+.link--edit::before {
+  content: "\e3c9";
+}
+/* #endregion */

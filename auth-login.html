@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Log in | GameHub</title>
+    <meta name="description" content="Log in to your account on GameHub" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5840af" />
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#603cba" />
+    <meta name="msapplication-config" content="./assets/favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#5840af" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!-- Css -->
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <!-- Theme -->
+    <script type="module">
+      import { pageLoadTheme } from "./js/features/theme.js";
+      pageLoadTheme();
+    </script>
+
+    <!-- Hotjar -->
+    <script src="./js/hotjar.js"></script>
+  </head>
+  <body>
+    <div class="min-full-height">
+      <a href="#main-content" class="skip-nav">Skip to content</a>
+      <nav class="sm-nav | bg-dark">
+        <div class="container">
+          <div class="logo">
+            <a href="./index.html"><img src="./assets/logo/logo.png" alt="Gamehub" /></a>
+          </div>
+        </div>
+      </nav>
+
+      <main id="main-content" class="auth | container flex">
+        <form
+          id="login-form"
+          action="./index.html"
+          method="get"
+          class="flow-content flow-form bg-card rounded-corners shadow"
+        >
+          <h1>Log in</h1>
+          <label for="email">Email</label>
+          <input type="email" id="email" />
+          <label for="password">Password</label>
+
+          <div class="password-container input-container input">
+            <input type="password" id="password" />
+            <button
+              id="password-visibility-toggle"
+              data-visible="false"
+              aria-label="Show password"
+              aria-controls="password"
+            >
+              <span aria-hidden="true" class="material-symbols-outlined"> visibility </span>
+            </button>
+          </div>
+          <div class="form-section flex flex--wrap">
+            <div class="custom-checkbox">
+              <input type="checkbox" id="remember-me" />
+              <label for="remember-me">Remember me</label>
+            </div>
+            <a id="forgot-password" href="./auth-forgot.html" class="link fg-low-contrast">Forgot password?</a>
+          </div>
+          <button id="login" class="btn auth-btn">Log in</button>
+          <div class="alternative flex flex--col">
+            <span class="fg-low-contrast">Dont have an account?</span
+            ><a id="sign-up" href="./auth-signup.html" class="link">Sign up</a>
+          </div>
+        </form>
+      </main>
+    </div>
+
+    <footer class="primary-footer | bg-dark">
+      <div class="container grid grid--even-col2">
+        <a href="./index.html" class="logo"><img src="./assets/logo/logo.png" alt="Gamehub" /></a>
+        <button
+          id="theme-toggle"
+          class="btn btn--light-focus theme-toggle"
+          aria-pressed="false"
+          aria-label="theme toggle"
+        >
+          <span>Darkmode</span>
+          <span class="pill d-block" aria-hidden="true"><span class="ball | d-block"></span> </span>
+        </button>
+
+        <span>Copyright @ Martemkn 2022</span>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+    <script type="module">
+      import { setupLogin } from "./js/pages/login.js";
+      setupLogin();
+    </script>
+  </body>
+</html>

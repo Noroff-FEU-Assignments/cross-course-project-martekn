@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Purchase completed | Gamehub</title>
+    <meta name="description" content="Your order was completed, thank you for your purchase" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5840af" />
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#603cba" />
+    <meta name="msapplication-config" content="./assets/favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#5840af" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!-- Css -->
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <!-- Theme -->
+    <script type="module">
+      import { pageLoadTheme } from "./js/features/theme.js";
+      pageLoadTheme();
+    </script>
+
+    <!-- Hotjar -->
+    <script src="./js/hotjar.js"></script>
+  </head>
+  <body>
+    <div class="min-full-height">
+      <a href="#main-content" class="skip-nav">Skip to content</a>
+      <header class="primary-header | bg-card">
+        <div class="top-bar | container grid">
+          <button
+            id="mobile-hamburger"
+            class="mobile-nav-toggle hamburger"
+            aria-controls="primary-navigation"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            <span class="material-symbols-outlined | text-600"> menu </span>
+          </button>
+
+          <div class="logo">
+            <a href="./index.html"><img src="./assets/logo/logo.png" alt="Gamehub" /></a>
+          </div>
+
+          <div class="search | flex">
+            <label for="search-input" class="visually-hidden">Search for games</label>
+            <input type="text" name="search-input" id="search-input" placeholder="Search..." />
+            <button id="search-btn">
+              <span class="material-symbols-outlined"> search </span>
+            </button>
+          </div>
+
+          <div class="cta-group | flex">
+            <a id="auth" href="./auth-login.html" class="user | flex">
+              <span id="auth-icon" class="material-symbols-outlined"> login </span>
+              <span id="auth-text">Log in</span>
+            </a>
+            <a href="./shopping-cart.html" class="cart | flex">
+              <span class="material-symbols-outlined | text-550"> shopping_cart </span>
+              <span id="counter-container" class="counter | rounded-corners">
+                <span class="visually-hidden">Items in cart:</span>
+                <span id="count"></span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <nav id="primary-navigation-wrapper" class="primary-navigation-wrapper | bg-dark" data-visible="false">
+          <div class="container">
+            <button
+              id="mobile-close"
+              class="mobile-nav-toggle close"
+              aria-controls="primary-navigation"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              <span class="material-symbols-outlined text-550"> close </span>
+            </button>
+            <ul id="primary-navigation" class="primary-navigation | flex" aria-label="primary navigation">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./games-all.html">Games</a></li>
+              <li><a href="./games-preorder.html">Pre-orders</a></li>
+              <li><a href="./games-deals.html">Special deals</a></li>
+              <li>
+                <a href="./faq.html"
+                  ><span clasS="visually-hidden">Frequently asked questions</span
+                  ><span aria-hidden="true">F.A.Q.</span></a
+                >
+              </li>
+              <li><a href="./contact.html">Contact us</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <main id="main-content">
+        <div class="confirmation-page | container flow-content">
+          <h1>Thank you for your purchase!</h1>
+          <span class="order-nr | d-block">Order number: <a id="order-number" href="#" class="link"></a></span>
+          <p>We will email you an order confirmation with details regarding your purchase.</p>
+          <a href="./library.html" class="link link--link">View game(s) in library</a>
+        </div>
+      </main>
+    </div>
+
+    <footer class="primary-footer | bg-dark">
+      <div class="container grid grid--even-col2">
+        <a href="./index.html" class="logo"><img src="./assets/logo/logo.png" alt="Gamehub" /></a>
+        <button
+          id="theme-toggle"
+          class="btn btn--light-focus theme-toggle"
+          aria-pressed="false"
+          aria-label="theme toggle"
+        >
+          <span>Darkmode</span>
+          <span class="pill d-block" aria-hidden="true"><span class="ball | d-block"></span> </span>
+        </button>
+
+        <span>Copyright @ Martemkn 2022</span>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+    <script type="module">
+      import { setupConfirmationLink } from "./js/util/confirmation.js";
+
+      setupConfirmationLink("purchase");
+    </script>
+  </body>
+</html>

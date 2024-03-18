@@ -1,0 +1,173 @@
+/* Table of contents
+--------------------------------------------------
+    1. General
+    2. Colors
+    3. Layout
+*/
+
+/* Typography related utility classes can be found in typography.css */
+
+/** 1. General
+-------------------------*/
+/* #region */
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  word-wrap: normal;
+  overflow: hidden;
+}
+
+.rounded-corners {
+  border-radius: var(--border-radius);
+}
+
+.shadow {
+  box-shadow: var(--box-shadow);
+}
+
+.d-block {
+  display: block;
+}
+
+.d-none {
+  display: none;
+}
+
+.o-hidden {
+  overflow: hidden;
+}
+
+.odd-table-rows > :nth-child(odd) {
+  background-color: var(--clr-table);
+}
+/* #endregion */
+
+/** 2. Colors
+-------------------------*/
+/* #region */
+
+/* [class*="bg-"] selects all elements whose class contains bg- */
+[class*="bg-"] {
+  color: var(--fg, var(--clr-font));
+  background-color: var(--bg, green);
+}
+
+.bg-card {
+  --bg: var(--clr-card);
+}
+
+.bg-dark {
+  --bg: var(--clr-neutral-600);
+  --fg: var(--clr-neutral-100);
+}
+
+.bg-low-contrast {
+  --bg: var(--crl-table-bg);
+}
+
+s,
+.fg-low-contrast {
+  color: var(--clr-font-contrast);
+}
+
+/* #endregion */
+
+/** 3. Layout
+-------------------------*/
+/* #region */
+/* Child elements that has a previous sibling gains margin-top,
+This keeps things consistent regardless of the formatting context */
+.flow-content > * + * {
+  margin-top: var(--flow-space, var(--space-400));
+}
+
+.flow-content.flow-form label,
+.flow-content.flow-form button,
+.flow-content.flow-form .form-section {
+  --flow-space: var(--space-450);
+}
+
+.flow-content.flow-form input,
+.flow-content.flow-form .input,
+.flow-content.flow-form textarea {
+  --flow-space: var(--space-350);
+  width: 100%;
+}
+
+.form-section.grid {
+  --gap: 0;
+}
+
+@media (min-width: 30em) {
+  .form-section.grid {
+    grid-template-columns: repeat(2, 1fr);
+    --gap: var(--space-400);
+    row-gap: 0;
+  }
+
+  .form-section .section-group {
+    margin-top: 0;
+  }
+}
+
+.container {
+  --max-width: 75rem;
+  --screen-edge: var(--space-400);
+
+  width: min(var(--max-width), 100% - (var(--screen-edge) * 2));
+  margin-inline: auto;
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap, var(--space-400));
+}
+
+.flex--col {
+  flex-direction: column;
+}
+
+.flex--wrap {
+  flex-wrap: wrap;
+}
+
+.flex--wrap > * {
+  flex: 1 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, var(--space-400));
+}
+
+.grid--even-columns {
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+}
+
+@media (min-width: 45em) {
+  .grid--even-col2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.games-container {
+  --gap: var(--space-450);
+}
+
+@media (min-width: 45em) {
+  .games-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 75em) {
+  .games-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+/* #endregion */
